@@ -13,6 +13,6 @@ class Chat extends Model
     public function getCreatedAtAttribute()
     {
         return \Carbon\Carbon::parse($this->attributes['created_at'])
-            ->format('H:i');
+            ->diffForHumans();
     }
 }
