@@ -39,7 +39,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 User
-                <i class="right fas fa-user-left"></i>
+                <i class="right fas fa-users-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
