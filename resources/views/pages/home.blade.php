@@ -68,7 +68,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Pendapatan (Bulan ini)</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                IDR {{ number_format($penjualan, 0, ',', '.')}}</div>
+                                IDR {{ number_format($sales, 0, ',', '.')}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -87,7 +87,7 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Keuangan</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">IDR
-                                {{number_format($keuangan->saldo, 0, ',', '.')}}</div>
+                                {{number_format($finance->balance, 0, ',', '.')}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-university fa-2x text-gray-300"></i>
@@ -131,10 +131,10 @@
                         <canvas id="myPieChart"></canvas>
                     </div>
                     <div class="mt-4 text-center small">
-                        @foreach ($jenis_sampah as $item)
+                        @foreach ($trash_id as $item)
                         <img class="rounded-circle" style="background-color:{{$item->warna}};"
                             src="{{asset('img/circle.png')}}" width="8px">
-                        <span class="mr-2">{{ $item->jenis_sampah}} </span>
+                        <span class="mr-2">{{ $item->trash_id}} </span>
                         @endforeach
                     </div>
                 </div>
