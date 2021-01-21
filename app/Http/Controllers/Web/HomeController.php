@@ -19,7 +19,7 @@ class HomeController extends Controller
         $month = date('m');
 
         // Card
-        $user = User::where('role', 'admin')->where('deleted_at', null)->count();
+        $user = User::where('deleted_at', null)->count();
         $Finance = Finance::latest()->first('balance');
         $Sale = Sale::whereMonth('created_at', $month)->sum('revenue');
         $transaksi = Deposit::whereMonth('created_at', $month)->count();;
