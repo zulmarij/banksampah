@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use GuzzleHttp\Client;
+use RealRashid\SweetAlert\Facades\Alert;
 use Symfony\Component\Console\Input\Input;
 
 class TrashController extends Controller
@@ -70,7 +71,7 @@ class TrashController extends Controller
             $trash->image = $data->image->display_url;
             $trash->save();
 
-            alert()->succes('message', 'Trash Stored');
+            alert::success('message', 'Trash Stored');
             return back();
         }
     }
