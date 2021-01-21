@@ -16,12 +16,12 @@ class ChatController extends BaseController
         if(Auth::user()->hasRole(['pengurus2', 'bendahara', 'admin'])) return $this->responseError('YOU DO NOT HAVE ACCESS HERE', 403);
         $my_id = Auth::user()->id;
 
-        $from = User::select('users.id', 'users.name', 'users.photo')->distinct()
+        $from = User::select('users.id', 'users.name', 'users.photo', 'created_at', 'updated_at')->distinct()
             ->join('chats', 'users.id', '=', 'chats.to')
             ->where('users.id', '!=', $my_id)
             ->where('chats.from', '=', $my_id)->get()->toArray();
 
-        $to = User::select('users.id', 'users.name', 'users.photo')->distinct()
+        $to = User::select('users.id', 'users.name', 'users.photo', 'created_at', 'updated_at')->distinct()
             ->join('chats', 'users.id', '=', 'chats.from')
             ->where('users.id', '!=', $my_id)
             ->where('chats.to', '=', $my_id)->get()->toArray();
