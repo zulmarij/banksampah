@@ -21,9 +21,9 @@ class TrashController extends Controller
     public function index()
     {
         $trashes = Trash::all();
-        $data = ['trashes' => $trashes];
+        // $data = ['trashes' => $trashes];
 
-        return view('admin.trash.index')->with($data);
+        return view('admin.trash.index')->with($trashes);
     }
 
     /**
@@ -76,7 +76,7 @@ class TrashController extends Controller
             $trash->save();
 
             alert::success('message', 'Trash Stored');
-            return back();
+            return redirect('admin.trash');
         }
     }
 
@@ -88,7 +88,10 @@ class TrashController extends Controller
      */
     public function show($id)
     {
-        //
+        $trash = Trash::find($id);
+        $data = ['trash' => $trash];
+
+        return view('admin.trash.show')
     }
 
     /**

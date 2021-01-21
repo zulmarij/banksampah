@@ -36,7 +36,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-users-alt"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 User
                 <i class="right fas fa-angle-left"></i>
