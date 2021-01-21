@@ -30,6 +30,7 @@ class TrashController extends Controller
      */
     public function create()
     {
+        alert::success('message', 'Success Input Trash');
         return view('admin.trash.create');
     }
 
