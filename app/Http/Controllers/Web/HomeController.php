@@ -20,17 +20,17 @@ class HomeController extends Controller
 
         // Card
         $user = User::where('role', 'admin')->where('deleted_at', null)->count();
-        $Finance = Finance::latest()->first('saldo');
-        $Sale = Sale::whereMonth('created_at', $month)->sum('penghasilan');
+        $Finance = Finance::latest()->first('balance');
+        $Sale = Sale::whereMonth('created_at', $month)->sum('revenue');
         $transaksi = Deposit::whereMonth('created_at', $month)->count();;
 
         // Pie grafik
-        $jenis_sampah = Trash::all();
-        foreach ($jenis_sampah as $value) {
-            $jenis[] = $value->jenis_sampah;
+        $trash_id = Trash::all();
+        foreach ($trash_id as $value) {
+            $jenis[] = $value->trash_id;
         }
 
-        foreach ($jenis_sampah as $value) {
+        foreach ($trash_id as $value) {
             $warna[] = $value->warna;
         }
 
@@ -60,7 +60,7 @@ class HomeController extends Controller
             $penghasilan[] =  $value->penghasilan;
         }
 
-        return view('pages.home', compact('user', 'Finance', 'Sale', 'transaksi', 'jenis', 'sampah', 'warna', 'jenis_sampah', 'penghasilan'));
+        return view('pages.home', compact('user', 'Finance', 'Sale', 'transaksi', 'jenis', 'sampah', 'warna', 'trash_id', 'penghasilan'));
     }
 
     public function alert()
