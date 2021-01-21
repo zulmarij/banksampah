@@ -29,7 +29,7 @@ class TrashController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.trash.create');
     }
 
     /**
