@@ -91,7 +91,7 @@ class TrashController extends Controller
         $trash = Trash::find($id);
         $data = ['trash' => $trash];
 
-        return view('admin.trash.show');
+        return view('admin.trash.show')->with($data);
     }
 
     /**
@@ -105,7 +105,7 @@ class TrashController extends Controller
         $trash = Trash::find($id);
         $data = ['trash' => $trash];
 
-        return view('admin.trash.edit')->with('data');
+        return view('admin.trash.edit')->with($data);
     }
 
     /**
