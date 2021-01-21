@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
     @yield('content')
-      {{-- <div class="container-fluid">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-lg-6">
             <div class="card">
@@ -108,20 +108,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid --> --}}
+      </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
-  {{-- <aside class="control-sidebar control-sidebar-dark">
+  <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
     <div class="p-3">
       <h5>Title</h5>
       <p>Sidebar content</p>
     </div>
-  </aside> --}}
+  </aside>
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
