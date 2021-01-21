@@ -16,6 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css')}}">
 </head>
+@include('sweetalert::alert')
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
