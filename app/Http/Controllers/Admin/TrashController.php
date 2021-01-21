@@ -20,7 +20,10 @@ class TrashController extends Controller
      */
     public function index()
     {
-        //
+        $trashes = Trash::all();
+        $data = ['trashes' => $trashes];
+
+        return view('admin.trash.index')->with($data);
     }
 
     /**
