@@ -20,11 +20,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  @include('admin/header')
+  @include('admin.header')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  @include('admin/sidebar')
+  @include('admin.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -125,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
- @include('admin/footer')
+ @include('admin.footer')
 </div>
 <!-- ./wrapper -->
 
