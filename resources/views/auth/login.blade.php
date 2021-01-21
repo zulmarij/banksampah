@@ -15,9 +15,9 @@
                         <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                         <div class="col-lg-6">
                             <div class="p-5">
-                                <div class="text-center">z
+                                {{-- <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-5">{{strtoupper($sapa)}} ADMIN</h1>
-                                </div>
+                                </div> --}}
 
                                 <form class="user mb-5" method="POST" action="{{route('login')}}">
                                     <div class="form-group">

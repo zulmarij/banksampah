@@ -38,10 +38,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function showLoginForm()
-    {
-        $sapa = $this->sapa();
+    // public function showLoginForm()
+    // {
+    //     $sapa = $this->sapa();
 
-        return view('auth.login', compact('sapa'));
-    }
+    //     return view('auth.login', compact('sapa'));
+    // }
 }
