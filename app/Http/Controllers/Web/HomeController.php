@@ -48,7 +48,7 @@ class HomeController extends Controller
                 ->get();
         } else {
             // Untuk production query pgsql heroku
-            $revenuee = DB::table("Sales")
+            $revenuee = DB::table("sales")
                 ->select(DB::raw("DATE_TRUNC('month',created_at) AS bulan, SUM(revenue) as revenue"))
                 ->groupBy(DB::raw("DATE_TRUNC('month',created_at)"))
                 ->get();
