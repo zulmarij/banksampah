@@ -21,9 +21,9 @@ class TrashController extends Controller
     public function index()
     {
         $trashes = Trash::all();
-        // $data = ['trashes' => $trashes];
+        $data = ['trashes' => $trashes];
 
-        return view('admin.trash.index')->with($trashes);
+        return view('admin.trash.index')->with($data);
     }
 
     /**
@@ -102,7 +102,10 @@ class TrashController extends Controller
      */
     public function edit($id)
     {
-        //
+        $trash = Trash::find($id);
+        $data = ['trash' => $trash];
+
+        return view('admin.trash.edit')->with('data');
     }
 
     /**
@@ -114,9 +117,46 @@ class TrashController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $validator = Validator::make($request->all(), [
+            'trash' => 'required',
+            'price' => 'required|integer',
+            'image' => 'required'
+        ]);
 
+        if ($validator->fails()) {
+            return redirect('admin.trash' . $id . 'edit')
+                ->withErrors($validator);
+        } else {
+            $trash = Trash::find($id);
+
+            $trash->trash = request('trash');
+            $trash->price = request('price');
+
+            if (!$request->file('image')) {
+                $image = $trash->image;
+            } else {
+                $image = base64_encode(file_get_contents(request('image')));
+                $client = new Client();
+                $res = $client->request('POST', 'https://freeimage.host/api/1/upload', [
+                    'form_params' => [
+                        'key' => '6d207e02198a847aa98d0a2a901485a5',
+                        'action' => 'upload',
+                        'source' => $image,
+                        'format' => 'json'
+                    ]
+                ]);
+
+                $get = $res->getBody()->getContents();
+                $data  = json_decode($get);
+                $trash->image = $data->image->display_url;
+            }
+
+            $trash->save();
+
+            alert::success('message', 'Trash Data Changed Successfully');
+            return redirect('admin.trash');
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -125,6 +165,10 @@ class TrashController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $trash = Trash::find($id);
+        $trash->delete();
+
+        alert::success('message', 'Trash Removed');
+        return redirect('admin.trash');
     }
 }
