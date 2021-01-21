@@ -29,7 +29,7 @@ class TrashController extends Controller
      */
     public function create()
     {
-        return view('admin.trash.create');
+        return view('admin/trash/create');
     }
 
     /**
@@ -52,7 +52,7 @@ class TrashController extends Controller
         } else {
             $trash = new Trash();
 
-            $trash->name = request('trash');
+            $trash->trash = request('trash');
             $trash->price = request('price');
             $image = base64_encode(file_get_contents(request('image')));
             $client = new Client();
