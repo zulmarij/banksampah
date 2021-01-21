@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
         "pusher/pusher-php-server": "^4.1",
+        "realrashid/sweet-alert": "^3.2",
         "spatie/laravel-permission": "^3.18"
     },
     "require-dev": {
