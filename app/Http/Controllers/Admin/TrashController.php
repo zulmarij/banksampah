@@ -76,7 +76,7 @@ class TrashController extends Controller
             $trash->save();
 
             alert::success('message', 'Trash Stored');
-            return redirect('admin.trash');
+            return redirect('admin/trash');
         }
     }
 
@@ -154,7 +154,7 @@ class TrashController extends Controller
             $trash->save();
 
             alert::success('message', 'Trash Data Changed Successfully');
-            return redirect('admin.trash');
+            return redirect('admin/trash');
         }
     }
     /**
@@ -169,6 +169,6 @@ class TrashController extends Controller
         $trash->delete();
 
         alert::success('message', 'Trash Removed');
-        return redirect('admin.trash');
+        return redirect('admin/trash');
     }
 }
