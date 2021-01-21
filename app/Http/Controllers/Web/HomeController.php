@@ -39,28 +39,28 @@ class HomeController extends Controller
             $sampah[] = $value->berat;
         }
 
-        // chart penghasilan
+        // chart revenue
         if (request()->url() == 'http://localhost:8000/home') {
             // query mysql untuk localhost
-            $penghasilann = DB::table("Sales")
-                ->select(DB::raw("(SUM(penghasilan)) as penghasilan"))
+            $revenuee = DB::table("sales")
+                ->select(DB::raw("(SUM(revenue)) as revenue"))
                 ->groupBy(DB::raw("MONTH(created_at)"))
                 ->get();
         } else {
             // Untuk production query pgsql heroku
-            $penghasilann = DB::table("Sales")
-                ->select(DB::raw("DATE_TRUNC('month',created_at) AS bulan, SUM(penghasilan) as penghasilan"))
+            $revenuee = DB::table("Sales")
+                ->select(DB::raw("DATE_TRUNC('month',created_at) AS bulan, SUM(revenue) as revenue"))
                 ->groupBy(DB::raw("DATE_TRUNC('month',created_at)"))
                 ->get();
         }
 
-        $penghasilan = [];
+        $revenue = [];
 
-        foreach ($penghasilann as  $value) {
-            $penghasilan[] =  $value->penghasilan;
+        foreach ($revenuee as  $value) {
+            $revenue[] =  $value->revenue;
         }
 
-        return view('pages.home', compact('user', 'Finance', 'Sale', 'transaksi', 'jenis', 'sampah', 'warna', 'trash_id', 'penghasilan'));
+        return view('pages.home', compact('user', 'Finance', 'Sale', 'transaksi', 'jenis', 'sampah', 'warna', 'trash_id', 'revenue'));
     }
 
     public function alert()
