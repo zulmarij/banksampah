@@ -11,7 +11,7 @@ use App\Models\Warehouse;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Withdrawal;
-
+use Spatie\Permission\Models\Role;
 class HomeController extends Controller
 {
     public function index()
@@ -19,7 +19,7 @@ class HomeController extends Controller
         $month = date('m');
 
         // Card
-        $user = User::where('role_id', 1)->where('deleted_at', null)->count();
+        $user = User::where('deleted_at', null)->count()->hashRole('admin');
         $Finance = Finance::latest()->first('saldo');
         $Sale = Sale::whereMonth('created_at', $month)->sum('penghasilan');
         $transaksi = Deposit::whereMonth('created_at', $month)->count();;
