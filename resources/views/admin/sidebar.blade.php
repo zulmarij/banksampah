@@ -39,7 +39,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 User
-                <i class="right fas fa-users-left"></i>
+                <i class="fa fa-users"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -73,7 +73,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Simple Link
+                Input Sampah
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>

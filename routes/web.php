@@ -21,4 +21,5 @@ Auth::routes();
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
 Route::middleware('auth:web')->group(function () {
 Route::get('/admin', 'Admin\AdminController@index')->name('Dashboard');
+Route::resource('/admin/trash', 'Admin\TrashController');
 });
