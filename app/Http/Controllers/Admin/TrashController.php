@@ -104,8 +104,8 @@ class TrashController extends Controller
     {
         $trash = Trash::find($id);
         $data = ['trash' => $trash];
-        return back()->with($data);
-        // return view('admin.trash.edit')->with($data);
+        
+        return view('admin.trash.edit')->with($data);
     }
 
     /**
@@ -120,11 +120,11 @@ class TrashController extends Controller
         $validator = Validator::make($request->all(), [
             'trash' => 'required',
             'price' => 'required|integer',
-            'image' => 'required'
+            // 'image' => 'required'
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin.trash' . $id . 'edit')
+            return redirect('admin/trash/'.$id.'/edit')
                 ->withErrors($validator);
         } else {
             $trash = Trash::find($id);
@@ -133,7 +133,7 @@ class TrashController extends Controller
             $trash->price = request('price');
 
             if (!$request->file('image')) {
-                $image = $trash->image;
+                $image = request('imagePath');
             } else {
                 $image = base64_encode(file_get_contents(request('image')));
                 $client = new Client();

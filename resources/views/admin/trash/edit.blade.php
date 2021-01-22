@@ -33,7 +33,7 @@
                     <div class="col-md-12">
                         {{ Form::hidden('imagePath',$trash['image'])}}
                         {{ Form::label('image', 'Image') }}
-                        {{ Form::file('imageFile', ['class'=>'form-control']) }}
+                        {{ Form::file('image', ['class'=>'form-control']) }}
                     </div>
                 </div>
             </div>
