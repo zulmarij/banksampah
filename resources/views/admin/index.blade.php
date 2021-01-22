@@ -22,7 +22,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Likes</span>
-                <span class="info-box-number">{{ $sale[] }}</span>
+                <span class="info-box-number">{{ $sale }}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
