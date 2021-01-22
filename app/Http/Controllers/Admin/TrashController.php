@@ -73,7 +73,7 @@ class TrashController extends Controller
             $trash->image = $data->image->display_url;
             $trash->save();
 
-            alert::success('message', 'Success Input Trash');
+             alert::success('message', 'Success Create Trash');
             return redirect('admin/trash');
         }
     }

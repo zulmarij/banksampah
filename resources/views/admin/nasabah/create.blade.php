@@ -2,10 +2,10 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        {{ Form::open(['route'=>'trash.store', 'files'=>true]) }}
+        {{ Form::open('route'=>'nasabah.store') }}
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Added Trash</h3>
+                <h3 class="card-title">Added Nasabah</h3>
             </div>
             <div class="card-body">
                 @if(!empty($errors->all()))
@@ -16,20 +16,20 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            {{ Form::label('trash', 'Trash') }}
-                            {{ Form::text('trash', '', ['class'=>'form-control', 'placeholder'=>'Enter the Trash Name']) }}
+                            {{ Form::label('name', 'Name') }}
+                            {{ Form::text('name', '', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Name']) }}
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            {{ Form::label('price', 'Price') }}
-                            {{ Form::text('price', '', ['class'=>'form-control', 'placeholder'=>'Enter the Trash Price']) }}
+                            {{ Form::label('email', 'Email') }}
+                            {{ Form::email('email', '', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Email']) }}
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            {{ Form::label('image', 'image') }}
-                            {{ Form::file('image', ['class'=>'form-control']) }}
+                            {{ Form::label('password', 'Password') }P
+                            {{ Form::password('Password', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Password']) }}
                         </div>
                     </div>
                 </div>

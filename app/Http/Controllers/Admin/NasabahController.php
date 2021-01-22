@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NasabahController extends Controller
 {
@@ -30,7 +31,7 @@ class NasabahController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.nasabah.create');
     }
 
     /**
@@ -48,31 +49,19 @@ class NasabahController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin/nasabah/index')
+            return redirect('admin/nasabah')
                 ->withErrors($validator);
         } else {
-            $user = new Trash();
+            $user = new User();
 
-            $user->user = request('user');
-            $user->price = request('price');
-            $image = base64_encode(file_get_contents(request('image')));
-            $client = new Client();
-            $res = $client->request('POST', 'https://freeimage.host/api/1/upload', [
-                'form_params' => [
-                    'key' => '6d207e02198a847aa98d0a2a901485a5',
-                    'action' => 'upload',
-                    'source' => $image,
-                    'format' => 'json'
-                ]
-            ]);
-
-            $get = $res->getBody()->getContents();
-            $data  = json_decode($get);
-            $user->image = $data->image->display_url;
+            $user->name = request('name');
+            $user->email = request('email');
+            $user->password = request('password');
+      
             $user->save();
 
-            alert::success('message', 'Trash Stored');
-            return redirect('admin/user');
+            alert::success('message', 'Success Create Nasabah');
+            return redirect('admin/nasabah');
         }
     }
 
