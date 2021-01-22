@@ -19,6 +19,6 @@ class AdminController extends Controller
         $deposit = Deposit::count();
 
         // $data = ['finance' => $finance];
-        return view('admin.admin', compact('finance', 'sale', 'user', 'deposit'));
+        return view('admin', compact('finance', 'sale', 'user', 'deposit'));
     }
 }
