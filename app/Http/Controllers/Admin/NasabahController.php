@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -56,8 +57,8 @@ class NasabahController extends Controller
 
             $user->name = request('name');
             $user->email = request('email');
-            $user->password = request('password');
-      
+            $user->password = Hash::make(request('password'));
+            $user->assignRole('nasabah');
             $user->save();
 
             alert::success('message', 'Success Create Nasabah');
