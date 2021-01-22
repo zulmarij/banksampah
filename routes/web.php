@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
 Route::middleware('auth:web')->group(function () {
-Route::get('/admin', 'Admin\AdminController@index')->name('Dashboard');
+Route::get('/admin', 'Admin\AdminController@index');
+
 Route::resource('/admin/trash', 'Admin\TrashController');
 });

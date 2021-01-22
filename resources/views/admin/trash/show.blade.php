@@ -28,6 +28,9 @@
                     </div>
                 </div>
             </div>
+            <div class="card-footer">
+                <a href="{{ URL::to('admin/trash') }}" class="btn btn-outline-info">Back</a>
+            </div>
         </div>
     </div>
 </div>
