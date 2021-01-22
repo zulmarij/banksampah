@@ -39,7 +39,7 @@
             </div>
             <div class="card-footer">
                 <a href="{{ URL::to('admin/trash') }}" class="btn btn-outline-info">Back</a>
-                {{ Form::submit('Proses', ['class' => 'btn btn-primary pull-right']) }}
+                {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
             </div>
         </div>
         <!-- </form> -->

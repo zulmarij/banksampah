@@ -52,7 +52,7 @@ class TrashController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin.trash.index')
+            return redirect('admin/trash/index')
                 ->withErrors($validator);
         } else {
             $trash = new Trash();
