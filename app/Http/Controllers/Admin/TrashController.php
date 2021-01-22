@@ -21,9 +21,8 @@ class TrashController extends Controller
     public function index()
     {
         $trashes = Trash::all();
-        $data = ['trashes' => $trashes];
 
-        return view('admin.trash.index')->with($data);
+        return view('admin.trash.index', compact('trashes'));
     }
 
     /**

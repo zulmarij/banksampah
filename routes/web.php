@@ -23,4 +23,6 @@ Route::middleware('auth:web')->group(function () {
 Route::get('/admin', 'Admin\AdminController@index');
 
 Route::resource('/admin/trash', 'Admin\TrashController');
+
+Route::resource('/admin/nasabah', 'Admin\NasabahController');
 });
