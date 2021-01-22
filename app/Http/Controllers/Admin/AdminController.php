@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function index()
     {   
         $user = User::count();
-        $finance = Finance::latest()->first('balance');
+        $finance = Finance::latest()->first();
         $sale = Sale::sum('revenue');
         $deposit = Deposit::count();
 

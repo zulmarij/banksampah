@@ -7,7 +7,7 @@
 
                  <div class="info-box-content">
                      <span class="info-box-text">Finance</span>
-                     <span class="info-box-number">Rp. {{ $finance }}</span>
+                     <span class="info-box-number">Rp. {{ number_format($finance['balance'], 0, ',', '.') }}</span>
                  </div>
                  <!-- /.info-box-content -->
              </div>
@@ -36,8 +36,8 @@
                  <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
                  <div class="info-box-content">
-                     <span class="info-box-text">Rp. {{number_format($sale, 0, ',', '.') }}</span>
-                     <span class="info-box-number">760</span>
+                     <span class="info-box-text">Deposit</span>
+                     <span class="info-box-number">Rp. {{number_format($deposit, 0, ',', '.') }}</span>
                  </div>
                  <!-- /.info-box-content -->
              </div>
