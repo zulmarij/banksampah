@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Collection;
 class NasabahController extends Controller
 {
     /**
