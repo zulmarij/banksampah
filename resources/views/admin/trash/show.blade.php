@@ -7,11 +7,9 @@
                 <h3 class="card-title">Trash Details</h3>
             </div>
             <div class="card-body">
-                <div class="row justify-content">
-                    <div class="card-body card-shadow">
-                        <div class="col-md-6">
-                            <img src="{{ $trash['image'] }}" height="256" width="256" />
-                        </div>
+                <div class="row">
+                    <div class="card-image card-center">
+                        <img src="{{ $trash['image'] }}" height="256" width="256" />
                     </div>
                 </div>
                 <div class="row">
