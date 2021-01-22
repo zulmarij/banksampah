@@ -7,7 +7,7 @@
 
                  <div class="info-box-content">
                      <span class="info-box-text">Finance</span>
-                     <span class="info-box-number">Rp. {{ number_format($finance, 0, ',', '.') }}</span>
+                     <span class="info-box-number">Rp. {{ $finance }}</span>
                  </div>
                  <!-- /.info-box-content -->
              </div>
