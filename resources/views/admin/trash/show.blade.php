@@ -8,9 +8,9 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6 col-centered">
                             <img src="{{ $trash['image'] }}"
-                                height="200" width="100%"/>
+                                height="256" width="256"/>
                         </div>
                     </div>
                     <div class="row">
