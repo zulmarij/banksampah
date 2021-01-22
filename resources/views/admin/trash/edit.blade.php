@@ -13,10 +13,13 @@
                     {{ Html::ul($errors->all())}}
                 </div>
                 @endif
-                <div class="row">
-                    <div class="col-md-12">
-                        <img src="{{ $trash['image'] }}" width="100%" height="200">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                        <img src="{{ $trash['image'] }}" height="256" width="256" />
                     </div>
+                </div>
+                <div class="row">
+                   
                     <div class="col-md-6">
                         <div class="form-group">
                             {{ Form::label('trash', 'Trash') }}
