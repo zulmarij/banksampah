@@ -32,7 +32,6 @@ class TrashController extends Controller
      */
     public function create()
     {
-        alert::success('message', 'Success Input Trash');
         return view('admin.trash.create');
     }
 
@@ -51,7 +50,7 @@ class TrashController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin/trash/index')
+            return redirect('admin/trash/create')
                 ->withErrors($validator);
         } else {
             $trash = new Trash();
@@ -74,7 +73,7 @@ class TrashController extends Controller
             $trash->image = $data->image->display_url;
             $trash->save();
 
-            alert::success('message', 'Trash Stored');
+            alert::success('message', 'Success Input Trash');
             return redirect('admin/trash');
         }
     }
