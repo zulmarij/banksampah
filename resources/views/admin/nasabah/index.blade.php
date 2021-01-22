@@ -38,14 +38,14 @@
                                     <td>{{ $user['phone'] }}</td>
                                     <td>{{ $user['email'] }}</td>
                                     <td>{{ $user['address'] }}</td>
-                                    <td class="text-center"><img src="{{ $user['image'] }}" width="100" /></td>
+                                    <td class="text-center"><img src="{{ $user['photo'] }}" width="100" /></td>
                                     <td class="text-center">
-                                        <form method="POST" action="{{ URL::to('/admin/user/'.$user['id']) }}">
+                                        <form method="POST" action="{{ URL::to('/admin/nasabah/'.$user['id']) }}">
                                             {{ csrf_field() }}
                                             <input type="hidden" name="_method" value="DELETE" />
                                             <div class="btn-group">
-                                                <a class="btn btn-info" href="{{ URL::to('/admin/user/'.$user['id']) }}"><i class="fa fa-eye"></i></a>
-                                                <a class="btn btn-success" href="{{ URL::to('/admin/user/'.$user['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
+                                                <a class="btn btn-info" href="{{ URL::to('/admin/nasabah/'.$user['id']) }}"><i class="fa fa-eye"></i></a>
+                                                <a class="btn btn-success" href="{{ URL::to('/admin/nasabah/'.$user['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-user"></i></button>
                                             </div>
                                         </form>
