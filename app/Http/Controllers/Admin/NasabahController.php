@@ -15,8 +15,7 @@ class NasabahController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->get();
-        $users->getRoleNames('nasabah');
+        $users = User::role('nasabah')->get()->latest();
 
         return view('admin.nasabah.index', compact('users'));
     }
