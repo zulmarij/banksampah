@@ -14,7 +14,7 @@ class AdminController extends Controller
         $month = date('m');
 
         $finance = Finance::latest()->first();
-        $sale = Sale::whereMonth('created_at', $month)->sum('revenue');
+        $sale = Sale::sum('revenue');
 
         // $data = ['finance' => $finance];
         return view('admin.admin', compact('finance', 'sale'));
