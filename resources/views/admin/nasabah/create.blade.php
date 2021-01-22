@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        {{ Form::open(['route'=>'nasabah.store', 'method' => 'post']) }}
+        {{ Form::open(['route'=>'nasabah.store']) }}
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Added Nasabah</h3>

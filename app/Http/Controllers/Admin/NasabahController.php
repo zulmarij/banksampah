@@ -44,9 +44,9 @@ class NasabahController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|string|min:5',
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -58,8 +58,9 @@ class NasabahController extends Controller
             $user->name = request('name');
             $user->email = request('email');
             $user->password = Hash::make(request('password'));
-            $user->assignRole('nasabah');
             $user->save();
+            $user->assignRole('nasabah');
+            $user->createToken('banksampah')->accessToken;
 
             alert::success('message', 'Success Create Nasabah');
             return redirect('admin/nasabah');
