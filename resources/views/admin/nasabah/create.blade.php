@@ -14,22 +14,30 @@
                 </div>
                 @endif
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             {{ Form::label('name', 'Name') }}
                             {{ Form::text('name', '', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Name']) }}
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             {{ Form::label('email', 'Email') }}
                             {{ Form::email('email', '', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Email']) }}
                         </div>
                     </div>
-                    <div class="col-md-4">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="form-group">
                             {{ Form::label('password', 'Password') }}
                             {{ Form::password('Password', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Password']) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ Form::label('password_confirmation', 'Password') }}
+                            {{ Form::password('Password_confrimation', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Password Again']) }}
                         </div>
                     </div>
                 </div>
