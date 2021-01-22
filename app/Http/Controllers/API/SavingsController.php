@@ -87,36 +87,12 @@ class SavingsController extends BaseController
         return $this->responseOk(request('nominal'), 200, 'The request is being processed, waiting for the balance to be sent');
     }
 
-    public function send($nominal)
+    public function history()
     {
-        $data = Savings::where('user_id', Auth::id())->latest()->first();
+        if(Auth::user()->hasRole(['pengurus2', 'pengurus1', 'bendahara', 'admin'])) return $this->responseError('YOU DO NOT HAVE ACCESS HERE', 403);
+        
+        $history = Withdrawal::where('user_id', Auth::id())->get();
 
-        if ($data == null or $nominal > $data->balance) {
-            return $this->responseError('Selling Trash First', 400);
-        }
-
-        Savings::create([
-            'user_id'       => Auth::id(),
-            'information'    => request('information') ?? 'send balance to other users',
-            'trash_id'  => null,
-            'weight'         => null,
-            'debit'         => 0,
-            'credit'        => $nominal,
-            'balance'         => $data->balance - $nominal
-        ]);
-
-        $send = Savings::where('email', request('email'))->latest()->first();
-
-        Savings::create([
-            'user_id'       => $send->user_id,
-            'information'    => request('information') ?? 'send balance to other users',
-            'trash_id'  => null,
-            'weight'         => null,
-            'debit'         => $nominal,
-            'credit'        => 0,
-            'balance'         => $send->balance + $nominal
-        ]);
-
-        return $this->responseOk('Success', 200, 'balance was successfully sent to other users');
+        return $this->responseOk($history, 200, 'History was successfully displayed');
     }
 }

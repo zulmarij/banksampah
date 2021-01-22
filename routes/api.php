@@ -65,6 +65,7 @@ Route::middleware('auth:api')->group(function () {
 
     Route::get('savings', 'API\SavingsController@index');
     Route::get('balance', 'API\SavingsController@show');
+    Route::get('history/withdraw', 'API\SavingsController@history');
     Route::post('withdrawal', 'API\SavingsController@withdraw');
 
 
