@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function index()
     {   
-        $finance = Finance::latest()->first('balance');
+        $finance = Finance::latest()->first();
         $data = ['finance' => $finance];
         return view('admin.admin')->with($data);
     }

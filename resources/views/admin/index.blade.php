@@ -8,7 +8,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">CPU Traffic</span>
                 <span class="info-box-number">
-                  {{ $finance }}
+                 Rp. {{ $finance['balance'] }}
                 </span>
               </div>
               <!-- /.info-box-content -->
