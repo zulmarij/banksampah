@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
-use App\Models\Savings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController;
+use App\Models\Savings;
 use App\Models\Withdrawal;
 use Illuminate\Support\Facades\Auth;
 
