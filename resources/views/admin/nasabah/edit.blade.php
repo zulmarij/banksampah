@@ -14,9 +14,8 @@
                 </div>
                 @endif
                 <div class="row justify-content-md-center">
+                    <img src="{{ $user['photo'] }}" height="256" width="256" />
                     <div class="col-md-auto">
-                        {!! link_to_asset($user['photo'], title = Photo) !!}
-                        {{-- <img src="{{ $user['url'] }}" height="256" width="256" /> --}}
                         {{-- {{ Form::label('photo', 'Photo') }} --}}
                         {{ Form::hidden('photoPath',$user['photo'])}}
                         {{ Form::file('photo', ['class'=>'form-control']) }}
