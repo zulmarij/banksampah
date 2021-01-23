@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
-Route::middleware('auth:web')->group(function () {
+Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 Route::get('/admin', 'Admin\AdminController@index');
 
 Route::resource('/admin/trash', 'Admin\TrashController');
