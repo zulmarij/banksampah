@@ -70,10 +70,9 @@ class ChatController extends BaseController
         );
 
         $pusher = new Pusher(
-            '858e6bc31a28a06e1073',
             'ea9cc38ebb4b891afb5b',
-            '1131752',
-            $options
+            '858e6bc31a28a06e1073',
+            '1131752', $options
         );
 
         $pusher->trigger('my-channel', 'my-event', $data);
