@@ -14,7 +14,7 @@
                 </div>
                 @endif
                 <div class="row justify-content-md-center">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <img src="{{ $user['photo'] }}" height="256" width="256" />
                         {{-- {{ Form::label('photo', 'Photo') }} --}}
                         {{ Form::hidden('photoPath',$user['photo'])}}
