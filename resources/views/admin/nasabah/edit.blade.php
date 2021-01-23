@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        {{ Form::model($user,['action'=>['Admin\NasabahController@update',$trash['id']],'files'=>true,'method'=>'PUT']) }}
+        {{ Form::model($user,['action'=>['Admin\NasabahController@update',$user['id']],'files'=>true,'method'=>'PUT']) }}
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Change Trash Data</h3>
