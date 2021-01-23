@@ -18,7 +18,7 @@ class FinanceController extends Controller
         $credit = Finance::sum('credit');
         $debit = Finance::sum('debit');
 
-        return view('admin.bendahara.finance', compact('finance', 'balance', 'credit', 'debit'));
+        return view('admin.finance.index', compact('finance', 'balance', 'credit', 'debit'));
     }
 
     public function getPenarikan()
