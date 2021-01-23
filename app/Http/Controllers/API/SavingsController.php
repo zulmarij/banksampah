@@ -71,7 +71,7 @@ class SavingsController extends BaseController
             'weight'         => null,
             'debit'         => null,
             'credit'        => request('nominal'),
-            'balance'         => $data->balance - request('nominal')
+            'balance'         => $data->balance -= request('nominal')
         ]);
 
         Withdrawal::create([
