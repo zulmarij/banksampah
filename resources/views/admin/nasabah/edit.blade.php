@@ -13,7 +13,7 @@
                     {{ Html::ul($errors->all())}}
                 </div>
                 @endif
-                {{ Form::label('photo', 'Photo') }}
+                {{ Form::label('photo', 'Photo', ['class' => 'text-center']) }}
                 <div class="row justify-content-md-center">
                     <div class="col-md-auto" style="text-align:center">
                         <img src="{{ $user['photo'] }}" height="128" width="128" />
