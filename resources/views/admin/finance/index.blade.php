@@ -105,7 +105,7 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($keuangan as $value)
+                        {{-- @foreach ($keuangan as $value) --}}
                         <tr>
                             <td>$value->id}}</td>
                             <td>$value->keterangan}}</td>
@@ -114,7 +114,7 @@
                             <td>number_format ($value->saldo, 0, ',', '.')}}</td>
                             <td>$value->created_at}}</td>
                         </tr>
-                        @endforeach
+                        {{-- @endforeach --}}
                     </tbody>
                 </table>
             </div>
