@@ -15,7 +15,8 @@
                 @endif
                 <div class="row justify-content-md-center">
                     <div class="col-md-auto">
-                        <img src="{{ $user['photo'] }}" height="300" width="300" />
+                        {!! link_to_asset($user['photo'], title = Photo) !!}
+                        {{-- <img src="{{ $user['url'] }}" height="256" width="256" /> --}}
                         {{-- {{ Form::label('photo', 'Photo') }} --}}
                         {{ Form::hidden('photoPath',$user['photo'])}}
                         {{ Form::file('photo', ['class'=>'form-control']) }}
@@ -48,18 +49,18 @@
                     </div>
                     {{-- <div class="col-md-12">
                         {{ Form::hidden('photoPath',$user['photo'])}}
-                        {{ Form::label('photo', 'Photo') }}
-                        {{ Form::file('photo', ['class'=>'form-control']) }}
-                    </div> --}}
-                </div>
-            </div>
-            <div class="card-footer">
-                <a href="{{ URL::to('admin/nasabah') }}" class="btn btn-outline-info">Back</a>
-                {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
+                    {{ Form::label('photo', 'Photo') }}
+                    {{ Form::file('photo', ['class'=>'form-control']) }}
+                </div> --}}
             </div>
         </div>
-        <!-- </form> -->
-        {{ Form::close() }}
+        <div class="card-footer">
+            <a href="{{ URL::to('admin/nasabah') }}" class="btn btn-outline-info">Back</a>
+            {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
+        </div>
     </div>
+    <!-- </form> -->
+    {{ Form::close() }}
+</div>
 </div>
 @endsection
