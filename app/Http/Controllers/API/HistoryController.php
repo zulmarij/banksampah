@@ -12,7 +12,7 @@ class HistoryController extends BaseController
     public function index()
     {
         if(Auth::user()->hasRole(['pengurus1', 'pengurus2', 'bendahara', 'admin'])) return $this->responseError('YOU DO NOT HAVE ACCESS HERE', 403);
-        $request = History::where('user_id', Auth::id())->latest()->get();
+        $request = History::where('user_id', Auth::id())->get();
         return $this->responseOk($request, 200, 'list of history');
     }
 
