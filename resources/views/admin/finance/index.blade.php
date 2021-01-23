@@ -107,8 +107,8 @@
             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Events</span>
-                <span class="info-box-number">Rp. {{ number_format($balance, 0, ',', '.') }}</span>
+                <span class="info-box-text">Balance</span>
+                <span class="info-box-number">Rp. {{ $balance }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
