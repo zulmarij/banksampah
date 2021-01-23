@@ -108,7 +108,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Balance</span>
-                <span class="info-box-number">Rp. {{ $balance }}</span>
+                <span class="info-box-number">Rp. {{ number_format($balance['balance'], 0, ',', '.') }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
