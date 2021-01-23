@@ -1,3 +1,5 @@
+@extends('admin/admin')
+@section('content')
 <div class="container-fluid">
 
     <div class="d-sm-flex align-items-center justify-content-between mb-3">
@@ -122,3 +124,4 @@
     </div>
 
 </div>
+@endsection
