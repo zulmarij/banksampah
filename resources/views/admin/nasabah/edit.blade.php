@@ -13,10 +13,10 @@
                     {{ Html::ul($errors->all())}}
                 </div>
                 @endif
+                {{ Form::label('photo', 'Photo') }}
                 <div class="row justify-content-md-center">
                     <div class="col-md-auto" style="text-align:center">
-                        {{ Form::label('photo', 'Photo') }}
-                        <img src="{{ $user['photo'] }}" height="256" width="256" />
+                        <img src="{{ $user['photo'] }}" height="128" width="128" />
                         {{ Form::hidden('photoPath',$user['photo'])}}
                         {{ Form::file('photo', ['class'=>'form-control']) }}
                     </div>
