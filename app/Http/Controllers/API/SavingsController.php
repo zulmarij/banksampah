@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController;
 use App\Models\Savings;
+// e App\Models\Savings;
 use App\Models\Withdrawal;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,8 @@ class SavingsController extends BaseController
     public function index()
     {
         if(Auth::user()->hasRole(['pengurus2', 'pengurus1', 'bendahara', 'admin'])) return $this->responseError('YOU DO NOT HAVE ACCESS HERE', 403);
-        $data = Savings::where('user_id', Auth::id())->get();
+        $data = new Savings();
+        $data->where('user_id', Auth::id())->get();
 
         if ($data == '[]') return $this->sendResponse();
 

@@ -4,6 +4,7 @@ namespace App\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\FormatDate;
+
 class Savings extends Model
 {
     use FormatDate;
