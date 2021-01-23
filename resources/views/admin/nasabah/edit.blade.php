@@ -15,8 +15,8 @@
                 @endif
                 <div class="row justify-content-md-center">
                     <div class="col-md-auto">
-                        {{ Form::label('photo', 'Photo') }}
                         <img src="{{ $user['photo'] }}" height="256" width="256" />
+                        {{ Form::label('photo', 'Photo') }}
                         {{ Form::hidden('photoPath',$user['photo'])}}
                         {{ Form::file('photo', ['class'=>'form-control']) }}
                     </div>
