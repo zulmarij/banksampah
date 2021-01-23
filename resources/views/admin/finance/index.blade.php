@@ -127,8 +127,8 @@
             <span class="info-box-icon"><i class="fas fa-comments"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Comments</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">Total Financial Reports</span>
+                <span class="info-box-number">{{ $finance }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
