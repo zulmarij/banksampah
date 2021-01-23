@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class NasabahController extends Controller
+class Pengurus1Controller extends Controller
 {
     /**
      * Display a listing of the resource.
