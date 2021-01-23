@@ -46,7 +46,7 @@
                                             <div class="btn-group">
                                                 <a class="btn btn-info" href="{{ URL::to('/admin/nasabah/'.$user['id']) }}"><i class="fa fa-eye"></i></a>
                                                 <a class="btn btn-success" href="{{ URL::to('/admin/nasabah/'.$user['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-user"></i></button>
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-eraser"></i></button>
                                             </div>
                                         </form>
                                     </td>

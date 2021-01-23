@@ -42,7 +42,7 @@
                                             <div class="btn-group">
                                                 <a class="btn btn-info" href="{{ URL::to('/admin/trash/'.$trash['id']) }}"><i class="fa fa-eye"></i></a>
                                                 <a class="btn btn-success" href="{{ URL::to('/admin/trash/'.$trash['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-eraser"></i></button>
                                             </div>
                                         </form>
                                     </td>
