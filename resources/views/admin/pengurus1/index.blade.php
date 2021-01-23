@@ -13,9 +13,9 @@
                 </div>
             </div>
             <div class="card-body">
-                @if (alert::has('message'))
+                {{-- @if (alert::has('message'))
                     {{ alert::get('message') }}
-                @endif
+                @endif --}}
                 <div class="row">
                     <div class="col-md-12">
                         <table class="table table-bordered table-hover">
