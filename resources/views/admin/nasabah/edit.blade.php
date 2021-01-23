@@ -14,8 +14,8 @@
                 </div>
                 @endif
                 <div class="row justify-content-md-center">
-                    <img src="{{ $user['photo'] }}" height="256" width="256" />
-                    <div class="col-md-auto">
+                    <div class="col-md-6">
+                        <img src="{{ $user['photo'] }}" height="256" width="256" />
                         {{-- {{ Form::label('photo', 'Photo') }} --}}
                         {{ Form::hidden('photoPath',$user['photo'])}}
                         {{ Form::file('photo', ['class'=>'form-control']) }}
@@ -48,18 +48,18 @@
                     </div>
                     {{-- <div class="col-md-12">
                         {{ Form::hidden('photoPath',$user['photo'])}}
-                    {{ Form::label('photo', 'Photo') }}
-                    {{ Form::file('photo', ['class'=>'form-control']) }}
-                </div> --}}
+                        {{ Form::label('photo', 'Photo') }}
+                        {{ Form::file('photo', ['class'=>'form-control']) }}
+                    </div> --}}
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="{{ URL::to('admin/nasabah') }}" class="btn btn-outline-info">Back</a>
+                {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
             </div>
         </div>
-        <div class="card-footer">
-            <a href="{{ URL::to('admin/nasabah') }}" class="btn btn-outline-info">Back</a>
-            {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
-        </div>
+        <!-- </form> -->
+        {{ Form::close() }}
     </div>
-    <!-- </form> -->
-    {{ Form::close() }}
-</div>
 </div>
 @endsection
