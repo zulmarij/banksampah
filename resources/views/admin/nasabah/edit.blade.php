@@ -15,7 +15,10 @@
                 @endif
                 <div class="row justify-content-md-center">
                     <div class="col-md-auto">
+                        {{ Form::label('photo', 'Photo') }}
                         <img src="{{ $user['photo'] }}" height="256" width="256" />
+                        {{ Form::hidden('photoPath',$user['photo'])}}
+                        {{ Form::file('photo', ['class'=>'form-control']) }}
                     </div>
                 </div>
                 <div class="row">
@@ -43,11 +46,11 @@
                             {{ Form::text('address', $user['address'], ['class'=>'form-control', 'placeholder'=>'Enter The Nasabah Address']) }}
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    {{-- <div class="col-md-12">
                         {{ Form::hidden('photoPath',$user['photo'])}}
                         {{ Form::label('photo', 'Photo') }}
                         {{ Form::file('photo', ['class'=>'form-control']) }}
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="card-footer">
