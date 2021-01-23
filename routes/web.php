@@ -23,6 +23,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 Route::get('/admin', 'AdminController@index');
 
 Route::resource('/admin/trash', 'TrashController');
-
-Route::resource('/admin/nasabah', 'NasabahController');
+Route::resource('/admin/Pengurus1', 'Pengurus1Controller');
+Route::resource('/admin/Pengurus2', 'Pengurus2Controller');
+Route::resource('/admin/Bendahara', 'BendaharaController');
 });

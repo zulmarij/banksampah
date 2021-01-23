@@ -152,6 +152,10 @@ class NasabahController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        alert::success('message', 'User Removed');
+        return redirect('admin/nasabah');
     }
 }

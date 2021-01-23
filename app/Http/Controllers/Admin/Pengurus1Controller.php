@@ -3,9 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
-class Pengurus1Controller extends Controller
+class NasabahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +21,9 @@ class Pengurus1Controller extends Controller
      */
     public function index()
     {
-        //
+        $users = User::role('pengurus1')->latest()->get();
+
+        return view('admin.pengurus1.index', compact('users'));
     }
 
     /**
@@ -24,7 +33,7 @@ class Pengurus1Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pengurus1.create');
     }
 
     /**
@@ -35,7 +44,27 @@ class Pengurus1Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|string|min:5',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/pengurus1/create')
+                ->withErrors($validator);
+        } else {
+            $user = new User();
+
+            $user->name = request('name');
+            $user->email = request('email');
+            $user->password = Hash::make(request('password'));
+            $user->save();
+            $user->assignRole('pengurus1');
+
+            alert::success('message', 'Success Create Nasabah');
+            return redirect('admin/pengurus1');
+        }
     }
 
     /**
@@ -57,7 +86,9 @@ class Pengurus1Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        
+        return view('admin.pengurus1.edit', compact('user'));
     }
 
     /**
@@ -69,7 +100,48 @@ class Pengurus1Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'email'   => 'string|min:5|max:50|email',
+            'name'    => 'string|min:3',
+            'phone'   => 'string|min:5',
+            'address' => 'string|min:5|max:100'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/pengurus1/'.$id.'/edit')
+                ->withErrors($validator);
+        } else {
+            $user = User::find($id);
+
+            $user->name = request('name');
+            $user->email = request('email');
+            $user->phone = request('phone');
+            $user->address = request('address');
+
+            if (!$request->file('photo')) {
+                $photo = request('photoPath');
+            } else {
+                $image = base64_encode(file_get_contents(request('photo')));
+                $client = new Client();
+                $res = $client->request('POST', 'https://freeimage.host/api/1/upload', [
+                    'form_params' => [
+                        'key' => '6d207e02198a847aa98d0a2a901485a5',
+                        'action' => 'upload',
+                        'source' => $image,
+                        'format' => 'json'
+                    ]
+                ]);
+
+                $get = $res->getBody()->getContents();
+                $data  = json_decode($get);
+                $user->photo = $data->image->display_url;
+            }
+
+            $user->save();
+
+            alert::success('message', 'User Data Changed Successfully');
+            return redirect('admin/pengurus1');
+        }
     }
 
     /**
@@ -80,6 +152,10 @@ class Pengurus1Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        alert::success('message', 'User Removed');
+        return redirect('admin/pengurus1');
     }
 }
