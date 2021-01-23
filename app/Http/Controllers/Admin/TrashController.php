@@ -101,9 +101,8 @@ class TrashController extends Controller
     public function edit($id)
     {
         $trash = Trash::find($id);
-        $data = ['trash' => $trash];
         
-        return view('admin.trash.edit')->with($data);
+        return view('admin.trash.edit', compact('trash'));
     }
 
     /**

@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        {{ Form::open(['route'=>'trash.store', 'files'=>true]) }}
+        {{ Form::open(['action'=>'Admin\TrashController@store', 'files'=>true]) }}
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Added Trash</h3>

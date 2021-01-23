@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Collection;
@@ -50,7 +51,7 @@ class NasabahController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin/nasabah')
+            return redirect('admin/nasabah/create')
                 ->withErrors($validator);
         } else {
             $user = new User();
@@ -85,7 +86,9 @@ class NasabahController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        
+        return view('admin.nasabah.edit', compact('user'));
     }
 
     /**
@@ -97,7 +100,48 @@ class NasabahController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'email'   => 'string|min:5|max:50|email',
+            'name'    => 'string|min:3',
+            'phone'   => 'string|min:5',
+            'address' => 'string|min:5|max:100'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('admin/nasabah/'.$id.'/edit')
+                ->withErrors($validator);
+        } else {
+            $user = User::find($id);
+
+            $user->name = request('name');
+            $user->email = request('email');
+            $user->phone = request('phone');
+            $user->address = request('address');
+
+            if (!$request->file('photo')) {
+                $photo = request('photoPath');
+            } else {
+                $image = base64_encode(file_get_contents(request('photo')));
+                $client = new Client();
+                $res = $client->request('POST', 'https://freeimage.host/api/1/upload', [
+                    'form_params' => [
+                        'key' => '6d207e02198a847aa98d0a2a901485a5',
+                        'action' => 'upload',
+                        'source' => $image,
+                        'format' => 'json'
+                    ]
+                ]);
+
+                $get = $res->getBody()->getContents();
+                $data  = json_decode($get);
+                $user->photo = $data->image->display_url;
+            }
+
+            $user->save();
+
+            alert::success('message', 'User Data Changed Successfully');
+            return redirect('admin/nasabah');
+        }
     }
 
     /**

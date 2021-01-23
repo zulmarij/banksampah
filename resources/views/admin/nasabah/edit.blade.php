@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        {{ Form::model($trash,['route'=>['trash.update',$trash['id']],'files'=>true,'method'=>'PUT']) }}
+        {{ Form::model($user,['action'=>['Admin\NasabahController@update',$trash['id']],'files'=>true,'method'=>'PUT']) }}
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Change Trash Data</h3>
@@ -15,33 +15,43 @@
                 @endif
                 <div class="row justify-content-md-center">
                     <div class="col-md-auto">
-                        <img src="{{ $trash['image'] }}" height="256" width="256" />
+                        <img src="{{ $user['photo'] }}" height="256" width="256" />
                     </div>
                 </div>
                 <div class="row">
-                   
                     <div class="col-md-6">
                         <div class="form-group">
-                            {{ Form::label('trash', 'Trash') }}
-                            {{ Form::text('trash', $trash['trash'], ['class'=>'form-control', 'placeholder'=>'Enter The Trash Name']) }}
+                            {{ Form::label('name', 'Name') }}
+                            {{ Form::text('name', $user['name'], ['class'=>'form-control', 'placeholder'=>'Enter The Nasabah Name']) }}
                         </div>
-
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            {{ Form::label('price', 'Price') }}
-                            {{ Form::text('price', $trash['price'], ['class'=>'form-control', 'placeholder'=>'Enter the Trash Price']) }}
+                            {{ Form::label('email', 'Email') }}
+                            {{ Form::email('email', $user['email'], ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Email']) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ Form::label('phone', 'Phone') }}
+                            {{ Form::text('phone', $user['phone'], ['class'=>'form-control', 'placeholder'=>'Enter The Nasabah Phone']) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ Form::label('address', 'Address') }}
+                            {{ Form::text('address', $user['address'], ['class'=>'form-control', 'placeholder'=>'Enter The Nasabah Address']) }}
                         </div>
                     </div>
                     <div class="col-md-12">
-                        {{ Form::hidden('imagePath',$trash['image'])}}
-                        {{ Form::label('image', 'Image') }}
-                        {{ Form::file('image', ['class'=>'form-control']) }}
+                        {{ Form::hidden('photoPath',$user['photo'])}}
+                        {{ Form::label('photo', 'Photo') }}
+                        {{ Form::file('photo', ['class'=>'form-control']) }}
                     </div>
                 </div>
             </div>
             <div class="card-footer">
-                <a href="{{ URL::to('admin/trash') }}" class="btn btn-outline-info">Back</a>
+                <a href="{{ URL::to('admin/nasabah') }}" class="btn btn-outline-info">Back</a>
                 {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
             </div>
         </div>
