@@ -14,8 +14,8 @@
                 </div>
                 @endif
                 <div class="row justify-content-md-center">
+                    <img src="{{ $user['photo'] }}" height="256" width="256" style="text-align:center" />
                     <div class="col-md-auto">
-                        <img src="{{ $user['photo'] }}" height="256" width="256" style="text-align:center"/>
                         {{ Form::label('photo', 'Photo', ['class' => 'text-center']) }}
                         {{ Form::hidden('photoPath',$user['photo'])}}
                         {{ Form::file('photo', ['class'=>'form-control']) }}
