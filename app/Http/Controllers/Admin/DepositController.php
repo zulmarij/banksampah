@@ -11,7 +11,7 @@ class DepositController extends Controller
 {
     public function index()
     {
-        $revenue = Deposit::sum('revenue');
+        $revenue = Deposit::sum('revenue')->get();
         $weight = Deposit::sum('weight');
         $trash = Trash::count('trash');
         $report = Deposit::count();
