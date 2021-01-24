@@ -46,8 +46,8 @@
             <span class="info-box-icon"><i class="fas fa-wallet"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Trash</span>
-                <span class="info-box-number">{{ $trash }}</span>
+                <span class="info-box-text">User</span>
+                <span class="info-box-number">{{ $user }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
