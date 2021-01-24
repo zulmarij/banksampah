@@ -23,7 +23,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-success">
-            <span class="info-box-icon"><i class="fas fa-hand-holding-usd"></i></span>
+            <span class="info-box-icon"><i class="fas fa-weight"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Weight</span>
@@ -43,7 +43,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-warning">
-            <span class="info-box-icon"><i class="fas fa-wallet"></i></span>
+            <span class="info-box-icon"><i class="fas fa-user"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">User</span>
