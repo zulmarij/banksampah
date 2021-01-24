@@ -102,7 +102,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($finance as $data)
+                @foreach($finance as $data)
                 <tr>
                     <td>{{ $data->id}}</td>
                     <td>{{ number_format ($data->debit, 0, ',', '.')}}</td>
@@ -111,15 +111,16 @@
                     <td>{{ $data->information}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>
-            @endforeach
+                @endforeach
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                    <th>ID</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    <th>Balance</th>
+                    <th>Information</th>
+                    <th>Created_at</th>
                 </tr>
             </tfoot>
         </table>
