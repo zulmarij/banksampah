@@ -13,7 +13,7 @@ class DepositController extends Controller
     {
         $revenue = Deposit::sum('revenue');
         $weight = Deposit::sum('weight');
-        $user = Deposit::count('user_id');
+        $user = Deposit::count()->distinct('user_id');
         $report = Deposit::count();
         $deposit = Deposit::with('user', 'trash')->get();
 
