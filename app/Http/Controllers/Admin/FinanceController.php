@@ -22,7 +22,7 @@ class FinanceController extends Controller
         return view('admin.finance.index', compact('finance', 'report', 'balance', 'credit', 'debit'));
     }
 
-    public function getPenarikan()
+    public function getWithdrawal()
     {
         return view('admin.withdrawal.index');
     }

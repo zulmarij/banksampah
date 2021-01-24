@@ -1,18 +1,18 @@
-@extends('admin/admin')
+@extends('admin/admin',['title' => "Finance | Sampah Bank"])
 @section('content')
 
 <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-info">
-            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <span class="info-box-icon"><i class="far fa-dollar"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Income</span>
                 <span class="info-box-number">Rp. {{ number_format($debit, 0, ',', '.') }}</span>
 
                 <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
                 </div>
+                    <div class="progress-bar" style="width: 70%"></div>
                 <span class="progress-description">
                     70% Increase in 30 Days
                 </span>
@@ -24,7 +24,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-success">
-            <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+            <span class="info-box-icon"><i class="far fa-hand-holding-usd"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Spending</span>
@@ -44,7 +44,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-warning">
-            <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+            <span class="info-box-icon"><i class="far fa-walet"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Balance</span>
@@ -64,7 +64,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-danger">
-            <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+            <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Financial Reports</span>
