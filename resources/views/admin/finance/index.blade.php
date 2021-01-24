@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-info">
-            <span class="info-box-icon"><i class="fa fa-dollar"></i></span>
+            <span class="info-box-icon"><i class="far fa-money"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Income</span>
@@ -24,7 +24,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-success">
-            <span class="info-box-icon"><i class="fa fa-hand-holding-usd"></i></span>
+            <span class="info-box-icon"><i class="far fa-hand-holding-usd"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Spending</span>
@@ -44,7 +44,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-warning">
-            <span class="info-box-icon"><i class="fa fa-walet"></i></span>
+            <span class="info-box-icon"><i class="far fa-walet"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Balance</span>
@@ -64,7 +64,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-danger">
-            <span class="info-box-icon"><i class="fa fa-file-invoice-dollar"></i></span>
+            <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Financial Reports</span>
