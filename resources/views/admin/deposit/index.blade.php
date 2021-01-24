@@ -25,7 +25,7 @@
                     <td>{{ $data->user->name}}</td>
                     <td>{{ $data->user->email}}</td>
                     <td>{{ $data->trash->trash}}</td>
-                    <td>{{ $data->trash->weight}}</td>
+                    <td>{{ $data->weight}}</td>
                     <td>{{ number_format ($data->revenue, 0, ',', '.')}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>
