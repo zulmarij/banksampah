@@ -1,65 +1,5 @@
 @extends('admin/admin')
 @section('content')
-<div class="container-fluid">
-
-    <div class="d-sm-flex align-items-center justify-content-between mb-3">
-        <div aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <i class="fas fa-home breadcrumb-item mt-0_5"></i>
-                <li class="breadcrumb-item"> <a class="text-decoration-none" href="route('home')}}"> Home </a> </li>
-                <li class="breadcrumb-item active" aria-current="page"> Keuangan </li>
-            </ol>
-        </div>
-
-        <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="window.print()"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-    </div>
-
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header d-flex justify-content-between py-3">
-            <h6 class="m-0 font-weight-bold text-primary">KEUANGAN PERUSAHAAN </h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Keterangan</th>
-                            <th>debit</th>
-                            <th>Kredit</th>
-                            <th>Saldo</th>
-                            <th>Dibuat</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Keterangan</th>
-                            <th>debit</th>
-                            <th>Kredit</th>
-                            <th>Saldo</th>
-                            <th>Dibuat</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        {{-- @foreach ($keuangan as $value) --}}
-                        <tr>
-                            <td>$value->id}}</td>
-                            <td>$value->keterangan}}</td>
-                            <td>number_format ($value->debit, 0, ',', '.')}}</td>
-                            <td>number_format ($value->kredit, 0, ',', '.')}}</td>
-                            <td>number_format ($value->saldo, 0, ',', '.')}}</td>
-                            <td>$value->created_at}}</td>
-                        </tr>
-                        {{-- @endforeach --}}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-</div>
 
 <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
@@ -142,5 +82,49 @@
         <!-- /.info-box -->
     </div>
     <!-- /.col -->
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Finance</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    <th>Balance</th>
+                    <th>Information</th>
+                    <th>Created_at</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach($finance as $data)
+                
+            @endforeach
+                <tr>
+                    <td>{{ $data->id}}</td>
+                    <td>{{ number_format ($data->debit, 0, ',', '.')}}</td>
+                    <td>{{ number_format ($data->credit, 0, ',', '.')}}</td>
+                    <td>{{ number_format ($data->balance, 0, ',', '.')}}</td>
+                    <td>{{ $data->Information}}</td>
+                    <td>{{ $data->created_at}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.card-body -->
 </div>
 @endsection
