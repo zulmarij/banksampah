@@ -67,7 +67,7 @@
             <span class="info-box-icon"><i class="fas fa-comments"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Total Financial Reports</span>
+                <span class="info-box-text">Financial Reports</span>
                 <span class="info-box-number">{{ $report }}</span>
 
                 <div class="progress">
@@ -102,7 +102,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($finance as $data)
+                @foreach($finance as $data)
                 <tr>
                     <td>{{ $data->id}}</td>
                     <td>{{ number_format ($data->debit, 0, ',', '.')}}</td>
@@ -111,7 +111,7 @@
                     <td>{{ $data->information}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>
-            @endforeach
+                @endforeach
             </tbody>
             <tfoot>
                 <tr>
@@ -126,4 +126,16 @@
     </div>
     <!-- /.card-body -->
 </div>
+<!-- Page specific script -->
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true
+            , "lengthChange": false
+            , "autoWidth": false
+            , "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+
+</script>
 @endsection
