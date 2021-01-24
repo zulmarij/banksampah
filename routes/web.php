@@ -29,4 +29,6 @@ Route::resource('/admin/pengurus2', 'Pengurus2Controller');
 Route::resource('/admin/bendahara', 'BendaharaController');
 
 Route::get('/admin/finance', 'FinanceController@index');
+
+Route::get('/admin/deposit', 'DepositController@index');
 });

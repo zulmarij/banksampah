@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Deposit;
+use App\Models\Sale;
 use App\Models\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -87,7 +89,7 @@ class BendaharaController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        
+
         return view('admin.bendahara.edit', compact('user'));
     }
 
@@ -157,5 +159,21 @@ class BendaharaController extends Controller
 
         alert::success('message', 'User Removed');
         return redirect('admin/bendahara');
+    }
+
+    public function penjualan()
+    {
+        $datas = Sale::with('jenis')->get();
+
+        return view('pages.bendahara.penjualan', compact('datas'));
+    }
+
+    public function saldo($id)
+    {
+        $penarikan = Penarikan::where('user id', $id)->get();
+        $Saldo = Tabungan::where('user id', $id)->latest()->first('saldo');
+        $tabungan = Tabungan::where('user id', $id)->get();
+
+        // return view('', compact('Saldo','penarikan');
     }
 }
