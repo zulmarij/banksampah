@@ -7,7 +7,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Profit</span>
-                <span class="info-box-number">Rp. {{ sum($data->revenue - ($data->trash->price * $data->weight) }}</span>
+                <span class="info-box-number">Rp. {{ sum($data->revenue - ($data->trash->price * $data->weight)) }}</span>
 
                 <div class="progress">
                 </div>
