@@ -7,5 +7,10 @@ use Illuminate\Http\Request;
 
 class SaleController extends Controller
 {
-    //
+    public function index()
+    {
+        $sale = Sale::with('trash')->get();
+
+        return view('admin.sale.index', compact('sale'));
+    }
 }
