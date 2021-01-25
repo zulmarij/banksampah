@@ -7,7 +7,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Profit</span>
-                {{-- <span class="info-box-number">Rp. {{ sum($data->revenue - ($data->trash->price * $data->weight)) }}</span> --}}
+                <span class="info-box-number">Rp. {{ sum($sale->revenue - ($sale->trash->price * $sale->weight)) }}</span>
 
                 <div class="progress">
                 </div>
@@ -27,7 +27,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Buy</span>
-                <span class="info-box-number">{{ sum($data->price)  }}</span>
+                <span class="info-box-number">{{ sum($sale->price)  }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -47,7 +47,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Sale</span>
-                <span class="info-box-number">{{ sum($data->trash->price) }}</span>
+                <span class="info-box-number">{{ sum($sale->trash->price) }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -67,7 +67,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Reports</span>
-                <span class="info-box-number">{{ sum($data->weight) }}</span>
+                <span class="info-box-number">{{ sum($sale->weight) }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>

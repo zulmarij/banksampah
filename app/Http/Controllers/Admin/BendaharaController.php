@@ -161,13 +161,6 @@ class BendaharaController extends Controller
         return redirect('admin/bendahara');
     }
 
-    public function penjualan()
-    {
-        $datas = Sale::with('jenis')->get();
-
-        return view('pages.bendahara.penjualan', compact('datas'));
-    }
-
     public function saldo($id)
     {
         $penarikan = Penarikan::where('user id', $id)->get();
