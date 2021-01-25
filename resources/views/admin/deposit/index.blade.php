@@ -66,7 +66,7 @@
             <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Deposit Reports</span>
+                <span class="info-box-text">Reports</span>
                 <span class="info-box-number">{{ $report }}</span>
 
                 <div class="progress">
