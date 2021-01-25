@@ -1,13 +1,13 @@
-@extends('admin/admin',['title' => "Deposit | Sampah Bank"])
+@extends('admin/admin',['title' => "Sale | Sampah Bank"])
 @section('content')
-{{-- <div class="row">
+<div class="row">
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-info">
             <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Revenue</span>
-                <span class="info-box-number">Rp. {{ number_format($revenue, 0, ',', '.') }}</span>
+                <span class="info-box-text">Profit</span>
+                <span class="info-box-number">Rp. {{ sum($data->revenue - ($data->trash->price * $data->weight) }}</span>
 
                 <div class="progress">
                 </div>
@@ -26,8 +26,8 @@
             <span class="info-box-icon"><i class="fas fa-weight"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Weight</span>
-                <span class="info-box-number">{{ $weight  }}</span>
+                <span class="info-box-text">Buy</span>
+                <span class="info-box-number">{{ sum($data->price)  }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -46,8 +46,8 @@
             <span class="info-box-icon"><i class="fas fa-user"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">User</span>
-                <span class="info-box-number">{{ $user }}</span>
+                <span class="info-box-text">Sale</span>
+                <span class="info-box-number">{{ sum($data->trash->price) }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -67,7 +67,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Reports</span>
-                <span class="info-box-number">{{ $report }}</span>
+                <span class="info-box-number">{{ sum($data->weight) }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -81,10 +81,10 @@
         <!-- /.info-box -->
     </div>
     <!-- /.col -->
-</div> --}}
+</div>
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Deposit</h3>
+        <h3 class="card-title">Sale</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">

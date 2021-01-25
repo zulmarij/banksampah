@@ -10,6 +10,10 @@ class SaleController extends Controller
 {
     public function index()
     {
+        // $revenue = Deposit::sum('revenue');
+        // $weight = Deposit::sum('weight');
+        // $user = Deposit::distinct('user_id')->count();
+        // $report = Deposit::count();
         $sale = Sale::with('trash')->get();
 
         return view('admin.sale.index', compact('sale'));
