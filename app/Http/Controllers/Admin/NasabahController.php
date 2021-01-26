@@ -32,9 +32,8 @@ class NasabahController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {    $user = new User();
-        $dd =  dd($user);
-        return view('admin.nasabah.create' ,compact('dd'));
+    {
+        return view('admin.nasabah.create');
     }
 
     /**
@@ -88,9 +87,9 @@ class NasabahController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-
-        return view('admin.nasabah.edit', compact('user'));
+        $user = User::find($id);;
+        $dd =  dd($user);
+        return view('admin.nasabah.edit', compact('dd'));
     }
 
     /**
