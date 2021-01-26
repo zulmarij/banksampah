@@ -5,7 +5,7 @@
         <div class="info-box bg-info">
             <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
 
-            <div class="info-box-content">
+            {{-- <div class="info-box-content">
                 <span class="info-box-text">Profit</span>
                 <span class="info-box-number">Rp. {{ sum($sale->revenue - ($sale->trash->price * $sale->weight)) }}</span>
 
@@ -15,7 +15,7 @@
                 <span class="progress-description">
                     70% Increase in 30 Days
                 </span>
-            </div>
+            </div> --}}
             <!-- /.info-box-content -->
         </div>
         <!-- /.info-box -->
@@ -27,7 +27,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Buy</span>
-                <span class="info-box-number">{{ sum($sale->price)  }}</span>
+                <span class="info-box-number">{{ $price }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
