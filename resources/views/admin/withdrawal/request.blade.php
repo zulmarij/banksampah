@@ -36,6 +36,7 @@
                             </button>
                         </form>
                         <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
+                            {{ csrf_field() }}
                             <button class="btn btn-danger btn-sm" type="submit">
                                 <i class="fas fa-ban"></i>
                                 Reject
