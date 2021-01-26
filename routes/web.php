@@ -35,7 +35,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
     Route::get('/admin/sale', 'SaleController@index');
 
-    Route::post('/admin/withdrawal/{id}/confirm', 'WithdrawalController@confirm');
-    Route::post('/admin/withdrawal/{id}/reject', 'WithdrawalController@reject');
     Route::get('/admin/withdrawal/request', 'WithdrawalController@getRequest');
+    Route::post('/admin/withdrawal/{id}/confirm', 'WithdrawalController@confirm')->name('withdrawal.confirm');
+    Route::post('/admin/withdrawal/{id}/reject', 'WithdrawalController@reject')->name('withdrawal.reject');
 });
