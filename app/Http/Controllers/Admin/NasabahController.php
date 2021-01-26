@@ -33,8 +33,8 @@ class NasabahController extends Controller
      */
     public function create()
     {    $user = new User();
-        dd($user);
-        return view('admin.nasabah.create');
+        $dd =  dd($user);
+        return view('admin.nasabah.create' ,compact('dd'));
     }
 
     /**
