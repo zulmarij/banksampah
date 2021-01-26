@@ -23,7 +23,8 @@ class NasabahController extends Controller
     {
         $users = User::role('nasabah')->latest()->get();
 
-        return view('admin.nasabah.index', compact('users'));
+        return view('admin.nasa
+        bah.index', compact('users'));
     }
 
     /**
@@ -48,6 +49,7 @@ class NasabahController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|string|min:5',
+            'role' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -60,7 +62,7 @@ class NasabahController extends Controller
             $user->email = request('email');
             $user->password = Hash::make(request('password'));
             $user->save();
-            $user->assignRole('nasabah');
+            $user->assignRole(request('role'));
 
             alert::success('message', 'Success Create Nasabah');
             return redirect('admin/nasabah');
@@ -87,7 +89,7 @@ class NasabahController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        
+
         return view('admin.nasabah.edit', compact('user'));
     }
 
@@ -136,6 +138,7 @@ class NasabahController extends Controller
                 $data  = json_decode($get);
                 $user->photo = $data->image->display_url;
             }
+            $user->syncRoles(request('role')) ?? $user->role;
 
             $user->save();
 

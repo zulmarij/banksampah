@@ -40,6 +40,12 @@
                             {{ Form::password('Password_confrimation', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Password Again']) }}
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ Form::label('role', 'Role') }}
+                            {{ Form::text('role', '', ['class'=>'form-control', 'placeholder'=>'Enter the Nasabah Role']) }}
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">
