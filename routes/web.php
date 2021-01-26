@@ -34,4 +34,6 @@ Route::get('/admin/finance', 'FinanceController@index');
 Route::get('/admin/deposit', 'DepositController@index');
 
 Route::get('/admin/sale', 'SaleController@index');
+
+Route::get('/admin/withdrawal/request', 'WithdrawalController@getRequest');
 });

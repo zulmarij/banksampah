@@ -10,11 +10,11 @@ class SaleController extends Controller
 {
     public function index()
     {
-        $price = Sale::sum('price');
-        $sale = Sale::withSum('trash')->get();
-        foreach ($sale as $data) {
-            
-        }
+        // $price = Sale::sum('price');
+        // $sale = Sale::withSum('trash')->get();
+        // foreach ($sale as $data) {
+
+        // }
         $sales = Sale::with('trash')->get();
 
         return view('admin.sale.index', compact('sales'));
