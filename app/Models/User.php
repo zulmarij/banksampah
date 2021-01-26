@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Spatie\Permission\Models\Role;
 
 class User extends Authenticatable
 {
@@ -19,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'address', 'photo', 'token'
+        'name', 'email', 'password', 'phone', 'address', 'photo', 'token', 'role'
     ];
 
     /**
@@ -40,6 +41,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
 
     ];
+
+    public function role()
+    {
+        return $this->hasMany(Role::class);
+    }
 
     public function deposit()
     {
