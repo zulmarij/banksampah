@@ -15,7 +15,7 @@ class WithdrawalController extends Controller
 
     public function getRequest()
     {
-        $request = Withdrawal::where('status', [NULL ,'1'])->get();
+        $request = Withdrawal::get();
 
         return view('admin.withdrawal.request', compact('request'));
     }
