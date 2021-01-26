@@ -30,16 +30,16 @@
                     <td>
                         <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
                             {{ csrf_field() }}
-                            <a class="btn btn-primary btn-sm" type="submit">
+                            <button class="btn btn-primary btn-sm" type="submit">
                                 <i class="fas fa-check"></i>
                                 Confirm
-                            </a>
+                            </button>
                         </form>
                         <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
-                            <a class="btn btn-danger btn-sm" type="submit">
+                            <button class="btn btn-danger btn-sm" type="submit">
                                 <i class="fas fa-ban"></i>
                                 Reject
-                            </a>
+                            </button>
                         </form>
                     </td>
                 </tr>
