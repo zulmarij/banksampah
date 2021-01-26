@@ -33,22 +33,19 @@
                     <td>{{ $data->user->email }}</td>
                     <td>{{ $data->account }}</td>
                     <td>{{ $data->created_at }}</td>
-                    <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a>
-                        <a class="btn btn-info btn-sm" href="#">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            Edit
-                        </a>
-                        <a class="btn btn-danger btn-sm" href="#">
-                            <i class="fas fa-trash">
-                            </i>
-                            Delete
-                        </a>
+                    <td>
+                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id) }}">
+                            <a class="btn btn-primary btn-sm"
+                                href="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
+                                <i class="fas fa-check"></i>
+                                Confirm
+                            </a>
+                            <a class="btn btn-danger btn-sm"
+                                href="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
+                                <i class="fas fa-ban"></i>
+                                Reject
+                            </a>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

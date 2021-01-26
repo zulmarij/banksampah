@@ -20,20 +20,22 @@ Route::get('/', function () {
 Auth::routes();
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
-Route::get('/admin', 'AdminController@index');
+    Route::get('/admin', 'AdminController@index');
 
-Route::resource('/admin/nasabah', 'NasabahController');
-Route::resource('/admin/pengurus1', 'Pengurus1Controller');
-Route::resource('/admin/pengurus2', 'Pengurus2Controller');
-Route::resource('/admin/bendahara', 'BendaharaController');
+    Route::resource('/admin/nasabah', 'NasabahController');
+    Route::resource('/admin/pengurus1', 'Pengurus1Controller');
+    Route::resource('/admin/pengurus2', 'Pengurus2Controller');
+    Route::resource('/admin/bendahara', 'BendaharaController');
 
-Route::resource('/admin/trash', 'TrashController');
+    Route::resource('/admin/trash', 'TrashController');
 
-Route::get('/admin/finance', 'FinanceController@index');
+    Route::get('/admin/finance', 'FinanceController@index');
 
-Route::get('/admin/deposit', 'DepositController@index');
+    Route::get('/admin/deposit', 'DepositController@index');
 
-Route::get('/admin/sale', 'SaleController@index');
+    Route::get('/admin/sale', 'SaleController@index');
 
-Route::get('/admin/withdrawal/request', 'WithdrawalController@getRequest');
+    Route::get('/admin/withdrawal/request', 'WithdrawalController@getRequest');
+    Route::post('/admin/withdrawal/{id}/confirm', 'WithdrawalController@confirm');
+    Route::post('penarikan/tolak/{id}/reject', 'WithdrawalController@reject');
 });

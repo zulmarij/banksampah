@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Finance;
+use App\Models\Savings;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class WithdrawalController extends Controller
 {
@@ -71,7 +74,7 @@ class WithdrawalController extends Controller
     }
 
     // Konfirmasi
-    public function confrim($id)
+    public function confirm($id)
     {
         $withdrawal = Withdrawal::where('id', $id)->first();
         $withdrawal->status = 2;
@@ -79,13 +82,13 @@ class WithdrawalController extends Controller
 
         // Saldo Finance berkurang otomatis
         Finance::create([
-            'information' => 'Withdrawal Uang Oleh Nasabah',
+            'information' => 'Withdrawal Money',
             'debit'      => 0,
             'credit'     => $withdrawal->credit,
             'balance'      => Finance::latest()->first()->balance -= $withdrawal->credit
         ]);
 
-        alert()->success('Success', 'Dana Berhasil dikirim');
+        alert::success('message', 'Money Sent Successfully');
         return back();
     }
 
@@ -99,13 +102,13 @@ class WithdrawalController extends Controller
         // kembalikan balance nasabah
         Savings::create([
             'user_id'       => $withdrawal->user_id,
-            'information'    => 'Pengembalian Saldo Transaksi Gagal',
+            'information'    => 'Refund of Failed Transaction Money',
             'debit'         => $withdrawal->credit,
             'credit'        => 0,
             'balance'         => Savings::latest()->first()->balance += $withdrawal->credit
         ]);
 
-        alert()->info('Success', 'Permintaan Berhasil direject');
+        alert::success('message', 'Request Rejected Successfully');
         return back();
     }
 }
