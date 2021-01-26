@@ -28,11 +28,10 @@
                     <td>{{ $data->account }}</td>
                     <td>{{ $data->created_at }}</td>
                     <td>
-                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id) }}">
-                            {{ csrf_field() }}
+                        <form action="{{ URL::to('/admin/withdrawal/'.$data->id) }}" method="POST">
                             <a class="btn btn-primary btn-sm"
-                                href="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
-                                <i class="fas fa-check"></i>
+                            href="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
+                            <i class="fas fa-check"></i>
                                 Confirm
                             </a>
                             <a class="btn btn-danger btn-sm"
@@ -40,6 +39,7 @@
                                 <i class="fas fa-ban"></i>
                                 Reject
                             </a>
+                            {{ csrf_field() }}
                         </form>
                     </td>
                 </tr>
