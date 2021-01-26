@@ -20,6 +20,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Nominal</th>
                     <th>Account</th>
                     <th>Created_at</th>
                     <th>Action</th>
@@ -31,6 +32,7 @@
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->user->name }}</td>
                     <td>{{ $data->user->email }}</td>
+                    <td>{{ $data->credit }}</td>
                     <td>{{ $data->account }}</td>
                     <td>{{ $data->created_at }}</td>
                     <td>
