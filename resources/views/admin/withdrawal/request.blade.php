@@ -28,19 +28,19 @@
                     <td>{{ $data->account }}</td>
                     <td>{{ $data->created_at }}</td>
                     <td>
-                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id) }}">
+                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'confirm') }}">
                             {{ csrf_field() }}
-                            <a class="btn btn-primary btn-sm"
-                                href="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
+                            <a class="btn btn-primary btn-sm" type="submit" onclick="return confirm ('Sure ?')">
                                 <i class="fas fa-check"></i>
                                 Confirm
                             </a>
-                            <a class="btn btn-danger btn-sm"
-                                href="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
+                        </form>
+                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
+                            {{ csrf_field() }}
+                            <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm ('Sure ?')">
                                 <i class="fas fa-ban"></i>
                                 Reject
-                            </a>
-                        </form>
+                            </button>
                     </td>
                 </tr>
                 @endforeach
