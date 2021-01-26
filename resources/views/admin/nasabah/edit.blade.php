@@ -63,5 +63,5 @@
         {{ Form::close() }}
     </div>
 </div> --}}
-{{ $edit }}
+{{ $dd }}
 @endsection
