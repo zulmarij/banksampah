@@ -5,15 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Finance;
 use App\Models\Savings;
+use App\Models\User;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class WithdrawalController extends Controller
 {
-    public function getWithdrawal()
+    public function getWithdraw()
     {
-        return view('admin.withdrawal.index');
+        return view('admin.withdrawal.withdraw');
     }
 
     public function getRequest()
@@ -24,7 +25,7 @@ class WithdrawalController extends Controller
     }
 
     // POST
-    public function withdrawal()
+    public function withdraw()
     {
         request()->validate([
             'email'  => 'required|email',
@@ -32,10 +33,10 @@ class WithdrawalController extends Controller
         ]);
 
         $user = User::where('email', request('email'))->firstOrfail();
-        $tabungan = Savings::where('user_id', $user->id)->latest()->firstOrFail();
+        $savings = Savings::where('user_id', $user->id)->latest()->firstOrFail();
 
-        if ($tabungan->balance < request('nominal')) {
-            alert()->warning('Gagal', 'Saldo Nasabah Tidak Cukup');
+        if ($savings->balance < request('nominal')) {
+            alert::warning('Message', 'Saldo Nasabah Tidak Cukup');
             return back();
         }
 
@@ -43,34 +44,33 @@ class WithdrawalController extends Controller
         $withdrawal = Withdrawal::create([
             'user_id'    => $user->id,
             'name'       => $user->name,
-            'account'   => "Melalui Teller",
+            'account'   => "From Teller",
             'credit'     => request('nominal'),
-            'information' => request('information') ?? "Withdrawal Tunai Melalui Teller",
+            'information' => "Withdrawal Money From Teller",
             'status'     => 2
         ]);
 
-        // tambah data di table tabungan nasabah
+        // tambah data di table savings nasabah
         Savings::create([
             'user_id'       => $user->id,
-            'information'    =>  request('information') ?? "Withdrawal Tunai Melalui Teller",
+            'information'    => "Withdrawal Tunai From Teller",
             'debit'         => 0,
             'credit'        => request('nominal'),
-            'balance'         => $tabungan->balance -= request('nominal')
+            'balance'         => $savings->balance -= request('nominal')
         ]);
 
         // kurangi balance finance bank
         $finance = Finance::latest()->first('balance');
 
         Finance::create([
-            'information' => 'Withdrawal Dana Nasabah Melalui Teller',
+            'information' => 'Withdrawal Nasabah Money From Teller',
             'debit'      => 0,
             'credit'     => request('nominal'),
             'balance'      => $finance->balance -= request('nominal')
         ]);
 
-        alert()->success('Success', 'Saldo Berhasil ditarik');
-
-        return redirect(route('finance.withdrawal'))->with('data', $withdrawal);
+        alert::success('message', 'Withdraw Money Successfully');
+        return redirect('admin.withdrawal.withdraw')->with('data', $withdrawal);
     }
 
     // Konfirmasi

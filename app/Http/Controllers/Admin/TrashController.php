@@ -101,7 +101,7 @@ class TrashController extends Controller
     public function edit($id)
     {
         $trash = Trash::find($id);
-        
+
         return view('admin.trash.edit', compact('trash'));
     }
 
@@ -150,7 +150,7 @@ class TrashController extends Controller
 
             $trash->save();
 
-            alert::success('message', 'Trash Data Changed Successfully');
+            9999999999999999999999999999
             return redirect('admin/trash');
         }
     }
