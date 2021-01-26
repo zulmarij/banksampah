@@ -37,5 +37,5 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
     Route::get('/admin/withdrawal/request', 'WithdrawalController@getRequest');
     Route::post('/admin/withdrawal/{id}/confirm', 'WithdrawalController@confirm');
-    Route::post('penarikan/tolak/{id}/reject', 'WithdrawalController@reject');
+    Route::post('/admin/withdrawal/{id}/reject', 'WithdrawalController@reject');
 });
