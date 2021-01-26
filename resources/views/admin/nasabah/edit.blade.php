@@ -46,6 +46,12 @@
                             {{ Form::text('address', $user['address'], ['class'=>'form-control', 'placeholder'=>'Enter The Nasabah Address']) }}
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{ Form::label('role', 'Role') }}
+                            {{ Form::text('role', $user['role']['name']) }}
+                        </div>
+                    </div>
                     {{-- <div class="col-md-12">
                         {{ Form::hidden('photoPath',$user['photo'])}}
                     {{ Form::label('photo', 'Photo') }}
