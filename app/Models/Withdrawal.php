@@ -10,7 +10,7 @@ class Withdrawal extends Model
     use FormatDate;
     protected $table = 'withdrawals';
 
-    protected $fillable = ['user_id', 'name', 'account', 'keterangan', 'credit', 'balance'];
+    protected $fillable = ['user_id', 'name', 'account', 'information', 'credit', 'balance'];
 
     public function user()
     {
