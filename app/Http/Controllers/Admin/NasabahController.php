@@ -32,7 +32,8 @@ class NasabahController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {    $user = new User();
+        dd($user);
         return view('admin.nasabah.create');
     }
 

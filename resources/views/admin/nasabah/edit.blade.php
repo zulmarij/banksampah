@@ -1,6 +1,6 @@
 @extends('admin.admin')
 @section('content')
-<div class="row">
+{{-- <div class="row">
     <div class="col-12">
         {{ Form::model($user,['action'=>['Admin\NasabahController@update',$user['id']],'files'=>true,'method'=>'PUT']) }}
         <div class="card">
@@ -49,23 +49,18 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             {{ Form::label('role', 'Role') }}
-                            {{ Form::text('role', $user->hasRole()) }}
+                            {{ Form::text('role', $user->role)}}
                         </div>
                     </div>
-                    {{-- <div class="col-md-12">
-                        {{ Form::hidden('photoPath',$user['photo'])}}
-                    {{ Form::label('photo', 'Photo') }}
-                    {{ Form::file('photo', ['class'=>'form-control']) }}
-                </div> --}}
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="{{ URL::to('admin/nasabah') }}" class="btn btn-outline-info">Back</a>
+                {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
             </div>
         </div>
-        <div class="card-footer">
-            <a href="{{ URL::to('admin/nasabah') }}" class="btn btn-outline-info">Back</a>
-            {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
-        </div>
+        <!-- </form> -->
+        {{ Form::close() }}
     </div>
-    <!-- </form> -->
-    {{ Form::close() }}
-</div>
-</div>
+</div> --}}
 @endsection
