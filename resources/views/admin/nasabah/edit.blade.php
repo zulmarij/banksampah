@@ -49,7 +49,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             {{ Form::label('role', 'Role') }}
-                            {{ Form::text('role', $user['role']) }}
+                            {{ Form::text('role', $user->hasRole()) }}
                         </div>
                     </div>
                     {{-- <div class="col-md-12">
