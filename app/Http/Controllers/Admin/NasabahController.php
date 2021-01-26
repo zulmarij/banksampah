@@ -23,8 +23,7 @@ class NasabahController extends Controller
     {
         $users = User::role('nasabah')->latest()->get();
 
-        return view('admin.nasa
-        bah.index', compact('users'));
+        return view('admin.nasabah.index', compact('users'));
     }
 
     /**
