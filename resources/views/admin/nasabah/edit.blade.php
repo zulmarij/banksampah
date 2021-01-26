@@ -1,6 +1,6 @@
 @extends('admin.admin')
 @section('content')
-{{-- <div class="row">
+<div class="row">
     <div class="col-12">
         {{ Form::model($user,['action'=>['Admin\NasabahController@update',$user['id']],'files'=>true,'method'=>'PUT']) }}
         <div class="card">
@@ -49,7 +49,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             {{ Form::label('role', 'Role') }}
-                            {{ Form::text('role', $user->role)}}
+                            {{ Form::text('role', $user->getRoleNames())}}
                         </div>
                     </div>
                 </div>
@@ -62,6 +62,5 @@
         <!-- </form> -->
         {{ Form::close() }}
     </div>
-</div> --}}
-{{ $dd }}
+</div>
 @endsection
