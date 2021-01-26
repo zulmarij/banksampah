@@ -2,19 +2,11 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Projects</h3>
-
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
+        <h3 class="card-title">Sale</h3>
     </div>
-    <div class="card-body p-0">
-        <table class="table table-striped projects">
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -53,6 +45,17 @@
                 </tr>
                 @endforeach
             </tbody>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Nominal</th>
+                    <th>Account</th>
+                    <th>Created_at</th>
+                    <th>Action</th>
+                </tr>
+            </tfoot>
         </table>
     </div>
     <!-- /.card-body -->
