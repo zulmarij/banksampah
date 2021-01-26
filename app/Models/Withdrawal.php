@@ -11,4 +11,9 @@ class Withdrawal extends Model
     protected $table = 'withdrawals';
 
     protected $fillable = ['user_id', 'name', 'account', 'keterangan', 'credit', 'balance'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
