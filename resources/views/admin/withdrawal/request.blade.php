@@ -29,7 +29,7 @@
                     <td>{{ $data->created_at }}</td>
                     <td>
                         <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id) }}">
-                            @csrf
+                            {{ csrf_field() }}
                             <a class="btn btn-primary btn-sm"
                                 href="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
                                 <i class="fas fa-check"></i>
@@ -45,17 +45,6 @@
                 </tr>
                 @endforeach
             </tbody>
-            <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Nominal</th>
-                    <th>Account</th>
-                    <th>Created_at</th>
-                    <th>Action</th>
-                </tr>
-            </tfoot>
         </table>
     </div>
     <!-- /.card-body -->
