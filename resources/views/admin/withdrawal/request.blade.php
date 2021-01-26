@@ -27,8 +27,6 @@
             </thead>
             <tbody>
                 @foreach ($request as $data)
-
-                @endforeach
                 <tr>
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->user->name }}</td>
@@ -53,6 +51,7 @@
                         </a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
