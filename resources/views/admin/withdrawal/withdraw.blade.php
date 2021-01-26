@@ -10,7 +10,6 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
             </div>
-            {{ Form::label('email', 'Email') }}
             {{ Form::email('email', '', ['class'=>'form-control', 'placeholder'=>'Email']) }}
         </div>
 
@@ -18,7 +17,6 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
             </div>
-            {{ Form::label('nominal', 'Nominal') }}
             {{ Form::text('nominal', '', ['class'=>'form-control', 'placeholder'=>'Nominal']) }}
         </div>
         <!-- /.row -->
