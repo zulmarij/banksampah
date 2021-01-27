@@ -83,7 +83,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($user as $data)
+                        @foreach($user as $key => $data)
                         <tr>
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->name }}</td>
@@ -91,11 +91,11 @@
                             <td>{{ $data->email }}</td>
                             <td>{{ $data->address }}</td>
                             <td>
-                                {{-- @if(!empty($roles))
-                                @foreach ($roles as $role)
+                                @if(!empty($data->getRoleNames()))
+                                @foreach($data->getRoleNames() as $role)
                                 <span class="badge badge-success">{{ $role }}</span>
                                 @endforeach
-                                @endif --}}
+                                @endif
                             </td>
                             <td>
                                 <form method="POST" action="{{ URL::to('/admin/user/'.$data->id) }}">
