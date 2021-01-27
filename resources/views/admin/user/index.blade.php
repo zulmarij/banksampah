@@ -95,13 +95,13 @@
                                 @foreach($data->getRoleNames() as $role)
                                 @if ($role == 'admin')
                                 <span class="badge badge-danger">{{ $role }}</span>
-                                @if ($role == 'bendahara')
+                                @elseif ($role == 'bendahara')
                                 <span class="badge badge-warning">{{ $role }}</span>
-                                @if ($role == 'pengurus2')
+                                @elseif ($role == 'pengurus2')
                                 <span class="badge badge-primary">{{ $role }}</span>
-                                @if ($role == 'pengurus1')
+                                @elseif ($role == 'pengurus1')
                                 <span class="badge badge-dark">{{ $role }}</span>
-                                @if ($role == 'nasabah')
+                                @elseif ($role == 'nasabah')
                                 <span class="badge badge-success">{{ $role }}</span>
                                 @endif
                                 @endforeach
