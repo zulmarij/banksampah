@@ -1,67 +1,85 @@
 @extends('admin/admin',['title' => "User | Sampah Bank"])
 @section('content')
-{{-- <div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Nasabah</h3>
-                <div class="card-tools">
-                    <a href="{{ URL::to('/admin/user/create')}}" class="btn btn-dark">
-<i class="fa fa-plus"></i>
-&nbsp; Add
-</a>
-</div>
-</div>
-<div class="card-body">
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr class="text-center">
-                        <th>ID</th>
-                        <th>name</th>
-                        <th>phone</th>
-                        <th>email</th>
-                        <th>address</th>
-                        <th>photo</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($users as $user)
-                    <tr>
-                        <td class="text-center">{{ $user['id'] }}</td>
-                        <td>{{ $user['name'] }}</td>
-                        <td>{{ $user['phone'] }}</td>
-                        <td>{{ $user['email'] }}</td>
-                        <td>{{ $user['address'] }}</td>
-                        <td class="text-center"><img src="{{ $user['photo'] }}" width="100" /></td>
-                        <td class="text-center">
-                            <form method="POST" action="{{ URL::to('/admin/user/'.$user['id']) }}">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="_method" value="DELETE" />
-                                <div class="btn-group">
-                                    <a class="btn btn-info" href="{{ URL::to('/admin/user/'.$user['id']) }}"><i
-                                            class="fa fa-eye"></i></a>
-                                    <a class="btn btn-success"
-                                        href="{{ URL::to('/admin/user/'.$user['id'].'/edit') }}"><i
-                                            class="fa fa-edit"></i></a>
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-eraser"></i></button>
-                                </div>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+<div class="row">
+    <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-danger"><i class="far fa-user"></i></span>
 
-
+            <div class="info-box-content">
+                <span class="info-box-text">Admin</span>
+                <span class="info-box-number">{{ $admin }}</span>
+            </div>
+            <!-- /.info-box-content -->
         </div>
+        <!-- /.info-box -->
     </div>
+    <!-- /.col -->
+    <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-warning"><i class="far fa-user"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Bendahara</span>
+                <span class="info-box-number">{{ $bendahara }}</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-primary"><i class="far fa-user"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Pengurus2</span>
+                <span class="info-box-number">{{ $pengurus2 }}</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-secondary"><i class="far fa-user"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Pengurus1</span>
+                <span class="info-box-number">{{ $pengurus1 }}</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-success"><i class="far fa-user"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Nasabah</span>
+                <span class="info-box-number">{{ $nasabah }}</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-2 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-dark"><i class="far fa-users"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total User</span>
+                <span class="info-box-number">{{ $total }}</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
 </div>
-</div>
-</div>
-</div> --}}
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -106,7 +124,7 @@
                                 @elseif ($role == 'pengurus2')
                                 <span class="badge badge-primary">{{ $role }}</span>
                                 @elseif ($role == 'pengurus1')
-                                <span class="badge badge-dark">{{ $role }}</span>
+                                <span class="badge badge-secondary">{{ $role }}</span>
                                 @elseif ($role == 'nasabah')
                                 <span class="badge badge-success">{{ $role }}</span>
                                 @endif

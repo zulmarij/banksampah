@@ -22,9 +22,15 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::orderBy('id','DESC')->get();
+        $admin = User::count()->hasRole('admin');
+        $bendahara = User::count()->hasRole('bendahara');
+        $pengurus2 = User::count()->hasRole('pengurus2');
+        $pengurus1 = User::count()->hasRole('pengurus1');
+        $nasabah = User::count()->hasRole('nasabah');
+        $total = User::count();
+        $user = User::orderBy('id', 'DESC')->get();
 
-        return view('admin.user.index', compact('user'));
+        return view('admin.user.index', compact('user', 'total', 'nasabah', 'pengurus1', 'pengurus2', 'bendahara', 'admin'));
     }
 
     /**
@@ -34,7 +40,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $role = Role::pluck('name','name')->all();
+        $role = Role::pluck('name', 'name')->all();
         return view('admin.user.create', compact('role'));
     }
 
@@ -65,7 +71,7 @@ class UserController extends Controller
             $user->save();
             $user->assignRole(request('role'));
 
-            alert::success('message', 'Success Create User');
+            alert::success('message', 'User Created');
             return redirect('admin/user');
         }
     }
@@ -112,7 +118,7 @@ class UserController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin/user/'.$id.'/edit')
+            return redirect('admin/user/' . $id . '/edit')
                 ->withErrors($validator);
         } else {
             $user = User::find($id);
@@ -144,7 +150,7 @@ class UserController extends Controller
 
             $user->save();
 
-            alert::success('message', 'User Data Changed Successfully');
+            alert::success('message', 'User Updated');
             return redirect('admin/user');
         }
     }
