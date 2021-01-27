@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-info">
+        <div class="info-box bg-success">
             <span class="info-box-icon"><i class="fas fa-check"></i></span>
 
             <div class="info-box-content">
@@ -22,7 +22,7 @@
     </div>
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-success">
+        <div class="info-box bg-primary">
             <span class="info-box-icon"><i class="fas fa-sync-alt"></i></span>
 
             <div class="info-box-content">
@@ -42,7 +42,7 @@
     </div>
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-warning">
+        <div class="info-box bg-danger">
             <span class="info-box-icon"><i class="fas fa-ban"></i></span>
 
             <div class="info-box-content">
@@ -62,7 +62,7 @@
     </div>
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-danger">
+        <div class="info-box bg-warning">
             <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
