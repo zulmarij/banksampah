@@ -91,7 +91,7 @@
                             <td>{{ $data['email'] }}</td>
                             <td>{{ $data['address'] }}</td>
                             <td>
-                                @foreach ($user->getRoleNames as $role)
+                                @foreach ($user->getRoleNames() as $role)
                                 <span class="badge badge-success">{{ $role }}</span>
                                 @endforeach
                             </td>
