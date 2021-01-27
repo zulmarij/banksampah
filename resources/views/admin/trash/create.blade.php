@@ -1,11 +1,11 @@
-@extends('admin.admin')
+@extends('admin/admin',['title' => "Add Trash | Sampah Bank"])
 @section('content')
 <div class="row">
-    <div class="col-12">
-        {{ Form::open(['action'=>'Admin\TrashController@store', 'files'=>true]) }}
-        <div class="card">
+    <div class="col-md-12">
+        {{ Form::open(['action'=>'Admin\TrashController@store', 'files'=>true, 'method'=>'PUT']) }}
+        <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Added Trash</h3>
+                <h3 class="card-title">Add Trash</h3>
             </div>
             <div class="card-body">
                 @if(!empty($errors->all()))
@@ -13,33 +13,31 @@
                     {{ Html::ul($errors->all())}}
                 </div>
                 @endif
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            {{ Form::label('trash', 'Trash') }}
-                            {{ Form::text('trash', '', ['class'=>'form-control', 'placeholder'=>'Enter the Trash Name']) }}
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            {{ Form::label('price', 'Price') }}
-                            {{ Form::text('price', '', ['class'=>'form-control', 'placeholder'=>'Enter the Trash Price']) }}
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            {{ Form::label('image', 'image') }}
-                            {{ Form::file('image', ['class'=>'form-control']) }}
+                <div class="form-group">
+                    {{ Form::label('trash', 'Trash') }}
+                    {{ Form::text('trash', '', ['class'=>'form-control', 'placeholder'=>'Trash']) }}
+                </div>
+                <div class="form-group">
+                    {{ Form::label('price', 'Price') }}
+                    {{ Form::text('price', '', ['class'=>'form-control', 'placeholder'=>'Price']) }}
+                </div>
+                <div class="form-group">
+                    {{ Form::label('image', 'Image') }}
+                    <div class="input-group">
+                        <div class="custom-file">
+                            {{ Form::file('image', ['class'=>'costum-file-input']) }}
+                            {{ Form::label('image', 'Choose Image', ['class'=>'custom-file-label']) }}
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- /.card-body -->
             <div class="card-footer">
-                <a href="{{ URL::to('admin') }}" class="btn btn-outline-info">Back</a>
-                {{ Form::submit('Input', ['class' => 'btn btn-primary pull-right']) }}
+                <a href="{{ URL::to('admin/trash') }}" class="btn btn-secondary">Back</a>
+                {{ Form::submit('Create', ['class' => 'btn btn-primary float-right']) }}
             </div>
         </div>
-        <!-- </form> -->
+        <!-- /.card -->
         {{ Form::close() }}
     </div>
 </div>
