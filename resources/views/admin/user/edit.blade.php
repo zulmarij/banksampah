@@ -72,12 +72,10 @@
             <div class="card-header">
                 <h3 class="card-title">Update User</h3>
             </div>
-            <div class="row justify-content-md-center">
-                <div class="widget-user-image">
-                    <img class="img-circle elevation-2" src="{{ $user->photo }}" style="text-align:center" alt="User">
+            <div class="justify-content-md-center">
+                    <img class="img-circle elevation-2" src="{{request(photo)??$user->photo}}" style="text-align:center" alt="User">
                     {{ Form::hidden('photoPath',$user->photo)}}
                     {{ Form::file('photo', ['class'=>'form-control']) }}
-                </div>
             </div>
             {{-- <div class="card-footer">
             <div class="row">
