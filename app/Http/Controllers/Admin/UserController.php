@@ -22,9 +22,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::role('user')->latest()->get();
+        $user = User::latest()->get();
 
-        return view('admin.user.index', compact('users'));
+        return view('admin.user.index', compact('user'));
     }
 
     /**
