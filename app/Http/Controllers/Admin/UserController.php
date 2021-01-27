@@ -164,12 +164,12 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        if ($user->role(['admin', 'pengurus1'])) {
+        if ($user->role('admin')) {
             alert::error('message', 'Admin User Cannot Be Deleted');
         } else {
             $user->delete();
             alert::success('message', 'User Removed');
         }
-        return redirect('admin/user');
+        return back();
     }
 }

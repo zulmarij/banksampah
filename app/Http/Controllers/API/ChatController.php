@@ -84,11 +84,13 @@ class ChatController extends BaseController
         if(Auth::user()->hasRole(['pengurus2', 'bendahara', 'admin'])) return $this->responseError('YOU DO NOT HAVE ACCESS HERE', 403);
         $user = Auth::id();
         $Message = Chat::find($id);
+        $all = Chat::where('message', $Message->message)->where('created_at', $Message->creted_at);
         if ($Message->from != $user) {
             return $this->responseError('Not your message', 422);
         }
         if ($Message) {
             $Message->delete();
+            $all->delete();
             return $this->responseOk($Message, 200, 'Message deleted successfully');
         }
         return $this->sendResponse('Failed to delete message', 400);
