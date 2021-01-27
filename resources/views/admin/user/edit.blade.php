@@ -66,7 +66,7 @@
 <div class="row">
     <div class="col-12">
         <!-- Widget: user widget style 1 -->
-        {{ Form::model($user,['action'=>['Admin\UserController@update',$user['id']],'files'=>true,'method'=>'PUT']) }}
+        {{ Form::model($user,['action'=>['Admin\UserController@update',$user->id],'files'=>true,'method'=>'PUT']) }}
         <div class="card">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="card-header">
@@ -131,7 +131,7 @@
                 <div class="form-group">
                     {{ Form::label('role', 'Role') }}
                     {{-- {{ Form::select('role[]', $role,[], array('class' => 'form-control','multiple')) }} --}}
-                    {{ Form::select('role', $role, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
+                    {{ Form::select('role[]', $role, $userrole, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
                 </div>
             </div>
         </div>

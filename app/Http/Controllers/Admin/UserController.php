@@ -96,9 +96,10 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id)->get();
-        $role = $user->role()->first();
+        $role = Role::pluck('name','name')->all();
+        $userrole = $user->role->pluck('name','name')->all();
 
-        return view('admin.user.edit', compact('user', 'role'));
+        return view('admin.user.edit', compact('user', 'role', 'userrole'));
     }
 
     /**
@@ -146,9 +147,8 @@ class UserController extends Controller
                 $data  = json_decode($get);
                 $user->photo = $data->image->display_url;
             }
-            $user->syncRoles(request('role')) ?? $user->getRoleNames();
-
             $user->save();
+            $user->syncRoles(request('role')) ?? $user->getRoleNames();
 
             alert::success('message', 'User Updated');
             return redirect('admin/user');
