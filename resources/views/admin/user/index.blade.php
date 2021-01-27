@@ -109,9 +109,9 @@
                                 </form>
                             </td>
                         </tr>
-                        @endforeah
+                        @endforeach
                     </tbody>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
                             <th>ID</th>
                             <th>Debit</th>
@@ -120,7 +120,7 @@
                             <th>Information</th>
                             <th>Created_at</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                 </table>
             </div>
             <!-- /.card-body -->
