@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-6 col-sm-6 col-12">
         <div class="info-box">
-            <span class="info-box-icon bg-danger"><i class="far fa-dolar-s"></i></span>
+            <span class="info-box-icon bg-danger"><i class="far fa-money-bill-wave"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Price</span>
