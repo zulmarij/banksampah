@@ -14,6 +14,11 @@
                 </div> --}}
             </div>
             <div class="card-body">
+                @if(!empty($errors->all()))
+                <div class="alert alert-danger">
+                    {{ Html::ul($errors->all())}}
+                </div>
+                @endif
                 <div class="form-group">
                     {{ Form::label('name', 'Name') }}
                     {{ Form::text('name', ['class'=>'form-control', 'placeholder'=>'Name']) }}

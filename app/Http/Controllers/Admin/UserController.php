@@ -61,7 +61,7 @@ class UserController extends Controller
             $user->email = request('email');
             $user->password = Hash::make(request('password'));
             $user->save();
-            $user->assignRole(request('role'));
+            // $user->assignRole(request('role'));
 
             alert::success('message', 'Success Create Nasabah');
             return redirect('admin/user');
