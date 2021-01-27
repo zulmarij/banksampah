@@ -130,7 +130,7 @@ class UserController extends Controller
             $user->address = request('address');
 
             if (!$request->file('photo')) {
-                $photo = request('photoPath');
+                $user->photo = request('photoPath');
             } else {
                 $image = base64_encode(file_get_contents(request('photo')));
                 $client = new Client();
