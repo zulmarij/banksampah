@@ -22,10 +22,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::get();
-        $roles = $user->getRoleNames()->first();
+        $user = User::orderBy('id','DESC');
 
-        return view('admin.user.index', compact('user', 'roles'));
+        return view('admin.user.index', compact('user'));
     }
 
     /**
