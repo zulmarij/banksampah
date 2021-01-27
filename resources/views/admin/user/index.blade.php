@@ -93,7 +93,17 @@
                             <td>
                                 @if(!empty($data->getRoleNames()))
                                 @foreach($data->getRoleNames() as $role)
+                                @if ($role == 'admin')
+                                <span class="badge badge-danger">{{ $role }}</span>
+                                @if ($role == 'bendahara')
+                                <span class="badge badge-warning">{{ $role }}</span>
+                                @if ($role == 'pengurus2')
+                                <span class="badge badge-primary">{{ $role }}</span>
+                                @if ($role == 'pengurus1')
+                                <span class="badge badge-dark">{{ $role }}</span>
+                                @if ($role == 'nasabah')
                                 <span class="badge badge-success">{{ $role }}</span>
+                                @endif
                                 @endforeach
                                 @endif
                             </td>
@@ -104,18 +114,15 @@
                                     <a class="btn btn-primary btn-sm" href="{{ URL::to('/admin/user/'.$data->id) }}">
                                         <i class="fas fa-eye">
                                         </i>
-                                        View
                                     </a>
                                     <a class="btn btn-info btn-sm"
                                         href="{{ URL::to('/admin/user/'.$data->id.'/edit') }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
-                                        Edit
                                     </a>
                                     <button type="submit" class="btn btn-danger btn-sm">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Delete
                                     </button>
                                 </form>
                             </td>
