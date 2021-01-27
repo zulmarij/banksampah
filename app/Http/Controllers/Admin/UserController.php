@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class Pengurus2Controller extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,9 +21,9 @@ class Pengurus2Controller extends Controller
      */
     public function index()
     {
-        $users = User::role('pengurus2')->latest()->get();
+        $users = User::role('user')->latest()->get();
 
-        return view('admin.pengurus2.index', compact('users'));
+        return view('admin.user.index', compact('users'));
     }
 
     /**
@@ -33,7 +33,7 @@ class Pengurus2Controller extends Controller
      */
     public function create()
     {
-        return view('admin.pengurus2.create');
+        return view('admin.user.create');
     }
 
     /**
@@ -48,10 +48,11 @@ class Pengurus2Controller extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|string|min:5',
+            'role' => 'required'
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin/pengurus2/create')
+            return redirect('admin/user/create')
                 ->withErrors($validator);
         } else {
             $user = new User();
@@ -60,10 +61,10 @@ class Pengurus2Controller extends Controller
             $user->email = request('email');
             $user->password = Hash::make(request('password'));
             $user->save();
-            $user->assignRole('pengurus2');
+            $user->assignRole(request('role'));
 
-            alert::success('message', 'Success Create pengurus2');
-            return redirect('admin/pengurus2');
+            alert::success('message', 'Success Create Nasabah');
+            return redirect('admin/user');
         }
     }
 
@@ -87,8 +88,9 @@ class Pengurus2Controller extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        
-        return view('admin.pengurus2.edit', compact('user'));
+        $role = $user->getRoleNames()->first();
+
+        return view('admin.user.edit', compact('user', 'role'));
     }
 
     /**
@@ -108,7 +110,7 @@ class Pengurus2Controller extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin/pengurus2/'.$id.'/edit')
+            return redirect('admin/user/'.$id.'/edit')
                 ->withErrors($validator);
         } else {
             $user = User::find($id);
@@ -136,11 +138,12 @@ class Pengurus2Controller extends Controller
                 $data  = json_decode($get);
                 $user->photo = $data->image->display_url;
             }
+            $user->syncRoles(request('role')) ?? $user->role;
 
             $user->save();
 
             alert::success('message', 'User Data Changed Successfully');
-            return redirect('admin/pengurus2');
+            return redirect('admin/user');
         }
     }
 
@@ -156,6 +159,6 @@ class Pengurus2Controller extends Controller
         $user->delete();
 
         alert::success('message', 'User Removed');
-        return redirect('admin/pengurus2');
+        return redirect('admin/user');
     }
 }
