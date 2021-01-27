@@ -88,8 +88,9 @@ class NasabahController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
+        $role = $user->getRoleNames();
 
-        return view('admin.nasabah.edit', compact('user'));
+        return view('admin.nasabah.edit', compact('user', 'role'));
     }
 
     /**
