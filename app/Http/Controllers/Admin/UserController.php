@@ -69,20 +69,20 @@ class UserController extends Controller
             $user->name = request('name');
             $user->email = request('email');
             $user->password = Hash::make(request('password'));
-            $image = base64_encode(file_get_contents(request('photo')));
-            $client = new Client();
-            $res = $client->request('POST', 'https://freeimage.host/api/1/upload', [
-                'form_params' => [
-                    'key' => '6d207e02198a847aa98d0a2a901485a5',
-                    'action' => 'upload',
-                    'source' => $image,
-                    'format' => 'json'
-                ]
-            ]);
+             $image = base64_encode(file_get_contents(request('photo')));
+                $client = new Client();
+                $res = $client->request('POST', 'https://freeimage.host/api/1/upload', [
+                    'form_params' => [
+                        'key' => '6d207e02198a847aa98d0a2a901485a5',
+                        'action' => 'upload',
+                        'source' => $image,
+                        'format' => 'json'
+                    ]
+                ]);
 
-            $get = $res->getBody()->getContents();
-            $data  = json_decode($get);
-            $user->photo = $data->image->display_url;
+                $get = $res->getBody()->getContents();
+                $data  = json_decode($get);
+                $user->photo = $data->image->display_url;
             $user->save();
             $user->assignRole(request('role'));
 

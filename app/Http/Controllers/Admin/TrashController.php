@@ -22,7 +22,7 @@ class TrashController extends Controller
     {
         $price = Trash::sum('price')->get();
         $total = Trash::count();
-        $trash = Trash::orderBy('id', 'DESC')->get();
+        $trash = Trash::get()->first();
 
         return view('admin.trash.index', compact('trash', 'total', 'price'));
     }
