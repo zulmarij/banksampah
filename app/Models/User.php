@@ -56,6 +56,11 @@ class User extends Authenticatable
         return $this->belongsTo('App\API\PickupController', 'user_id', 'id');
     }
 
+    public function chat()
+    {
+        return $this->hasMany(Chat::class);
+    }
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new PasswordResetNotification($token));
