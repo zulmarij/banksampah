@@ -33,19 +33,24 @@
             <!-- /.lockscreen-image -->
 
             <!-- lockscreen credentials (contains the form) -->
-            <form class="lockscreen-credentials" method="POST" action="{{route('login')}}">
+            {{-- <form class="lockscreen-credentials" method="POST" action="{{route('login')}}"> --}}
+                {{ Form::open(['route'=>'login', 'class'=>'lockscreen-credentials']) }}
                 <div class="input-group">
-                    <input type="hidden" id="email" name="email" value="admin@gmail.com">
-                    <input type="password" name="password" class="form-control" placeholder="password">
+                    {{ Form::hidden('email', '', ['class'=>'form-control', 'value'=>'admin@gmail.com']) }}
+                    {{-- <input type="hidden" id="email" name="email" value="admin@gmail.com"> --}}
+                    {{ Form::password('password', ['class'=>'form-control', 'placeholder'=>'Password']) }}
+                    {{-- <input type="password" name="password" class="form-control" placeholder="password"> --}}
 
                     <div class="input-group-append">
-                        <button type="submit" class="btn">
+                        {{ Form::submit('Create', ['class' => 'btn btn-primary float-right']) }}
+                    </div>
+                        {{-- <button type="submit" class="btn">
                             <i class="fas fa-arrow-right text-muted"></i>
-                        </button>
+                        </button> --}}
                     </div>
                 </div>
-                @csrf
-            </form>
+            {{-- </form> --}}
+            {{ Form::close() }}
             <!-- /.lockscreen credentials -->
 
         </div>
