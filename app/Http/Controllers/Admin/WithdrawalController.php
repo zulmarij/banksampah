@@ -14,11 +14,11 @@ class WithdrawalController extends Controller
 {
     public function index()
     {
-        $withdrawal = Withdrawal::where('status', 1)->get();
+        $withdrawal = Withdrawal::orderBy('status', 'ASC')->get();
 
         return view('admin.withdrawal.index', compact('withdrawal'));
     }
-    
+
     public function getWithdraw()
     {
         return view('admin.withdrawal.withdraw');
@@ -70,7 +70,7 @@ class WithdrawalController extends Controller
         ]);
 
         alert::success('message', 'Withdraw Money Successfully');
-        return redirect('admin.withdrawal.withdraw')->with('data', $withdrawal);
+        return redirect('admin.withdrawal.withdraw', compact('withdrawal'));
     }
 
     // Konfirmasi

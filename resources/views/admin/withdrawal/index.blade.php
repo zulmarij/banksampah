@@ -14,6 +14,7 @@
                     <th>Email</th>
                     <th>Nominal</th>
                     <th>Account</th>
+                    <th>Status</th>
                     <th>Created_at</th>
                     <th>Action</th>
                 </tr>
@@ -26,6 +27,15 @@
                     <td>{{ $data->user->email }}</td>
                     <td>{{ $data->credit }}</td>
                     <td>{{ $data->account }}</td>
+                    <td>
+                        @if ($data->status == 2)
+                        <span class="badge badge-success">Success</span>
+                        @elseif ($data->status == 1)
+                        <span class="badge badge-primary">Waiting</span>
+                        @elseif ($data->status == 0)
+                        <span class="badge badge-danger">Rejected</span>
+                        @endif
+                    </td>
                     <td>{{ $data->created_at }}</td>
                     <td>
                         <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">

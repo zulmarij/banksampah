@@ -48,7 +48,7 @@
                     <a href="{{ URL::to('/admin/trash') }}" class="nav-link">
                         <i class="nav-icon fas fa-dumpster"></i>
                         <p>
-                            Trash Input
+                            Trash
                         </p>
                     </a>
                 </li>

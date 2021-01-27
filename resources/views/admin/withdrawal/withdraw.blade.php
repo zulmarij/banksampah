@@ -23,7 +23,7 @@
     </div>
     <div class="card-footer">
         <a href="{{ URL::to('admin/withdrawal') }}" class="btn btn-outline-info">Back</a>
-        {{ Form::submit('Input', ['class' => 'btn btn-primary pull-right']) }}
+        {{ Form::submit('Withdraw', ['class' => 'btn btn-primary pull-right']) }}
     </div>
     <! -- /.card-body -->
 </div>
