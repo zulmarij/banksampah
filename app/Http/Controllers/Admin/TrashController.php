@@ -20,9 +20,9 @@ class TrashController extends Controller
      */
     public function index()
     {
-        $trashes = Trash::all();
+        $trash = Trash::orderBy('id', 'DESC')->get();
 
-        return view('admin.trash.index', compact('trashes'));
+        return view('admin.trash.index', compact('trash'));
     }
 
     /**

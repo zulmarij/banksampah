@@ -36,7 +36,7 @@ class WithdrawalController extends Controller
         $savings = Savings::where('user_id', $user->id)->latest()->firstOrFail();
 
         if ($savings->balance < request('nominal')) {
-            alert::warning('Message', 'Saldo Nasabah Tidak Cukup');
+            alert::warning('Message', 'Not enough nasabah Balance');
             return back();
         }
 
@@ -53,7 +53,7 @@ class WithdrawalController extends Controller
         // tambah data di table savings nasabah
         Savings::create([
             'user_id'       => $user->id,
-            'information'    => "Withdrawal Tunai From Teller",
+            'information'    => "Withdrawal Money From Teller",
             'debit'         => 0,
             'credit'        => request('nominal'),
             'balance'         => $savings->balance -= request('nominal')

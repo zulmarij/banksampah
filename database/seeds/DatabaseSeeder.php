@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Finance::create([
-            'information' => 'Dana dari pondok',
+            'information' => 'Sampah Bank Fund',
             'debit'      => '1000000',
             'credit'     => 0,
             'balance'      => '1000000'

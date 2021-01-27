@@ -16,7 +16,7 @@ class CreateWarehousesTable extends Migration
         Schema::create('warehouses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('trash_id');
-            $table->foreign('trash_id')->references('id')->on('trashes')->onDelete('cascade');;
+            $table->foreign('trash_id')->references('id')->on('trashes')->onDelete('cascade');
             $table->integer('weight');
             $table->timestamps();
         });

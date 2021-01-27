@@ -51,7 +51,7 @@ class SaleController extends BaseController
         $revenue = Finance::latest()->first();
 
         $finance = Finance::create([
-            'information' => "hasil penjualan ke pengepul",
+            'information' => "Proceeds From Sales To Pengepul",
             'debit' => $request->weight * $request->price,
             'credit' => 0,
             'balance' => $revenue == null ? $request->weight * $request->price : $revenue->balance + ($request->weight * $request->price)

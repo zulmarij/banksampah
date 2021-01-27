@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone')->nullable()->default('alamat belum di isi');
-            $table->string('address')->nullable()->default('alamat belum di isi');
-            $table->string('photo')->nullable()->default('https://i.ibb.co/zrdH5gN/1186030-big-image-keep-your-city-clean-1220297-keep-your-classroom-clean-png-840-880-1.png');
+            $table->string('phone')->nullable()->default('Phone doesnt Exist');
+            $table->string('address')->nullable()->default('Phone doesnt Exist');
+            $table->string('photo')->nullable()->default('https://ibb.co/7KmfMzH');
             $table->rememberToken();
             $table->timestamps();
             $table->dateTime('deleted_at')->nullable();

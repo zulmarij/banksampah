@@ -164,12 +164,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $chat = Chat::where('from', $id);
         $user = User::find($id);
         if ($user->hasRole('admin')) {
             alert::error('message', 'Admin User Cannot Be Deleted');
         } else {
-            $chat->delete();
             $user->delete();
             alert::success('message', 'User Removed');
         }
