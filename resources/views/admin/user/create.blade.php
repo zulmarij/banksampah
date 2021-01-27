@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     {{ Form::label('role', 'Role') }}
-                    {{ Form::select('role', ['L' => 'Large', 'S' => 'Small'], ['class'=>'form-control custom-select', , 'placeholder'=>'Select Role']) }}
+                    {{ Form::select('role', ['L' => 'Large', 'S' => 'Small'], ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
                 </div>
             </div>
             <!-- /.card-body -->
