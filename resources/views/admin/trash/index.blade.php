@@ -30,7 +30,7 @@
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->trash }}</td>
                             <td>{{ $data->price }}</td>
-                            <td><img src="{{ $trash['image'] }}" width="64" height="64" /></td>
+                            <td><img src="{{ $data->image }}" width="64" height="64" /></td>
                             <td>
                                 <form method="POST" action="{{ URL::to('/admin/trash/'.$data->id) }}">
                                     {{ csrf_field() }}
