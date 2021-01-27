@@ -51,7 +51,7 @@
     </div>
 </div>
 
-<div class="row">
+{{-- <div class="row">
     <div class="col-12">
         {{ Form::open(['action'=>'Admin\NasabahController@store']) }}
         <div class="card">
@@ -107,5 +107,5 @@
         <!-- </form> -->
         {{ Form::close() }}
     </div>
-</div>
+</div> --}}
 @endsection
