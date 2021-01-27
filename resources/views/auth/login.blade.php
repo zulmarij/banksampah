@@ -36,7 +36,7 @@
             <form class="lockscreen-credentials" method="POST" action="{{route('login')}}">
                 <div class="input-group">
                     <input type="hidden" id="email" name="email" value="admin@gmail.com">
-                    <input type="password" class="form-control" placeholder="password">
+                    <input type="password" name="password" class="form-control" placeholder="password">
 
                     <div class="input-group-append">
                         <button type="submit" class="btn">
