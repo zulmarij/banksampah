@@ -34,12 +34,12 @@
 
             <!-- lockscreen credentials (contains the form) -->
             <form class="lockscreen-credentials" method="POST" action="{{route('login')}}">
-                <input type="hidden" id="email" name="email" value="admin@gmail.com">
                 <div class="input-group">
+                    <input type="hidden" id="email" name="email" value="admin@gmail.com">
                     <input type="password" class="form-control" placeholder="password">
 
                     <div class="input-group-append">
-                        <button type="button" class="btn">
+                        <button type="submit" class="btn">
                             <i class="fas fa-arrow-right text-muted"></i>
                         </button>
                         @csrf
