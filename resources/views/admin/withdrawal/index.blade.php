@@ -1,90 +1,8 @@
 @extends('admin/admin',['title' => "Withdrawal | Sampah Bank"])
 @section('content')
-{{-- <div class="row">
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-info">
-            <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Profit</span>
-                <span class="info-box-number">Rp. {{ sum($sale->revenue - ($sale->trash->price * $sale->weight)) }}</span>
-
-                <div class="progress">
-                </div>
-                    <div class="progress-bar" style="width: 70%"></div>
-                <span class="progress-description">
-                    70% Increase in 30 Days
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-success">
-            <span class="info-box-icon"><i class="fas fa-weight"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Buy</span>
-                <span class="info-box-number">{{ $price }}</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                <span class="progress-description">
-                    70% Increase in 30 Days
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-warning">
-            <span class="info-box-icon"><i class="fas fa-user"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Sale</span>
-                <span class="info-box-number">{{ sum($sale->trash->price) }}</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                <span class="progress-description">
-                    70% Increase in 30 Days
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-danger">
-            <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Reports</span>
-                <span class="info-box-number">{{ sum($sale->weight) }}</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                <span class="progress-description">
-                    70% Increase in 30 Days
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-</div> --}}
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Sale</h3>
+        <h3 class="card-title">Withdrawal</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -92,38 +10,43 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Trash</th>
-                    <th>Weight</th>
-                    <th>Sale</th>
-                    <th>Buy</th>
-                    <th>Profit</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Nominal</th>
+                    <th>Account</th>
                     <th>Created_at</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($sale as $data)
+                @foreach ($withdrawal as $data)
                 <tr>
-                    <td>{{ $data->id}}</td>
-                    <td>{{ $data->trash->trash}}</td>
-                    <td>{{ $data->weight}}</td>
-                    <td>{{ $data->price}}</td>
-                    <td>{{ $data->trash->price}}</td>
-                    <td> {{number_format ($data->revenue - ($data->trash->price * $data->weight), 0, ',', '.')}}</td>
-                    <td>{{ $data->created_at}}</td>
+                    <td>{{ $data->id }}</td>
+                    <td>{{ $data->user->name }}</td>
+                    <td>{{ $data->user->email }}</td>
+                    <td>{{ $data->credit }}</td>
+                    <td>{{ $data->account }}</td>
+                    <td>{{ $data->created_at }}</td>
+                    <td>
+                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
+                            {{ csrf_field() }}
+                            <button class="btn btn-primary btn-sm" type="submit">
+                                <i class="fas fa-check"></i>
+                                Confirm
+                            </button>
+                        </form>
+                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
+                            {{ csrf_field() }}
+                            <button class="btn btn-danger btn-sm" type="submit">
+                                <i class="fas fa-ban"></i>
+                                Reject
+                            </button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
-            <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Trash</th>
-                    <th>Weight</th>
-                    <th>Sale</th>
-                    <th>Buy</th>
-                    <th>Profit</th>
-                    <th>Created_at</th>
-                </tr>
-            </tfoot>
+
         </table>
     </div>
     <!-- /.card-body -->

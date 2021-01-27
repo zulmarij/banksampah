@@ -46,10 +46,17 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ URL::to('/admin/trash') }}" class="nav-link">
-                        <i class="nav-icon fas fa-trash"></i>
+                        <i class="nav-icon fas fa-dumpster"></i>
                         <p>
                             Trash Input
-                            <span class="right badge badge-danger">New</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ URL::to('/admin/withdrawal') }}" class="nav-link">
+                        <i class="nav-icon fas fa-money-check-alt"></i>
+                        <p>
+                             Withdrawal
                         </p>
                     </a>
                 </li>

@@ -12,16 +12,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class WithdrawalController extends Controller
 {
+    public function index()
+    {
+        $withdrawal = Withdrawal::where('status', 1)->get();
+
+        return view('admin.withdrawal.index', compact('withdrawal'));
+    }
+    
     public function getWithdraw()
     {
         return view('admin.withdrawal.withdraw');
-    }
-
-    public function getRequest()
-    {
-        $request = Withdrawal::where('status', 1)->get();
-
-        return view('admin.withdrawal.request', compact('request'));
     }
 
     // POST

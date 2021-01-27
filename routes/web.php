@@ -33,7 +33,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
     Route::get('/admin/sale', 'SaleController@index');
 
-    Route::get('/admin/withdrawal/request', 'WithdrawalController@getRequest');
+    Route::get('/admin/withdrawal/', 'WithdrawalController@index');
     Route::get('/admin/withdrawal/withdraw', 'WithdrawalController@getWithdraw');
     Route::post('/admin/withdrawal/{id}/confirm', 'WithdrawalController@confirm');
     Route::post('/admin/withdrawal/{id}/reject', 'WithdrawalController@reject');
