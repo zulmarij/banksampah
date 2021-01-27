@@ -150,7 +150,7 @@ class TrashController extends Controller
             }
 
             $trash->save();
-
+            alert::success('message', 'Trash Updated');
             return redirect('admin/trash');
         }
     }
