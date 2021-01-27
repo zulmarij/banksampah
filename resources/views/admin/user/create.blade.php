@@ -38,7 +38,7 @@
             <!-- /.card-body -->
             <div class="card-footer">
                 <a href="{{ URL::to('admin/user') }}" class="btn btn-secondary">Back</a>
-                {{ Form::submit('Create', ['class' => 'btn btn-success float-right']) }}
+                {{ Form::submit('Create', ['class' => 'btn btn-primary float-right']) }}
             </div>
         </div>
         <!-- /.card -->
