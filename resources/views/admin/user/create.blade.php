@@ -21,11 +21,11 @@
                 @endif
                 <div class="form-group">
                     {{ Form::label('name', 'Name') }}
-                    {{ Form::text('name', ['class'=>'form-control', 'placeholder'=>'Name']) }}
+                    {{ Form::text('name', '', ['class'=>'form-control', 'placeholder'=>'Name']) }}
                 </div>
                 <div class="form-group">
                     {{ Form::label('email', 'Email') }}
-                    {{ Form::email('email', ['class'=>'form-control', 'placeholder'=>'Email']) }}
+                    {{ Form::email('email', '', ['class'=>'form-control', 'placeholder'=>'Email']) }}
                 </div>
                 <div class="form-group">
                     {{ Form::label('password', 'Password') }}
@@ -35,10 +35,10 @@
                     {{ Form::label('password_confirmation', 'Password') }}
                     {{ Form::password('Password_confrimation', ['class'=>'form-control', 'placeholder'=>'Password']) }}
                 </div>
-                {{-- <div class="form-group">
+                <div class="form-group">
                     {{ Form::label('role', 'Role') }}
                     {{ Form::select('role', ['L' => 'Large', 'S' => 'Small'], null, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
-                </div> --}}
+                </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
