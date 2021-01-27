@@ -111,16 +111,16 @@
                                 <form method="POST" action="{{ URL::to('/admin/user/'.$data->id) }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE" />
-                                    <a class="btn btn-primary btn-sm" href="{{ URL::to('/admin/user/'.$data->id) }}">
+                                    <a class="btn btn-primary" href="{{ URL::to('/admin/user/'.$data->id) }}">
                                         <i class="fas fa-eye">
                                         </i>
                                     </a>
-                                    <a class="btn btn-info btn-sm"
+                                    <a class="btn btn-info"
                                         href="{{ URL::to('/admin/user/'.$data->id.'/edit') }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                     </a>
-                                    <button type="submit" class="btn btn-danger btn-sm">
+                                    <button type="submit" class="btn btn-danger">
                                         <i class="fas fa-trash">
                                         </i>
                                     </button>
