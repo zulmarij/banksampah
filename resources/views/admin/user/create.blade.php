@@ -1,17 +1,11 @@
 @extends('admin.admin')
 @section('content')
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         {{ Form::open(['action'=>'Admin\UserController@store']) }}
         <div class="card card-primary">
             <div class="card-header">
                 <h3 class="card-title">Add User</h3>
-
-                {{-- <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div> --}}
             </div>
             <div class="card-body">
                 @if(!empty($errors->all()))
@@ -32,17 +26,17 @@
                     {{ Form::password('password', ['class'=>'form-control', 'placeholder'=>'Password']) }}
                 </div>
                 <div class="form-group">
-                    {{ Form::label('password_confirmation', 'Password') }}
-                    {{ Form::password('Password_confrimation', ['class'=>'form-control', 'placeholder'=>'Password']) }}
+                    {{ Form::label('password_confirmation', 'Password Confirmation') }}
+                    {{ Form::password('Password_confrimation', ['class'=>'form-control', 'placeholder'=>'Password Confirmation']) }}
                 </div>
                 <div class="form-group">
                     {{ Form::label('role', 'Role') }}
-                    {{ Form::select('role', ['L' => 'Large', 'S' => 'Small'], null, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
+                    {{ Form::select('role', ['nasabah' => 'Nasabah', 'pengurus1' => 'Pengurus 1', 'pengurus2'=>'Pengurus 2', 'bendahara'=>'Bendahara'], null, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
                 </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <a href="{{ URL::to('admin/nasabah') }}" class="btn btn-secondary">Back</a>
+                <a href="{{ URL::to('admin/user') }}" class="btn btn-secondary">Back</a>
                 {{ Form::submit('Create', ['class' => 'btn btn-success float-right']) }}
             </div>
         </div>
