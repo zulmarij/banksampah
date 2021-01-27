@@ -15,4 +15,8 @@ class Chat extends Model
         return \Carbon\Carbon::parse($this->attributes['created_at'])
             ->diffForHumans();
     }
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
 }
