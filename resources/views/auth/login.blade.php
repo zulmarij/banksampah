@@ -42,9 +42,9 @@
                         <button type="button" class="btn">
                             <i class="fas fa-arrow-right text-muted"></i>
                         </button>
+                        @csrf
                     </div>
                 </div>
-                @csrf
             </form>
             <!-- /.lockscreen credentials -->
 
