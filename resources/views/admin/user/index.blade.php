@@ -71,7 +71,7 @@
             <span class="info-box-icon bg-dark"><i class="fas fa-users"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Total User</span>
+                <span class="info-box-text">Total Users</span>
                 <span class="info-box-number">{{ $total }}</span>
             </div>
             <!-- /.info-box-content -->
@@ -141,7 +141,7 @@
                                             <i class="fas fa-eye">
                                             </i>
                                         </a>
-                                        <a class="btn btn-info btn-sm"
+                                        <a class="btn btn-warning btn-sm"
                                             href="{{ URL::to('/admin/user/'.$data->id.'/edit') }}">
                                             <i class="fas fa-pencil-alt">
                                             </i>
