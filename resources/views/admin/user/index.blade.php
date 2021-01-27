@@ -6,7 +6,7 @@
             <div class="card-header">
                 <h3 class="card-title">Nasabah</h3>
                 <div class="card-tools">
-                    <a href="{{ URL::to('/admin/nasabah/create')}}" class="btn btn-dark">
+                    <a href="{{ URL::to('/admin/user/create')}}" class="btn btn-dark">
                         <i class="fa fa-plus"></i>
                         &nbsp; Add
                     </a>
@@ -40,13 +40,18 @@
                                     <td>{{ $user['address'] }}</td>
                                     <td class="text-center"><img src="{{ $user['photo'] }}" width="100" /></td>
                                     <td class="text-center">
-                                        <form method="POST" action="{{ URL::to('/admin/nasabah/'.$user['id']) }}">
+                                        <form method="POST" action="{{ URL::to('/admin/user/'.$user['id']) }}">
                                             {{ csrf_field() }}
                                             <input type="hidden" name="_method" value="DELETE" />
                                             <div class="btn-group">
-                                                <a class="btn btn-info" href="{{ URL::to('/admin/nasabah/'.$user['id']) }}"><i class="fa fa-eye"></i></a>
-                                                <a class="btn btn-success" href="{{ URL::to('/admin/nasabah/'.$user['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-eraser"></i></button>
+                                                <a class="btn btn-info"
+                                                    href="{{ URL::to('/admin/user/'.$user['id']) }}"><i
+                                                        class="fa fa-eye"></i></a>
+                                                <a class="btn btn-success"
+                                                    href="{{ URL::to('/admin/user/'.$user['id'].'/edit') }}"><i
+                                                        class="fa fa-edit"></i></a>
+                                                <button type="submit" class="btn btn-danger"><i
+                                                        class="fa fa-eraser"></i></button>
                                             </div>
                                         </form>
                                     </td>
@@ -62,5 +67,67 @@
         </div>
     </div>
 </div>
-
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Finance</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>name</th>
+                            <th>phone</th>
+                            <th>email</th>
+                            <th>address</th>
+                            <th>photo</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($user as $data)
+                        <tr>
+                            <td class="text-center">{{ $data['id'] }}</td>
+                            <td>{{ $data['name'] }}</td>
+                            <td>{{ $data['phone'] }}</td>
+                            <td>{{ $data['email'] }}</td>
+                            <td>{{ $data['address'] }}</td>
+                            <td class="text-center"><img src="{{ $data['photo'] }}" width="100" /></td>
+                            <td class="text-center">
+                                <form method="POST" action="{{ URL::to('/admin/user/'.$data['id']) }}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="_method" value="DELETE" />
+                                    <div class="btn-group">
+                                        <a class="btn btn-info" href="{{ URL::to('/admin/user/'.$data['id']) }}"><i
+                                                class="fa fa-eye"></i></a>
+                                        <a class="btn btn-success"
+                                            href="{{ URL::to('/admin/user/'.$data['id'].'/edit') }}"><i
+                                                class="fa fa-edit"></i></a>
+                                        <button type="submit" class="btn btn-danger"><i
+                                                class="fa fa-eraser"></i></button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeah
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                            <th>Balance</th>
+                            <th>Information</th>
+                            <th>Created_at</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+    </div>
+</div>
 @endsection
