@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-info">
-            <span class="info-box-icon"><i class="far fa-check"></i></span>
+            <span class="info-box-icon"><i class="fas fa-check"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Success</span>
@@ -23,7 +23,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-success">
-            <span class="info-box-icon"><i class="far fa-sync-alt"></i></span>
+            <span class="info-box-icon"><i class="fas fa-sync-alt"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Waiting</span>
@@ -43,7 +43,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-warning">
-            <span class="info-box-icon"><i class="far fa-ban"></i></span>
+            <span class="info-box-icon"><i class="fas fa-ban"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Rejected</span>
