@@ -164,7 +164,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        if ($user->role('admin')) {
+        if ($user->hasRole('admin')) {
             alert::error('message', 'Admin User Cannot Be Deleted');
         } else {
             $user->delete();
