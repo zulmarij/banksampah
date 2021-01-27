@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::latest()->get();
+        $user = User::get();
         $roles = $user->getRoleNames()->first();
 
         return view('admin.user.index', compact('user', 'roles'));

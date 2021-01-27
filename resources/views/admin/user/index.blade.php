@@ -91,9 +91,11 @@
                             <td>{{ $data['email'] }}</td>
                             <td>{{ $data['address'] }}</td>
                             <td>
+                                @if(!empty($roles))
                                 @foreach ($roles as $role)
                                 <span class="badge badge-success">{{ $role }}</span>
                                 @endforeach
+                                @endif
                             </td>
                             <td>
                                 <form method="POST" action="{{ URL::to('/admin/user/'.$data['id']) }}">
