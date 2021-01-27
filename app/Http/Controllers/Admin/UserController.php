@@ -11,6 +11,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -33,7 +34,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        $role = Role::pluck('name','name')->all();
+        return view('admin.user.create', compact('role'));
     }
 
     /**
@@ -63,7 +65,7 @@ class UserController extends Controller
             $user->save();
             $user->assignRole(request('role'));
 
-            alert::success('message', 'Success Create Nasabah');
+            alert::success('message', 'Success Create User');
             return redirect('admin/user');
         }
     }
@@ -138,7 +140,7 @@ class UserController extends Controller
                 $data  = json_decode($get);
                 $user->photo = $data->image->display_url;
             }
-            $user->syncRoles(request('role')) ?? $user->role;
+            $user->syncRoles(request('role')) ?? $user->getRoleNames();
 
             $user->save();
 

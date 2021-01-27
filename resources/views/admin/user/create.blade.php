@@ -31,7 +31,8 @@
                 </div>
                 <div class="form-group">
                     {{ Form::label('role', 'Role') }}
-                    {{ Form::select('role', ['nasabah' => 'Nasabah', 'pengurus1' => 'Pengurus 1', 'pengurus2'=>'Pengurus 2', 'bendahara'=>'Bendahara'], null, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
+                    {{-- {{ Form::select('role[]', $role,[], array('class' => 'form-control','multiple')) }} --}}
+                    {{ Form::select('role[]', $role, null, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
                 </div>
             </div>
             <!-- /.card-body -->

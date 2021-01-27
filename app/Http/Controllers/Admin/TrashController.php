@@ -150,7 +150,6 @@ class TrashController extends Controller
 
             $trash->save();
 
-            9999999999999999999999999999
             return redirect('admin/trash');
         }
     }
