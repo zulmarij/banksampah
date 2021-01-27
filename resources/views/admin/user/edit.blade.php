@@ -136,6 +136,10 @@
                     {{ Form::select('role[]', $role, $userrole, ['class'=>'form-control custom-select']) }}
                 </div>
             </div>
+            <div class="card-footer">
+                <a href="{{ URL::to('admin/user') }}" class="btn btn-secondary">Back</a>
+                {{ Form::submit('Update', ['class' => 'btn btn-success float-right']) }}
+            </div>
         </div>
         {{ Form::close() }}
         <!-- /.widget-user -->
