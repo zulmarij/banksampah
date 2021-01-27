@@ -88,7 +88,7 @@ class ChatController extends BaseController
         if ($Message->from != $user) {
             return $this->responseError('Not your message', 422);
         }
-        if ($Message) {
+        if ($Message && $Message->is_read = 0) {
             $Message->delete();
             $all->delete();
             return $this->responseOk($Message, 200, 'Message deleted successfully');

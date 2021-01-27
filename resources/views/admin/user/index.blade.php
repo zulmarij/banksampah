@@ -68,7 +68,7 @@
     <!-- /.col -->
     <div class="col-md-2 col-sm-6 col-12">
         <div class="info-box">
-            <span class="info-box-icon bg-dark"><i class="far fa-users"></i></span>
+            <span class="info-box-icon bg-dark"><i class="fas fa-users"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Total User</span>
