@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/admin', 'AdminController@index');
