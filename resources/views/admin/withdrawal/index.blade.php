@@ -3,6 +3,12 @@
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Withdrawal</h3>
+        <div class="card-tools">
+            <a href="{{ URL::to('/admin/withdrawal/withdraw')}}" class="btn btn-dark">
+                <i class="fa fa-plus"></i>
+                &nbsp; Withdraw
+            </a>
+        </div>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
