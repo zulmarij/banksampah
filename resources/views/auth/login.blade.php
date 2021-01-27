@@ -97,7 +97,7 @@
 
 <body class="hold-transition lockscreen">
     <!-- Automatic element centering -->
-    {{ Form::open(['action'=>'{{ route('login') }}']) }}
+    {{ Form::open(['route'=>'{{ route('login') }}']) }}
     <div class="lockscreen-wrapper">
         <div class="lockscreen-logo">
             <a href="{{asset('')}}template/index2.html"><b>Admin</b>LTE</a>
