@@ -17,7 +17,7 @@
                 </div>
                 @endif
                 <div class="d-flex justify-content-center">
-                    <img class="img-circle elevation-2" src="{{$user->photo}}" alt="User" height="256" width="256">
+                    <img class="img-circle elevation-2" src="{{ $user->photo }}" alt="User" height="256" width="256">
                 </div>
                 <div class="form-group">
                     {{ Form::label('photo', 'Photo') }}

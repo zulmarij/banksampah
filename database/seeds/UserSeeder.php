@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('password'),
             'phone'  => '1234567890',
             'address'  => 'Pondok Programmer Kec. Kretek Bantul Yogyakarta',
-            'photo' =>'https://ibb.co/FwyZDH0'
+            'photo' => 'https://i.ibb.co/cFZfrYC/administrator.png'
         ]);
         $user->assignRole('admin');
 
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('password'),
             'phone'  => '1234567890',
             'address'  => 'Pondok Programmer Kec. Kretek Bantul Yogyakarta',
-            'photo' =>'https://ibb.co/vzVpZgy'
+            'photo' => 'https://i.ibb.co/C0mghNC/administrator-woman.png'
         ]);
         $user->assignRole('bendahara');
 
@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('password'),
             'phone'  => '1234567890',
             'address'  => 'Pondok Programmer Kec. Kretek Bantul Yogyakarta',
-            'photo' =>'https://ibb.co/cFGj1tK'
+            'photo' => 'https://i.ibb.co/MVYmspy/user2.png'
         ]);
         $user->assignRole('pengurus2');
 
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('password'),
             'phone'  => '1234567890',
             'address'  => 'Pondok Programmer Kec. Kretek Bantul Yogyakarta',
-            'photo' =>'https://ibb.co/k0GRR4q'
+            'photo' => 'https://i.ibb.co/jG8ccy3/worker.png'
         ]);
         $user->assignRole('pengurus1');
 
@@ -59,7 +59,7 @@ class UserSeeder extends Seeder
             'password'  => Hash::make('password'),
             'phone'  => '1234567890',
             'address'  => 'Pondok Programmer Kec. Kretek Bantul Yogyakarta',
-            'photo' =>'https://ibb.co/7KmfMzH'
+            'photo' => 'https://i.ibb.co/gJK2q7G/user-boy4.png'
         ]);
         $user->assignRole('nasabah');
     }

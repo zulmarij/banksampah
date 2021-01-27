@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone')->nullable()->default('Phone doesnt Exist');
             $table->string('address')->nullable()->default('Phone doesnt Exist');
-            $table->string('photo')->nullable()->default('https://ibb.co/7KmfMzH');
+            $table->string('photo')->nullable()->default('https://i.ibb.co/gJK2q7G/user-boy4.png');
             $table->rememberToken();
             $table->timestamps();
             $table->dateTime('deleted_at')->nullable();
