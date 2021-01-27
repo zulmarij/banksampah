@@ -22,11 +22,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $admin = User::count()->hasRole('admin');
-        $bendahara = User::count()->hasRole('bendahara');
-        $pengurus2 = User::count()->hasRole('pengurus2');
-        $pengurus1 = User::count()->hasRole('pengurus1');
-        $nasabah = User::count()->hasRole('nasabah');
+        $admin = User::role('admin')->count();
+        $bendahara = User::role('bendahara')->count();
+        $pengurus2 = User::role('pengurus2')->count();
+        $pengurus1 = User::role('pengurus1')->count();
+        $nasabah = User::role('nasabah')->count();
         $total = User::count();
         $user = User::orderBy('id', 'DESC')->get();
 
