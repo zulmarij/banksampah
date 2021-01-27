@@ -1,51 +1,48 @@
-@extends('admin.admin')
+@extends('admin/admin',['title' => "Edit Trash | Sampah Bank"])
 @section('content')
 <div class="row">
     <div class="col-12">
-        {{ Form::model($trash,['action'=>['Admin\TrashController@update',$trash['id']],'files'=>true,'method'=>'PUT']) }}
+        <!-- Widget: trash widget style 1 -->
+        {{ Form::model($trash,['action'=>['Admin\TrashController@update',$trash->id],'files'=>true,'method'=>'PUT']) }}
         <div class="card">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="card-header">
-                <h3 class="card-title">Change Trash Data</h3>
+                <h3 class="card-title">Update Trash</h3>
             </div>
+            <!-- /.row -->
             <div class="card-body">
                 @if(!empty($errors->all()))
                 <div class="alert alert-danger">
                     {{ Html::ul($errors->all())}}
                 </div>
                 @endif
-                <div class="row justify-content-md-center">
-                    <div class="col-md-auto">
-                        <img src="{{ $trash['image'] }}" height="256" width="256" />
+                <div class="d-flex justify-content-center">
+                    <img class="img-circle elevation-2" src="{{$trash->image}}" alt="User" height="256" width="256">
+                </div>
+                <div class="form-group">
+                    {{ Form::label('image', 'Image') }}
+                    <div class="input-group">
+                        <div class="custom-file">
+                            {{ Form::hidden('imagePath',$trash->image)}}
+                            {{ Form::file('image', ['class'=>'costum-file-input']) }}
+                            {{ Form::label('image', 'Choose Photo', ['class'=>'custom-file-label']) }}
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            {{ Form::label('trash', 'Trash') }}
-                            {{ Form::text('trash', $trash['trash'], ['class'=>'form-control', 'placeholder'=>'Enter The Trash Name']) }}
-                        </div>
-
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            {{ Form::label('price', 'Price') }}
-                            {{ Form::text('price', $trash['price'], ['class'=>'form-control', 'placeholder'=>'Enter the Trash Price']) }}
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        {{ Form::hidden('imagePath',$trash['image'])}}
-                        {{ Form::label('image', 'Image') }}
-                        {{ Form::file('image', ['class'=>'form-control']) }}
-                    </div>
+                <div class="form-group">
+                    {{ Form::label('trash', 'Trash') }}
+                    {{ Form::text('trash', $trash->trash, ['class'=>'form-control', 'placeholder'=>'Trash']) }}
+                </div>
+                <div class="form-group">
+                    {{ Form::label('price', 'Price') }}
+                    {{ Form::text('price', $trash->price, ['class'=>'form-control', 'placeholder'=>'Price']) }}
                 </div>
             </div>
             <div class="card-footer">
-                <a href="{{ URL::to('admin/trash') }}" class="btn btn-outline-info">Back</a>
-                {{ Form::submit('Edit', ['class' => 'btn btn-primary pull-right']) }}
+                <a href="{{ URL::to('admin/trash') }}" class="btn btn-secondary">Back</a>
+                {{ Form::submit('Update', ['class' => 'btn btn-warning float-right']) }}
             </div>
         </div>
-        <!-- </form> -->
         {{ Form::close() }}
     </div>
 </div>

@@ -75,7 +75,7 @@ class TrashController extends Controller
             $trash->image = $data->image->display_url;
             $trash->save();
 
-             alert::success('message', 'Success Create Trash');
+            alert::success('message', 'Success Create Trash');
             return redirect('admin/trash');
         }
     }
@@ -89,9 +89,8 @@ class TrashController extends Controller
     public function show($id)
     {
         $trash = Trash::find($id);
-        $data = ['trash' => $trash];
 
-        return view('admin.trash.show')->with($data);
+        return view('admin.trash.show', compact('trash'));
     }
 
     /**
@@ -123,7 +122,7 @@ class TrashController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin/trash/'.$id.'/edit')
+            return redirect('admin/trash/' . $id . '/edit')
                 ->withErrors($validator);
         } else {
             $trash = Trash::find($id);
