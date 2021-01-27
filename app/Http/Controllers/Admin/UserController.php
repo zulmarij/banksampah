@@ -97,7 +97,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $role = Role::pluck('name','name')->all();
-        $userrole = $user->role->pluck('name','name')->all();
+        $userrole = $user->role;
 
         return view('admin.user.edit', compact('user', 'role', 'userrole'));
     }
