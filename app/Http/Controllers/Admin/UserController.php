@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use App\Models\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -163,10 +164,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::all()->find($id);
+        $chat = Chat::where('from', $id);
+        $user = User::find($id);
         if ($user->hasRole('admin')) {
             alert::error('message', 'Admin User Cannot Be Deleted');
         } else {
+            $chat->delete();
             $user->delete();
             alert::success('message', 'User Removed');
         }
