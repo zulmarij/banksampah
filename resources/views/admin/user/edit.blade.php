@@ -73,9 +73,9 @@
                 <h3 class="card-title">Update User</h3>
             </div>
             <div class="widget-user-image">
-                <img class="img-circle elevation-2" src="../dist/img/user1-128x128.jpg" alt="User Avatar">
+                <img class="img-circle elevation-2" src="{{ $user->photo }}" alt="User">
                 {{ Form::hidden('photoPath',$user->photo)}}
-                {{ Form::file('photo', ['class'=>'form-control', 'src'=>$user->photo]) }}
+                {{ Form::file('photo', ['class'=>'form-control']) }}
             </div>
             {{-- <div class="card-footer">
             <div class="row">
@@ -131,7 +131,7 @@
                 <div class="form-group">
                     {{ Form::label('role', 'Role') }}
                     {{-- {{ Form::select('role[]', $role,[], array('class' => 'form-control','multiple')) }} --}}
-                    {{ Form::select('role[]', $role, $userrole, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
+                    {{ Form::select('role[]', $role, $userrole, ['class'=>'form-control custom-select']) }}
                 </div>
             </div>
         </div>
