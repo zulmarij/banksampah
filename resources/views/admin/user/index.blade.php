@@ -85,11 +85,11 @@
                     <tbody>
                         @foreach($user as $data)
                         <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $data['name'] }}</td>
-                            <td>{{ $data['phone'] }}</td>
-                            <td>{{ $data['email'] }}</td>
-                            <td>{{ $data['address'] }}</td>
+                            <td>{{ $data->id }}</td>
+                            <td>{{ $data->name }}</td>
+                            <td>{{ $data->phone }}</td>
+                            <td>{{ $data->email }}</td>
+                            <td>{{ $data->address }}</td>
                             <td>
                                 {{-- @if(!empty($roles))
                                 @foreach ($roles as $role)
@@ -98,16 +98,16 @@
                                 @endif --}}
                             </td>
                             <td>
-                                <form method="POST" action="{{ URL::to('/admin/user/'.$user->id) }}">
+                                <form method="POST" action="{{ URL::to('/admin/user/'.$data->id) }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE" />
-                                    <a class="btn btn-primary btn-sm" href="{{ URL::to('/admin/user/'.$user->id) }}">
+                                    <a class="btn btn-primary btn-sm" href="{{ URL::to('/admin/user/'.$data->id) }}">
                                         <i class="fas fa-eye">
                                         </i>
                                         View
                                     </a>
                                     <a class="btn btn-info btn-sm"
-                                        href="{{ URL::to('/admin/user/'.$user->id.'/edit') }}">
+                                        href="{{ URL::to('/admin/user/'.$data->id.'/edit') }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
