@@ -95,7 +95,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id)->first();
+        $user = User::find($id);
         $role = Role::pluck('name','name')->all();
         $userrole = $user->role->pluck('name','name')->all();
 
