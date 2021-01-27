@@ -66,7 +66,13 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Finance</h3>
+                <h3 class="card-title">User</h3>
+                <div class="card-tools">
+                    <a href="{{ URL::to('/admin/user/create')}}" class="btn btn-dark">
+                        <i class="fa fa-plus"></i>
+                        &nbsp; Add
+                    </a>
+                </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -111,19 +117,22 @@
                                 <form method="POST" action="{{ URL::to('/admin/user/'.$data->id) }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE" />
-                                    <a class="btn btn-primary" href="{{ URL::to('/admin/user/'.$data->id) }}">
-                                        <i class="fas fa-eye">
-                                        </i>
-                                    </a>
-                                    <a class="btn btn-info"
-                                        href="{{ URL::to('/admin/user/'.$data->id.'/edit') }}">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                    </a>
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                    </button>
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary btn-sm"
+                                            href="{{ URL::to('/admin/user/'.$data->id) }}">
+                                            <i class="fas fa-eye">
+                                            </i>
+                                        </a>
+                                        <a class="btn btn-info btn-sm"
+                                            href="{{ URL::to('/admin/user/'.$data->id.'/edit') }}">
+                                            <i class="fas fa-pencil-alt">
+                                            </i>
+                                        </a>
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                        </button>
+                                    </div>
                                 </form>
                             </td>
                         </tr>
