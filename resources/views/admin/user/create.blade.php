@@ -35,10 +35,10 @@
                     {{ Form::label('password_confirmation', 'Password') }}
                     {{ Form::password('Password_confrimation', ['class'=>'form-control', 'placeholder'=>'Password']) }}
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     {{ Form::label('role', 'Role') }}
                     {{ Form::select('role', ['L' => 'Large', 'S' => 'Small'], null, ['class'=>'form-control custom-select','placeholder'=>'Select Role']) }}
-                </div>
+                </div> --}}
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
