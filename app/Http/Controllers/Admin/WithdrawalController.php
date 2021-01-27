@@ -14,9 +14,17 @@ class WithdrawalController extends Controller
 {
     public function index()
     {
+        $success = Withdrawal::where('status', 2)->count();
+        $successCredit = Withdrawal::where('status', 2)->sum('credit');
+        $waiting = Withdrawal::where('status', 1)->count();
+        $waitingCredit = Withdrawal::where('status', 1)->sum('credit');
+        $rejected = Withdrawal::where('status', 0)->count();
+        $rejectedCredit = Withdrawal::where('status', 0)->sum('credit');
+        $total = Withdrawal::count();
+        $totalCredit = Withdrawal::sum('credit');
         $withdrawal = Withdrawal::orderBy('status', 'ASC')->get();
 
-        return view('admin.withdrawal.index', compact('withdrawal'));
+        return view('admin.withdrawal.index', compact('withdrawal', 'totalCredit', 'total', 'rejectedCredit', 'rejected', 'waitingCredit', 'waiting', 'successCredit', 'success'));
     }
 
     public function getWithdraw()

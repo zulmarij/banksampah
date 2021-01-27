@@ -1,5 +1,87 @@
 @extends('admin/admin',['title' => "Withdrawal | Sampah Bank"])
 @section('content')
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-info">
+            <span class="info-box-icon"><i class="far fa-check"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total Success</span>
+                <span class="info-box-number">{{ $success }}</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                    {{ $successCredit }}
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-success">
+            <span class="info-box-icon"><i class="far fa-sync-alt"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total Waiting</span>
+                <span class="info-box-number">{{ $waiting }}</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                    {{ $waitingCredit }}
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-warning">
+            <span class="info-box-icon"><i class="far fa-ban"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total Rejected</span>
+                <span class="info-box-number">{{ $rejected }}</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                    {{ $rejectedCredit }}
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-danger">
+            <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total Withdraw</span>
+                <span class="info-box-number">{{ $total }}</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                    {{ $totalCredit }}
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+</div>
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Withdrawal</h3>
@@ -18,7 +100,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Nominal</th>
+                    <th>Credit</th>
                     <th>Account</th>
                     <th>Status</th>
                     <th>Created_at</th>
