@@ -23,8 +23,9 @@ class UserController extends Controller
     public function index()
     {
         $user = User::latest()->get();
+        $roles = $user->getRoleNames()->first();
 
-        return view('admin.user.index', compact('user'));
+        return view('admin.user.index', compact('user', 'roles'));
     }
 
     /**
