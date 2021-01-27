@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/admin');
 });
 
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
