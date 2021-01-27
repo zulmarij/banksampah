@@ -85,7 +85,7 @@
                     <tbody>
                         @foreach($user as $data)
                         <tr>
-                            <td>{{ $data['id'] }}</td>
+                            <td>{{ $user->id }}</td>
                             <td>{{ $data['name'] }}</td>
                             <td>{{ $data['phone'] }}</td>
                             <td>{{ $data['email'] }}</td>
@@ -98,16 +98,16 @@
                                 @endif --}}
                             </td>
                             <td>
-                                <form method="POST" action="{{ URL::to('/admin/user/'.$data['id']) }}">
+                                <form method="POST" action="{{ URL::to('/admin/user/'.$user->id) }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE" />
-                                    <a class="btn btn-primary btn-sm" href="{{ URL::to('/admin/user/'.$data['id']) }}">
+                                    <a class="btn btn-primary btn-sm" href="{{ URL::to('/admin/user/'.$user->id) }}">
                                         <i class="fas fa-eye">
                                         </i>
                                         View
                                     </a>
                                     <a class="btn btn-info btn-sm"
-                                        href="{{ URL::to('/admin/user/'.$data['id'].'/edit') }}">
+                                        href="{{ URL::to('/admin/user/'.$user->id.'/edit') }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
