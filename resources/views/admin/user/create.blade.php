@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        {{ Form::open(['action'=>'Admin\UserController@store', 'files'=>true, 'method'=>'PUT']) }}
+        {{ Form::open(['action'=>'Admin\UserController@store', 'files'=>true]) }}
         <div class="card card-primary">
             <div class="card-header">
                 <h3 class="card-title">Add User</h3>
