@@ -42,7 +42,7 @@
     <!-- /.col -->
     <div class="col-md-2 col-sm-6 col-12">
         <div class="info-box">
-            <span class="info-box-icon bg-secondary"><i class="far fa-user"></i></span>
+            <span class="info-box-icon bg-secondary"><i class="fa fa-user"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Pengurus1</span>
