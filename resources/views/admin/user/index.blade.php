@@ -1,6 +1,6 @@
 @extends('admin/admin')
 @section('content')
-<div class="row">
+{{-- <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
@@ -13,9 +13,6 @@
                 </div>
             </div>
             <div class="card-body">
-                {{-- @if (alert::has('message'))
-                    {{ alert::get('message') }}
-                @endif --}}
                 <div class="row">
                     <div class="col-md-12">
                         <table class="table table-bordered table-hover">
@@ -66,7 +63,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <div class="row">
     <div class="col-12">
         <div class="card">

@@ -66,7 +66,7 @@ class UserController extends Controller
             $user->assignRole(request('role'));
 
             alert::success('message', 'Success Create User');
-            return redirect('admin/user/create');
+            return redirect('admin/user');
         }
     }
 
