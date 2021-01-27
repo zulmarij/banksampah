@@ -65,13 +65,11 @@ class ProfileController extends BaseController
 
     public function destroy()
     {
-        $user = Auth::user();
-
+        $id = Auth::id();
         if ($user->hasRole(['pengurus1', 'pengurus2', 'bendahara', 'admin'])) {
             return $this->responseError('YOU DO NOT HAVE ACCESS HERE', 403);
-        }
-
-        if ($user->delete()) {
+        }else {
+            $user = User::find($id)->delete();
             return $this->responseOk('Profile has been Deleted', 200);
         }
     }
