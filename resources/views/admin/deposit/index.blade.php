@@ -15,16 +15,16 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <ul>
-                    <li>
+                    <li class="nav-item">
                         Weight <span class="float-right badge bg-primary">{{ $kertasWeight }}</span>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         Revenue <span class="float-right badge bg-primary">{{ $kertasRevenue }}</span>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         User <span class="float-right badge bg-primary">{{ $kertasUser }}</span>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         Total <span class="float-right badge bg-primary">{{ $kertasTotal }}</span>
                     </li>
                 </ul>
