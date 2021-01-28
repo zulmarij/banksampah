@@ -1,7 +1,7 @@
 @extends('admin/admin',['title' => "Deposit | Sampah Bank"])
 @section('content')
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-success collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Kertas</h3>
@@ -41,7 +41,7 @@
         </div>
         <!-- /.card -->
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-warning collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Plastik</h3>
@@ -81,7 +81,7 @@
         </div>
         <!-- /.card -->
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-danger collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Kaca</h3>
@@ -123,7 +123,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-primary collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Minyak</h3>
@@ -163,7 +163,7 @@
         </div>
         <!-- /.card -->
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-secondary collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Logam</h3>
@@ -203,7 +203,7 @@
         </div>
         <!-- /.card -->
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card card-dark collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Elektronik</h3>
