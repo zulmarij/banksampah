@@ -16,22 +16,22 @@
             <div class="card-body">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Revenue <span class="float-right badge bg-success">{{ $kertasRevenue }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Weight <span class="float-right badge bg-primary">{{ $kertasWeight }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             User <span class="float-right badge bg-warning">{{ $kertasUser }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Total <span class="float-right badge bg-danger">{{ $kertasTotal }}</span>
                         </a>
                     </li>
@@ -56,22 +56,22 @@
             <div class="card-body">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Revenue <span class="float-right badge bg-success">{{ $plastikRevenue }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Weight <span class="float-right badge bg-primary">{{ $plastikWeight }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             User <span class="float-right badge bg-warning">{{ $plastikUser }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Total <span class="float-right badge bg-danger">{{ $plastikTotal }}</span>
                         </a>
                     </li>
@@ -96,22 +96,22 @@
             <div class="card-body">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Revenue <span class="float-right badge bg-success">{{ $kacaRevenue }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Weight <span class="float-right badge bg-primary">{{ $kacaWeight }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             User <span class="float-right badge bg-warning">{{ $kacaUser }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Total <span class="float-right badge bg-danger">{{ $kacaTotal }}</span>
                         </a>
                     </li>
@@ -138,22 +138,22 @@
             <div class="card-body">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Revenue <span class="float-right badge bg-success">{{ $minyakRevenue }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Weight <span class="float-right badge bg-primary">{{ $minyakWeight }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             User <span class="float-right badge bg-warning">{{ $minyakUser }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Total <span class="float-right badge bg-danger">{{ $minyakTotal }}</span>
                         </a>
                     </li>
@@ -178,22 +178,22 @@
             <div class="card-body">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Revenue <span class="float-right badge bg-success">{{ $logamRevenue }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Weight <span class="float-right badge bg-primary">{{ $logamWeight }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             User <span class="float-right badge bg-warning">{{ $logamUser }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Total <span class="float-right badge bg-danger">{{ $logamTotal }}</span>
                         </a>
                     </li>
@@ -218,22 +218,22 @@
             <div class="card-body">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Revenue <span class="float-right badge bg-success">{{ $elektronikRevenue }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Weight <span class="float-right badge bg-primary">{{ $elektronikWeight }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             User <span class="float-right badge bg-warning">{{ $elektronikUser }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a>
+                        <a class="nav-link">
                             Total <span class="float-right badge bg-danger">{{ $elektronikTotal }}</span>
                         </a>
                     </li>
