@@ -246,7 +246,7 @@
 </div>
 <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-info">
+        <div class="info-box bg-success">
             <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
 
             <div class="info-box-content">
@@ -266,7 +266,7 @@
     </div>
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-success">
+        <div class="info-box bg-primary">
             <span class="info-box-icon"><i class="fas fa-weight"></i></span>
 
             <div class="info-box-content">
