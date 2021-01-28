@@ -6,7 +6,7 @@
             <span class="info-box-icon"><i class="fas fa-wallet"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Balance</span>
+                <span class="info-box-text">Total Balance</span>
                 <span class="info-box-number">Rp {{ number_format($balance, 0, ',', '.') }}</span>
 
                 <div class="progress">
@@ -105,7 +105,7 @@
                 <tr>
                     <td>{{ $data->id}}</td>
                     <td>Rp {{ number_format($data->debit, 0, ',', '.')}}</td>
-                    <td>Ro {{ number_format($data->credit, 0, ',', '.')}}</td>
+                    <td>Rp {{ number_format($data->credit, 0, ',', '.')}}</td>
                     <td>Rp {{ number_format($data->balance, 0, ',', '.')}}</td>
                     <td>{{ $data->information}}</td>
                     <td>{{ $data->created_at}}</td>
