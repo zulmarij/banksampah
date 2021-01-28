@@ -27,9 +27,11 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
     Route::resource('/admin/trash', 'TrashController');
 
-    Route::get('/admin/finance', 'FinanceController@index');
-
     Route::get('/admin/deposit', 'DepositController@index');
+
+    Route::get('/admin/pickup', 'PickupController@index');
+
+    Route::get('/admin/finance', 'FinanceController@index');
 
     Route::get('/admin/sale', 'SaleController@index');
 

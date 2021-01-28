@@ -114,7 +114,7 @@
                             <td>{{ $data->phone }}</td>
                             <td>{{ $data->email }}</td>
                             <td>{{ $data->address }}</td>
-                            <td>
+                            <td class="text-center py-0 align-middle">
                                 @if(!empty($data->getRoleNames()))
                                 @foreach($data->getRoleNames() as $role)
                                 @if ($role == 'admin')
@@ -131,7 +131,7 @@
                                 @endforeach
                                 @endif
                             </td>
-                            <td>
+                            <td class="text-center py-0 align-middle">
                                 <form method="POST" action="{{ URL::to('/admin/user/'.$data->id) }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE" />
