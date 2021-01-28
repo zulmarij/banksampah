@@ -104,9 +104,9 @@
                 @foreach($finance as $data)
                 <tr>
                     <td>{{ $data->id}}</td>
-                    <td>Rp {{ number_format ($data->debit, 0, ',', '.')}}</td>
-                    <td>Ro {{ number_format ($data->credit, 0, ',', '.')}}</td>
-                    <td>Rp {{ number_format ($data->balance, 0, ',', '.')}}</td>
+                    <td>Rp {{ number_format($data->debit, 0, ',', '.')}}</td>
+                    <td>Ro {{ number_format($data->credit, 0, ',', '.')}}</td>
+                    <td>Rp {{ number_format($data->balance, 0, ',', '.')}}</td>
                     <td>{{ $data->information}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>
