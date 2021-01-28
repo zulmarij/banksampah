@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-6 col-sm-6 col-12">
         <div class="info-box">
-            <span class="info-box-icon bg-danger"><i class="far fa-money-bill-wave"></i></span>
+            <span class="info-box-icon bg-danger"><i class="fas fa-money-bill-wave"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Price</span>
@@ -16,7 +16,7 @@
     <!-- /.col -->
     <div class="col-md-6 col-sm-6 col-12">
         <div class="info-box">
-            <span class="info-box-icon bg-warning"><i class="far fa-user"></i></span>
+            <span class="info-box-icon bg-warning"><i class="fas fa-trash"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Trashes</span>
