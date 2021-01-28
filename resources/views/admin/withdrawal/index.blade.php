@@ -125,21 +125,21 @@
                         @endif
                     </td>
                     <td>{{ $data->created_at }}</td>
-                    <td>
-                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
-                            {{ csrf_field() }}
-                            <button class="btn btn-primary btn-sm" type="submit">
-                                <i class="fas fa-check"></i>
-                                Confirm
-                            </button>
-                        </form>
-                        <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
-                            {{ csrf_field() }}
-                            <button class="btn btn-danger btn-sm" type="submit">
-                                <i class="fas fa-ban"></i>
-                                Reject
-                            </button>
-                        </form>
+                    <td class="text-right py-0 align-middle">
+                        <div class="btn-group btn-group-sm">
+                            <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
+                                {{ csrf_field() }}
+                                <a class="btn btn-primary" type="submit">
+                                    <i class="fas fa-check"></i>
+                                </a>
+                            </form>
+                            <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
+                                {{ csrf_field() }}
+                                <a class="btn btn-danger" type="submit">
+                                    <i class="fas fa-ban"></i>
+                                </a>
+                            </form>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
