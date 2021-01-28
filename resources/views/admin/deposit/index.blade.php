@@ -17,12 +17,12 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">{{ $kertasRevenue }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($kertasRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">
-                            Weight <span class="float-right badge bg-primary">{{ $kertasWeight }}</span>
+                            Weight <span class="float-right badge bg-primary">{{ number_format($kertasWeight, 0, ',', '.') }} Kg</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -57,12 +57,12 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">{{ $plastikRevenue }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($plastikRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">
-                            Weight <span class="float-right badge bg-primary">{{ $plastikWeight }}</span>
+                            Weight <span class="float-right badge bg-primary">{{ number_format($plastikWeight, 0, ',', '.') }} Kg</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -97,12 +97,12 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">{{ $kacaRevenue }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($kacaRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">
-                            Weight <span class="float-right badge bg-primary">{{ $kacaWeight }}</span>
+                            Weight <span class="float-right badge bg-primary">{{ number_format($kacaWeight, 0, ',', '.') }} Kg</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -139,12 +139,12 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">{{ $minyakRevenue }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($minyakRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">
-                            Weight <span class="float-right badge bg-primary">{{ $minyakWeight }}</span>
+                            Weight <span class="float-right badge bg-primary">{{ number_format($minyakWeight, 0, ',', '.') }} Kg</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -179,12 +179,12 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">{{ $logamRevenue }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($logamRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">
-                            Weight <span class="float-right badge bg-primary">{{ $logamWeight }}</span>
+                            Weight <span class="float-right badge bg-primary">{{ number_format($logamWeight, 0, ',', '.') }} Kg</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -219,12 +219,12 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">{{ $elektronikRevenue }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($elektronikRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link">
-                            Weight <span class="float-right badge bg-primary">{{ $elektronikWeight }}</span>
+                            Weight <span class="float-right badge bg-primary">{{ number_format($elektronikWeight, 0, ',', '.') }} Kg</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -250,7 +250,7 @@
             <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Revenue</span>
+                <span class="info-box-text">Total Revenue</span>
                 <span class="info-box-number">Rp. {{ number_format($revenue, 0, ',', '.') }}</span>
 
                 <div class="progress">
@@ -270,8 +270,8 @@
             <span class="info-box-icon"><i class="fas fa-weight"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Weight</span>
-                <span class="info-box-number">{{ $weight  }}</span>
+                <span class="info-box-text">Total Weight</span>
+                <span class="info-box-number">{{ number_format($weight, 0, ',', '.')  }} Kg</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -290,7 +290,7 @@
             <span class="info-box-icon"><i class="fas fa-user"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">User</span>
+                <span class="info-box-text">Total User</span>
                 <span class="info-box-number">{{ $user }}</span>
 
                 <div class="progress">
@@ -310,7 +310,7 @@
             <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Reports</span>
+                <span class="info-box-text">Total Report</span>
                 <span class="info-box-number">{{ $total }}</span>
 
                 <div class="progress">
@@ -351,7 +351,7 @@
                     <td>{{ $data->user->name}}</td>
                     <td>{{ $data->user->email}}</td>
                     <td>{{ $data->trash->trash}}</td>
-                    <td>{{ $data->weight}}</td>
+                    <td>{{ ($data->weight, 0, ',', '.') }} Kg</td>
                     <td>{{ number_format ($data->revenue, 0, ',', '.')}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>

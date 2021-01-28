@@ -47,7 +47,7 @@
                         <tr>
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->trash }}</td>
-                            <td>{{ $data->price }}</td>
+                            <td>Rp. {{ number_format($data->price, 0, ',', '.') }}</td>
                             <td class="text-center py-0 align-middle"><img src="{{ $data->image }}" width="64"
                                     height="64" /></td>
                             <td class="text-center py-0 align-middle">

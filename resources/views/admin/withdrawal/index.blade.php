@@ -115,7 +115,7 @@
                     <td>{{ $data->user->email }}</td>
                     <td>{{ $data->credit }}</td>
                     <td>{{ $data->account }}</td>
-                    <td>
+                    <td class="text-center py-0 align-middle">
                         @if ($data->status == 2)
                         <span class="badge badge-success">Success</span>
                         @elseif ($data->status == 1)
