@@ -48,15 +48,16 @@
                             <td>{{ $data->id }}</td>
                             <td>{{ $data->trash }}</td>
                             <td>{{ $data->price }}</td>
-                            <td><img src="{{ $data->image }}" width="64" height="64" /></td>
-                            <td class="text-right py-0 align-middle">
+                            <td class="text-center py-0 align-middle"><img src="{{ $data->image }}" width="64"
+                                    height="64" /></td>
+                            <td class="text-center py-0 align-middle">
                                 <form method="POST" action="{{ URL::to('/admin/trash/'.$data->id) }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE" />
                                     <div class="btn-group btn-group-sm">
                                         {{-- <a class="btn btn-primary" href="{{ URL::to('/admin/trash/'.$data->id) }}">
-                                            <i class="fas fa-eye">
-                                            </i>
+                                        <i class="fas fa-eye">
+                                        </i>
                                         </a> --}}
                                         <a class="btn btn-warning"
                                             href="{{ URL::to('/admin/trash/'.$data->id.'/edit') }}">

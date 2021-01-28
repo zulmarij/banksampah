@@ -125,7 +125,7 @@
                         @endif
                     </td>
                     <td>{{ $data->created_at }}</td>
-                    <td class="text-right py-0 align-middle">
+                    <td class="text-center py-0 align-middle">
                         <div class="btn-group">
                             <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
                                 {{ csrf_field() }}
