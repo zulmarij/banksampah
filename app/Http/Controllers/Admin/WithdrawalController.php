@@ -78,7 +78,7 @@ class WithdrawalController extends Controller
         ]);
 
         alert::success('message', 'Withdraw Money Successfully');
-        return redirect('admin.withdrawal.withdraw', compact('withdrawal'));
+        return redirect('admin.withdrawal.withdraw')->with('data', $withdrawal);
     }
 
     // Konfirmasi
