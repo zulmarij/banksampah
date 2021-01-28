@@ -1,8 +1,8 @@
 @extends('admin/admin',['title' => "Deposit | Sampah Bank"])
 @section('content')
 <div class="row">
-    <div class="col-md-2">
-        <div class="card card-primary collapsed-card">
+    <div class="col-md-3">
+        <div class="card card-success collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Kertas</h3>
 
@@ -33,6 +33,208 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             Total <span class="float-right badge bg-primary">{{ $kertasTotal }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <div class="col-md-3">
+        <div class="card card-warning collapsed-card">
+            <div class="card-header">
+                <h3 class="card-title">Plastik</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Weight <span class="float-right badge bg-primary">{{ $plastikWeight }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Revenue <span class="float-right badge bg-primary">{{ $plastikRevenue }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            User <span class="float-right badge bg-primary">{{ $plastikUser }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Total <span class="float-right badge bg-primary">{{ $plastikTotal }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <div class="col-md-3">
+        <div class="card card-danger collapsed-card">
+            <div class="card-header">
+                <h3 class="card-title">Kaca</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Weight <span class="float-right badge bg-primary">{{ $kacaWeight }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Revenue <span class="float-right badge bg-primary">{{ $kacaRevenue }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            User <span class="float-right badge bg-primary">{{ $kacaUser }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Total <span class="float-right badge bg-primary">{{ $kacaTotal }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-primary collapsed-card">
+            <div class="card-header">
+                <h3 class="card-title">Minyak</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Weight <span class="float-right badge bg-primary">{{ $minyakWeight }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Revenue <span class="float-right badge bg-primary">{{ $minyakRevenue }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            User <span class="float-right badge bg-primary">{{ $minyakUser }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Total <span class="float-right badge bg-primary">{{ $minyakTotal }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <div class="col-md-3">
+        <div class="card card-secondary collapsed-card">
+            <div class="card-header">
+                <h3 class="card-title">Logam</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Weight <span class="float-right badge bg-primary">{{ $logamWeight }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Revenue <span class="float-right badge bg-primary">{{ $logamRevenue }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            User <span class="float-right badge bg-primary">{{ $logamUser }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Total <span class="float-right badge bg-primary">{{ $logamTotal }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <div class="col-md-3">
+        <div class="card card-dark collapsed-card">
+            <div class="card-header">
+                <h3 class="card-title">Elektronik</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Weight <span class="float-right badge bg-primary">{{ $elektronikWeight }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Revenue <span class="float-right badge bg-primary">{{ $elektronikRevenue }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            User <span class="float-right badge bg-primary">{{ $elektronikUser }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Total <span class="float-right badge bg-primary">{{ $elektronikTotal }}</span>
                         </a>
                     </li>
                 </ul>
