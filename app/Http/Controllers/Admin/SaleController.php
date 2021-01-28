@@ -15,8 +15,8 @@ class SaleController extends Controller
         // foreach ($sale as $data) {
 
         // }
-        $sales = Sale::with('trash')->get();
+        $sale = Sale::with('trash')->get();
 
-        return view('admin.sale.index', compact('sales'));
+        return view('admin.sale.index', compact('sale'));
     }
 }
