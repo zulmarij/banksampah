@@ -56,7 +56,7 @@
                     <a href="{{ URL::to('/admin/deposit') }}" class="nav-link">
                         <i class="nav-icon fas fa-truck-loading"></i>
                         <p>
-                             Deposit
+                            Deposit
                         </p>
                     </a>
                 </li>
@@ -64,7 +64,7 @@
                     <a href="{{ URL::to('/admin/pickup') }}" class="nav-link">
                         <i class="nav-icon fas fa-truck-moving"></i>
                         <p>
-                             Withdrawal
+                            Pickup
                         </p>
                     </a>
                 </li>
@@ -72,7 +72,7 @@
                     <a href="{{ URL::to('/admin/withdrawal') }}" class="nav-link">
                         <i class="nav-icon fas fa-money-check-alt"></i>
                         <p>
-                             Withdrawal
+                            Withdrawal
                         </p>
                     </a>
                 </li>
@@ -80,7 +80,15 @@
                     <a href="{{ URL::to('/admin/sale') }}" class="nav-link">
                         <i class="nav-icon fas fa-hand-holding-usd"></i>
                         <p>
-                             Sale
+                            Sale
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ URL::to('/admin/finance') }}" class="nav-link">
+                        <i class="nav-icon fas fa-wallet"></i>
+                        <p>
+                            Finance
                         </p>
                     </a>
                 </li>
