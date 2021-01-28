@@ -15,7 +15,7 @@ class FinanceController extends Controller
     {
         $debit = Finance::sum('debit');
         $credit = Finance::sum('credit');
-        $balance =Finance::orderBy('id', 'asc')->get();
+        $balance =Finance::orderBy('id', 'asc')->get('balance');
         $total = Finance::count();
         $finance = Finance::orderBy('id', 'desc')->get();
 
