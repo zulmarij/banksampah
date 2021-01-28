@@ -61,10 +61,26 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ URL::to('/admin/pickup') }}" class="nav-link">
+                        <i class="nav-icon fas fa-truck-moving"></i>
+                        <p>
+                             Withdrawal
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ URL::to('/admin/withdrawal') }}" class="nav-link">
                         <i class="nav-icon fas fa-money-check-alt"></i>
                         <p>
                              Withdrawal
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ URL::to('/admin/sale') }}" class="nav-link">
+                        <i class="nav-icon fas fa-hand-holding-usd"></i>
+                        <p>
+                             Sale
                         </p>
                     </a>
                 </li>
