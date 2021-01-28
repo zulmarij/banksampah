@@ -11,12 +11,14 @@ class DepositController extends Controller
 {
     public function index()
     {
+        $trash1 = Deposit::where('trash_id', 1)->get();
+
         $revenue = Deposit::sum('revenue');
         $weight = Deposit::sum('weight');
         $user = Deposit::distinct('user_id')->count();
-        $report = Deposit::count();
+        $total = Deposit::count();
         $deposit = Deposit::with('user', 'trash')->get();
 
-        return view('admin.deposit.index', compact('deposit', 'report', 'user', 'weight', 'revenue'));
+        return view('admin.deposit.index', compact('deposit', 'total', 'user', 'weight', 'revenue'));
     }
 }

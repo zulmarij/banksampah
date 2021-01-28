@@ -17,7 +17,7 @@
                 </span>
             </div>
             <!-- /.info-box-content -->
-        </div>
+        </div>*
         <!-- /.info-box -->
     </div>
     <!-- /.col -->

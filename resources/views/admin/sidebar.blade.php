@@ -53,6 +53,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ URL::to('/admin/deposit') }}" class="nav-link">
+                        <i class="nav-icon fas fa-truck-loading"></i>
+                        <p>
+                             Deposit
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ URL::to('/admin/withdrawal') }}" class="nav-link">
                         <i class="nav-icon fas fa-money-check-alt"></i>
                         <p>
