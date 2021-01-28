@@ -20,11 +20,10 @@ class TrashController extends Controller
      */
     public function index()
     {
-        $price = Trash::sum('price');
         $total = Trash::count();
         $trash = Trash::orderBy('id', 'DESC')->get();
 
-        return view('admin.trash.index', compact('trash', 'total', 'price'));
+        return view('admin.trash.index', compact('trash', 'total'));
     }
 
     /**

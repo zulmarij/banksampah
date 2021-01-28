@@ -1,32 +1,22 @@
 @extends('admin/admin',['title' => "Trash | Sampah Bank"])
 @section('content')
 <div class="row">
-    <div class="col-md-6 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-danger"><i class="fas fa-money-bill-wave"></i></span>
+    <div class="col-lg-12 col-6">
+        <!-- small card -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>{{ $total }}</h3>
 
-            <div class="info-box-content">
-                <span class="info-box-text">Total Price</span>
-                <span class="info-box-number">{{ $price }}</span>
+                <p>Total Trash</p>
             </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-6 col-sm-6 col-12">
-        <div class="info-box">
-            <span class="info-box-icon bg-warning"><i class="fas fa-trash"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Total Trashes</span>
-                <span class="info-box-number">{{ $total }}</span>
+            <div class="icon">
+                <i class="fas fa-trash-alt"></i>
             </div>
-            <!-- /.info-box-content -->
+            {{-- <a href="#" class="small-box-footer">
+            More info <i class="fas fa-arrow-circle-right"></i>
+          </a> --}}
         </div>
-        <!-- /.info-box -->
     </div>
-    <!-- /.col -->
 </div>
 <div class="row">
     <div class="col-12">
