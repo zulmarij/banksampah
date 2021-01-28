@@ -17,7 +17,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($kertasRevenue, 0, ',', '.') }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp {{ number_format($kertasRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -57,7 +57,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($plastikRevenue, 0, ',', '.') }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp {{ number_format($plastikRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -97,7 +97,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($kacaRevenue, 0, ',', '.') }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp {{ number_format($kacaRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -139,7 +139,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($minyakRevenue, 0, ',', '.') }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp {{ number_format($minyakRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -179,7 +179,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($logamRevenue, 0, ',', '.') }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp {{ number_format($logamRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -219,7 +219,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link">
-                            Revenue <span class="float-right badge bg-success">Rp. {{ number_format($elektronikRevenue, 0, ',', '.') }}</span>
+                            Revenue <span class="float-right badge bg-success">Rp {{ number_format($elektronikRevenue, 0, ',', '.') }}</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -251,7 +251,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Revenue</span>
-                <span class="info-box-number">Rp. {{ number_format($revenue, 0, ',', '.') }}</span>
+                <span class="info-box-number">Rp {{ number_format($revenue, 0, ',', '.') }}</span>
 
                 <div class="progress">
                 </div>
@@ -271,7 +271,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Weight</span>
-                <span class="info-box-number">{{ number_format($weight, 0, ',', '.')  }} Kg</span>
+                <span class="info-box-number">{{ number_format($weight, 0, ',', '.') }} Kg</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -351,8 +351,8 @@
                     <td>{{ $data->user->name}}</td>
                     <td>{{ $data->user->email}}</td>
                     <td>{{ $data->trash->trash}}</td>
-                    <td>{{ ($data->weight, 0, ',', '.') }} Kg</td>
-                    <td>{{ number_format ($data->revenue, 0, ',', '.')}}</td>
+                    <td>{{ number_format($data->weight, 0, ',', '.') }} Kg</td>
+                    <td>Rp {{ number_format ($data->revenue, 0, ',', '.')}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>
                 @endforeach
