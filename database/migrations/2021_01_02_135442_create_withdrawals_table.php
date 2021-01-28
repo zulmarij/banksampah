@@ -18,7 +18,7 @@ class CreateWithdrawalsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('account');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
             $table->bigInteger('credit')->nullable();
             $table->string('information')->nullable();
             $table->integer('status')->nullable();

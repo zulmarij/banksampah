@@ -1,6 +1,39 @@
 @extends('admin/admin',['title' => "Deposit | Sampah Bank"])
 @section('content')
 <div class="row">
+    <div class="col-md-2">
+        <!-- Widget: user widget style 2 -->
+        <div class="card card-widget widget-user-2">
+          <!-- Add the bg color to the header using any of the bg-* classes -->
+          <div class="widget-user-header bg-warning">
+            <div class="widget-user-image">
+              <img class="img-circle elevation-2" src="../dist/img/user7-128x128.jpg" alt="User Avatar">
+            </div>
+            <!-- /.widget-user-image -->
+            <h3 class="widget-user-username">Nadia Carmichael</h3>
+            <h5 class="widget-user-desc">Lead Developer</h5>
+          </div>
+          <div class="card-footer p-0">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                  Projects <span class="float-right badge bg-primary">31</span>
+              </li>
+              <li class="nav-item">
+                  Tasks <span class="float-right badge bg-info">5</span>
+              </li>
+              <li class="nav-item">
+                  Completed Projects <span class="float-right badge bg-success">12</span>
+              </li>
+              <li class="nav-item">
+                  Followers <span class="float-right badge bg-danger">842</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.widget-user -->
+      </div>
+</div>
+<div class="row">
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-info">
             <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
