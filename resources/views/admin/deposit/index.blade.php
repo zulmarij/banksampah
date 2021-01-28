@@ -16,16 +16,16 @@
           <div class="card-footer p-0">
             <ul class="nav flex-column">
               <li class="nav-item">
-                  Projects <span class="float-right badge bg-primary">31</span>
+                  Weight <span class="float-right badge bg-primary">{{ $kertasWeight }}</span>
               </li>
               <li class="nav-item">
-                  Tasks <span class="float-right badge bg-info">5</span>
+                  Revenue <span class="float-right badge bg-info">{{ $kertasRevenue }}</span>
               </li>
               <li class="nav-item">
-                  Completed Projects <span class="float-right badge bg-success">12</span>
+                  User <span class="float-right badge bg-success">{{ $kertasUser }}</span>
               </li>
               <li class="nav-item">
-                  Followers <span class="float-right badge bg-danger">842</span>
+                  Total <span class="float-right badge bg-danger">{{ $kertasTotal }}</span>
               </li>
             </ul>
           </div>

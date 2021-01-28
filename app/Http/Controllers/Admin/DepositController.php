@@ -48,6 +48,6 @@ class DepositController extends Controller
 
         $deposit = Deposit::with('user', 'trash')->get();
 
-        return view('admin.deposit.index', compact('deposit', 'total', 'user', 'weight', 'revenue', ''));
+        return view('admin.deposit.index', compact('deposit', 'total', 'user', 'weight', 'revenue', 'kertasWeight', 'kertasRevenue', 'kertasUser', 'kertasTotal'));
     }
 }
