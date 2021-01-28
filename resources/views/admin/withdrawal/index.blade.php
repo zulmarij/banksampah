@@ -126,18 +126,18 @@
                     </td>
                     <td>{{ $data->created_at }}</td>
                     <td class="text-right py-0 align-middle">
-                        <div class="btn-group btn-group-sm">
+                        <div class="btn-group">
                             <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/confirm') }}">
                                 {{ csrf_field() }}
-                                <a class="btn btn-primary" type="submit">
+                                <button class="btn btn-primary btn-sm" type="submit">
                                     <i class="fas fa-check"></i>
-                                </a>
+                                </button>
                             </form>
                             <form method="POST" action="{{ URL::to('/admin/withdrawal/'.$data->id.'/reject') }}">
                                 {{ csrf_field() }}
-                                <a class="btn btn-danger" type="submit">
+                                <button class="btn btn-danger btn-sm" type="submit">
                                     <i class="fas fa-ban"></i>
-                                </a>
+                                </button>
                             </form>
                         </div>
                     </td>

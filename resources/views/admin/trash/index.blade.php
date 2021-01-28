@@ -54,19 +54,19 @@
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE" />
                                     <div class="btn-group btn-group-sm">
-                                        <a class="btn btn-primary" href="{{ URL::to('/admin/trash/'.$data->id) }}">
+                                        {{-- <a class="btn btn-primary" href="{{ URL::to('/admin/trash/'.$data->id) }}">
                                             <i class="fas fa-eye">
                                             </i>
-                                        </a>
+                                        </a> --}}
                                         <a class="btn btn-warning"
                                             href="{{ URL::to('/admin/trash/'.$data->id.'/edit') }}">
                                             <i class="fas fa-pencil-alt">
                                             </i>
                                         </a>
-                                        <a type="submit" class="btn btn-danger">
+                                        <button type="submit" class="btn btn-danger">
                                             <i class="fas fa-trash">
                                             </i>
-                                        </a>
+                                        </button>
                                     </div>
                                 </form>
                             </td>
