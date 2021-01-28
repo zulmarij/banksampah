@@ -14,18 +14,26 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <ul>
-                    <li class="list">
-                        Weight <span class="float-right badge bg-primary">{{ $kertasWeight }}</span>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Weight <span class="float-right badge bg-primary">{{ $kertasWeight }}</span>
+                        </a>
                     </li>
-                    <li class="list">
-                        Revenue <span class="float-right badge bg-primary">{{ $kertasRevenue }}</span>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Revenue <span class="float-right badge bg-primary">{{ $kertasRevenue }}</span>
+                        </a>
                     </li>
-                    <li class="list">
-                        User <span class="float-right badge bg-primary">{{ $kertasUser }}</span>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            User <span class="float-right badge bg-primary">{{ $kertasUser }}</span>
+                        </a>
                     </li>
-                    <li class="list">
-                        Total <span class="float-right badge bg-primary">{{ $kertasTotal }}</span>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Total <span class="float-right badge bg-primary">{{ $kertasTotal }}</span>
+                        </a>
                     </li>
                 </ul>
             </div>
