@@ -14,13 +14,20 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        Weight <span class="float-right badge bg-primary">{{ $kertasWeight  }}</span>
+                <ul>
+                    <li>
+                        Weight <span class="float-right badge bg-primary">{{ $kertasWeight }}</span>
                     </li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                  </ul>
+                    <li>
+                        Revenue <span class="float-right badge bg-primary">{{ $kertasRevenue }}</span>
+                    </li>
+                    <li>
+                        User <span class="float-right badge bg-primary">{{ $kertasUser }}</span>
+                    </li>
+                    <li>
+                        Total <span class="float-right badge bg-primary">{{ $kertasTotal }}</span>
+                    </li>
+                </ul>
             </div>
             <!-- /.card-body -->
         </div>
