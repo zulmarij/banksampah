@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Withdrawal extends Model
 {
     use FormatDate;
-    protected $table = 'withdrawals';
 
     protected $fillable = ['user_id', 'name', 'account', 'information', 'status', 'credit', 'balance'];
 
