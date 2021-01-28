@@ -337,10 +337,10 @@
                 <tr>
                     <td>{{ $data->id}}</td>
                     <td>{{ $data->trash->trash}}</td>
-                    <td>{{ $data->weight}}</td>
-                    <td>{{ $data->price}}</td>
-                    <td>{{ $data->trash->price}}</td>
-                    <td> {{number_format ($data->revenue - ($data->trash->price * $data->weight), 0, ',', '.')}}</td>
+                    <td>{{ number_format($data->weight, 0, ',', '.')}} Kg</td>
+                    <td>Rp {{ number_format($data->price, 0, ',', '.') }}</td>
+                    <td>Rp {{ number_format($data->trash->price, 0, ',', '.') }}</td>
+                    <td>Rp {{ number_format($data->revenue - ($data->trash->price * $data->weight), 0, ',', '.')}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>
                 @endforeach

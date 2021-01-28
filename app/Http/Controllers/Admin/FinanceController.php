@@ -15,10 +15,10 @@ class FinanceController extends Controller
     {
         $debit = Finance::sum('debit');
         $credit = Finance::sum('credit');
-        $balance = Finance::latest()->first();
-        $report = Finance::count();
+        $balance =Finance::orderBy('id', 'asc')->get();
+        $total = Finance::count();
         $finance = Finance::orderBy('id', 'desc')->get();
 
-        return view('admin.finance.index', compact('finance', 'report', 'balance', 'credit', 'debit'));
+        return view('admin.finance.index', compact('finance', 'total', 'balance', 'credit', 'debit'));
     }
 }
