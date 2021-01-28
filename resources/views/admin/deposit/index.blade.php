@@ -347,7 +347,7 @@
             <tbody>
                 @foreach($deposit as $data)
                 <tr>
-                    <td>{{ $data->user->id}}</td>
+                    <td>{{ $data->id}}</td>
                     <td>{{ $data->user->name}}</td>
                     <td>{{ $data->user->email}}</td>
                     <td>{{ $data->trash->trash}}</td>

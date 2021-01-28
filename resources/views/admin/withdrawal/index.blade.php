@@ -13,7 +13,7 @@
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                    {{ $successCredit }}
+                   Rp {{ number_format($successCredit, 0, ',', '.') }}
                 </span>
             </div>
             <!-- /.info-box-content -->
@@ -33,7 +33,7 @@
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                    {{ $waitingCredit }}
+                   Rp {{ number_format($waitingCredit, 0, ',', '.') }}
                 </span>
             </div>
             <!-- /.info-box-content -->
@@ -53,7 +53,7 @@
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                    {{ $rejectedCredit }}
+                   Rp {{ number_format($rejectedCredit, 0, ',', '.') }}
                 </span>
             </div>
             <!-- /.info-box-content -->
@@ -73,7 +73,7 @@
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
                 <span class="progress-description">
-                    {{ $totalCredit }}
+                   Rp {{ number_format($totalCredit, 0, ',', '.') }}
                 </span>
             </div>
             <!-- /.info-box-content -->
@@ -113,7 +113,7 @@
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->user->name }}</td>
                     <td>{{ $data->user->email }}</td>
-                    <td>{{ $data->credit }}</td>
+                    <td>Rp {{ number_format($data->credit, 0, ',', '.') }}</td>
                     <td>{{ $data->account }}</td>
                     <td class="text-center py-0 align-middle">
                         @if ($data->status == 2)
