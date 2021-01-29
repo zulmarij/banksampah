@@ -23,10 +23,10 @@ class AdminController extends Controller
         return view('admin.index', compact('finance', 'sale', 'user', 'deposit'));
     }
 
-    public function admin()
-    {
-       $admin =  auth::user()->hasRole('admin');
+    // public function admin()
+    // {
+    //    $admin =  auth::user()->hasRole('admin');
 
-       return view('admin.trash.index', compact('admin'));
-    }
+    //    return view('admin.trash.index', compact('admin'));
+    // }
 }
