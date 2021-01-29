@@ -41,3 +41,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::post('/admin/withdrawal/{id}/reject', 'WithdrawalController@reject');
     Route::post('/admin/withdrawal/withdraw/store', 'WithdrawalController@withdraw');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
