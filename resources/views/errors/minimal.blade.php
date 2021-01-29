@@ -57,6 +57,13 @@
             <div class="message" style="padding: 10px;">
                 @yield('message')
             </div>
+            <div class="error-content text-center">
+                <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
+                <p>
+                  We could not find the page you were looking for.
+                  Meanwhile, you may <a href="{{asset('/admin')}}">return to index</a>.
+                </p>
+              </div>
         </div>
     </body>
 </html>
