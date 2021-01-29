@@ -77,6 +77,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ URL::to('/admin/savings') }}" class="nav-link">
+                        <i class="nav-icon fas fa-money"></i>
+                        <p>
+                            Savings
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ URL::to('/admin/withdrawal') }}" class="nav-link">
                         <i class="nav-icon fas fa-money-check-alt"></i>
                         <p>

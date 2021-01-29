@@ -37,6 +37,8 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
     Route::get('/admin/warehouse', 'WarehouseController@index');
 
+    Route::get('/admin/savings', 'SavingsController@index');
+
     Route::get('/admin/withdrawal/', 'WithdrawalController@index');
     Route::get('/admin/withdrawal/withdraw', 'WithdrawalController@getWithdraw');
     Route::post('/admin/withdrawal/{id}/confirm', 'WithdrawalController@confirm');

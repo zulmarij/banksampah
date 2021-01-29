@@ -1,4 +1,4 @@
-@extends('admin/admin',['title' => "Finance | Sampah Bank"])
+@extends('admin/admin',['title' => "Savings | Sampah Bank"])
 @section('content')
 <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
@@ -7,7 +7,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Balance</span>
-                <span class="info-box-number">Rp {{ number_format($balance['balance'], 0, ',', '.') }}</span>
+                <span class="info-box-number">Rp {{ number_format($balance, 0, ',', '.') }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -66,7 +66,7 @@
             <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Total Report</span>
+                <span class="info-box-text">Total Savings</span>
                 <span class="info-box-number">{{ $total }}</span>
 
                 <div class="progress">
@@ -85,7 +85,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Finance</h3>
+        <h3 class="card-title">Savings</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -93,20 +93,24 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
                     <th>Debit</th>
                     <th>Credit</th>
-                    <th>Balance</th>
                     <th>Information</th>
                     <th>Created_at</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($finance as $data)
+                @foreach($savings as $data)
                 <tr>
-                    <td>{{ $data->id}}</td>
+                    <td>{{ $data->user->id}}</td>
+                    <td>{{ $data->user->name}}</td>
+                    <td>{{ $data->user->email}}</td>
+                    <td>Rp {{ number_format($data->balance, 0, ',', '.')}}</td>
                     <td>Rp {{ number_format($data->debit, 0, ',', '.')}}</td>
                     <td>Rp {{ number_format($data->credit, 0, ',', '.')}}</td>
-                    <td>Rp {{ number_format($data->balance, 0, ',', '.')}}</td>
                     <td>{{ $data->information}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>
