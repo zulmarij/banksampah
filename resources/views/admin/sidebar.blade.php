@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ asset('admin') }}" class="brand-link">
+    <a href="{{ asset('admin') }}" class="brand-link navbar-indigo">
         <img src="{{ asset('template/dist/img/Logo.jpg') }}" alt="Sampah Bank"
             class="brand-image img-circle elevation-3" style="opacity: .8" height="128" width="128">
         <span class="brand-text font-weight-light">Sampah Bank</span>
