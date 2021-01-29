@@ -9,7 +9,7 @@
     @include('admin.css')
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page login-dark">
     <div class="login-box">
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">

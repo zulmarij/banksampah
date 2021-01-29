@@ -1,4 +1,4 @@
-@extends('admin/admin',['title' => 'Create User | Sampah Bank', 'judul' => 'Create User', 'breadcrumb' => 'Create User'])
+@extends('admin/admin',['title' => 'Create User | Sampah Bank', 'breadcrumb' => 'Create User'])
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -47,7 +47,7 @@
             <!-- /.card-body -->
             <div class="card-footer">
                 <a href="{{ URL::to('admin/user') }}" class="btn btn-secondary">Back</a>
-                {{ Form::submit('Create', ['class' => 'btn btn-succes float-right']) }}
+                {{ Form::submit('Create', ['class' => 'btn btn-success float-right']) }}
             </div>
         </div>
         <!-- /.card -->

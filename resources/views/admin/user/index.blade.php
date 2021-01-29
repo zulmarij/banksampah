@@ -1,4 +1,4 @@
-@extends('admin/admin',['title' => 'User | Sampah Bank', 'judul' => 'User', 'breadcrumb' => 'User'])
+@extends('admin/admin',['title' => 'User | Sampah Bank', 'breadcrumb' => 'User'])
 @section('content')
 <div class="row">
     <div class="col-md-2 col-sm-6 col-12">
