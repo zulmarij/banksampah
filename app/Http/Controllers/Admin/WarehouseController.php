@@ -8,24 +8,33 @@ use Illuminate\Http\Request;
 
 class WarehouseController extends Controller
 {
-     public function index()
+    public function index()
     {
-        $warehouses = Warehouse::with(['trash'])->orderBy('id', 'ASC')->get();
-        $data = ['warehouses' => $warehouses];
-        return view('admin.index')->with($data);
-    }
 
-    public function get()
-    {
-        $warehouse = Trash::all();
+        $kertasTotal = Warehouse::where('trash_id', 1)->count();
+        $kertasWeight = Warehouse::where('trash_id', 1)->sum('weight');
 
-        return $this->sendResponse($warehouse, 200, 'warehouse loaded successfully');
-    }
+        $plastikTotal = Warehouse::where('trash_id', 2)->count();
+        $plastikWeight = Warehouse::where('trash_id', 2)->sum('weight');
 
-    public function show($id)
-    {
-        $warehouse = Warehouse::findOrFail($id);
+        $kacaTotal = Warehouse::where('trash_id', 3)->count();
+        $kacaWeight = Warehouse::where('trash_id', 3)->sum('weight');
 
-        return $this->sendResponse($warehouse, 200, 'warehouse loaded successfully');
+        $minyakTotal = Warehouse::where('trash_id', 4)->count();
+        $minyakWeight = Warehouse::where('trash_id', 4)->sum('weight');
+
+        $logamTotal = Warehouse::where('trash_id', 5)->count();
+        $logamWeight = Warehouse::where('trash_id', 5)->sum('weight');
+
+        $elektronikTotal = Warehouse::where('trash_id', 6)->count();
+        $elektronikWeight = Warehouse::where('trash_id', 6)->sum('weight');
+
+        $weight = Warehouse::sum('weight');
+        $trash = Warehouse::distinct('trash_id')->count();
+        $total = Warehouse::count();
+
+        $warehouse = Warehouse::with('trash')->get();
+
+        return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'kertasWeight', 'kertasTotal', 'plastikWeight', 'plastikTotal', 'kacaWeight', 'kacaTotal', 'minyakWeight', 'minyakTotal', 'logamWeight', 'logamTotal', 'elektronikWeight', 'elektronikTotal'));
     }
 }
