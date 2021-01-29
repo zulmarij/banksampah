@@ -4,5 +4,5 @@
          Thanks to Pondok Programmer
      </div>
      <!-- Default to the left -->
-     <strong>Copyright &copy; 2014-2021 <a href="{{ URL::to('/admin') }}">Sampah Bank</a>.</strong> All rights reserved.
+     <strong>Copyright &copy; 2020-<?= date('Y') ?> <a href="{{ URL::to('/admin') }}">Sampah Bank</a>.</strong> All rights reserved.
  </footer>

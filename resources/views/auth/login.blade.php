@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bank Sampag | Lockscreen</title>
+    <title>Bank Sampah | Lockscreen</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -19,16 +19,16 @@
     <!-- Automatic element centering -->
     <div class="lockscreen-wrapper">
         <div class="lockscreen-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+            <a href="../../index2.html"><b>Sampah</b>Bank</a>
         </div>
         <!-- User name -->
-        <div class="lockscreen-name">John Doe</div>
+        <div class="lockscreen-name">Dzul Maarij</div>
 
         <!-- START LOCK SCREEN ITEM -->
         <div class="lockscreen-item">
             <!-- lockscreen image -->
             <div class="lockscreen-image">
-                <img src="../../dist/img/user1-128x128.jpg" alt="User Image">
+                <img src="{{ asset('template/dist/img/user1-128x128.JPG')}}" alt="User Image" width="128" height="128">
             </div>
             <!-- /.lockscreen-image -->
 
@@ -57,7 +57,7 @@
             <a href="login.html">Or sign in as a different user</a>
         </div>
         <div class="lockscreen-footer text-center">
-            Copyright &copy; 2014-2020 <b><a href="https://adminlte.io" class="text-black">AdminLTE.io</a></b><br>
+            Copyright &copy; 2020-<?= date('Y') ?> <b><a href="https://sampahbank.herokuapp.com" class="text-black">Sampah Bank</a></b><br>
             All rights reserved
         </div>
     </div>

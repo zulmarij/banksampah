@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ asset('admin') }}" class="brand-link">
-        <img src="{{ asset('template/dist/img/AdminLTELogo.png') }}" alt="Sampah Bank"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('template/dist/img/Logo.jpg') }}" alt="Sampah Bank"
+            class="brand-image img-circle elevation-3" style="opacity: .8" height="128" width="128">
         <span class="brand-text font-weight-light">Sampah Bank</span>
     </a>
 
@@ -11,8 +11,8 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('template/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                    alt="User Image">
+                <img src="{{ asset('template/dist/img/user2-160x160.JPG') }}" class="img-circle elevation-2"
+                    alt="User Image" width="160" height="160">
             </div>
             <div class="info">
                 <a href="#" class="d-block">Dzul Maarij</a>
