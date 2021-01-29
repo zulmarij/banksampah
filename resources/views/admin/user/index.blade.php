@@ -98,12 +98,14 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>name</th>
-                            <th>phone</th>
-                            <th>email</th>
-                            <th>address</th>
-                            <th>role</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Role</th>
+                            @hasrole('admin')
                             <th>Action</th>
+                            @endhasrole
                         </tr>
                     </thead>
                     <tbody>

@@ -39,7 +39,9 @@
                             <th>Trash</th>
                             <th>Price</th>
                             <th>Image</th>
+                            @hasrole('admin')
                             <th>Action</th>
+                            @endhasrole
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +52,6 @@
                             <td>Rp {{ number_format($data->price, 0, ',', '.') }}</td>
                             <td class="text-center py-0 align-middle"><img src="{{ $data->image }}" width="64"
                                     height="64" /></td>
-                            @hasrole('admin')
                             <td class="text-center py-0 align-middle">
                                 <form method="POST" action="{{ URL::to('/admin/trash/'.$data->id) }}">
                                     {{ csrf_field() }}
@@ -72,7 +73,6 @@
                                     </div>
                                 </form>
                             </td>
-                            @endhasrole
                         </tr>
                         @endforeach
                     </tbody>
