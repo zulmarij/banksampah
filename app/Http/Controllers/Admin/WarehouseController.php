@@ -11,9 +11,12 @@ class WarehouseController extends Controller
     public function index()
     {
         $warehouse = Warehouse::with('trash')->get();
+        foreach ($warehouse as $get) {
+          $price = sum($get->weight) * sum($get->trash->price);
+        }
         $weight = Warehouse::sum('weight');
         $trash = Warehouse::distinct('trash_id')->count();
-        $price = $warehouse->trash->price * $warehouse->weight;
+        // $price = $warehouse->trash->price * $warehouse->weight;
         $total = Warehouse::count();
 
 
