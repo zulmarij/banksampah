@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,7 @@ Route::get('/', function () {
 });
 
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/admin', 'AdminController@index');
 
     Route::resource('/admin/user', 'UserController');
