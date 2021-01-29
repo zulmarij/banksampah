@@ -1,11 +1,11 @@
-@extends('admin/admin',['title' => 'Add User | Sampah Bank', 'judul' => 'Add User', 'breadcrumb' => 'Add User'])
+@extends('admin/admin',['title' => 'Create User | Sampah Bank', 'judul' => 'Create User', 'breadcrumb' => 'Create User'])
 @section('content')
 <div class="row">
     <div class="col-md-12">
         {{ Form::open(['action'=>'Admin\UserController@store', 'files'=>true]) }}
         <div class="card card-dark">
             <div class="card-header">
-                <h3 class="card-title">Add User</h3>
+                <h3 class="card-title">Create User</h3>
             </div>
             <div class="card-body">
                 @if(!empty($errors->all()))
@@ -47,7 +47,7 @@
             <!-- /.card-body -->
             <div class="card-footer">
                 <a href="{{ URL::to('admin/user') }}" class="btn btn-secondary">Back</a>
-                {{ Form::submit('Create', ['class' => 'btn btn-primary float-right']) }}
+                {{ Form::submit('Create', ['class' => 'btn btn-succes float-right']) }}
             </div>
         </div>
         <!-- /.card -->
