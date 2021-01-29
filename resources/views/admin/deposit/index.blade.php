@@ -256,9 +256,9 @@
                 <div class="progress">
                 </div>
                 <div class="progress-bar" style="width: 70%"></div>
-                <span class="progress-description">
+                {{-- <span class="progress-description">
                     70% Increase in 30 Days
-                </span>
+                </span> --}}
             </div>
             <!-- /.info-box-content -->
         </div>*
@@ -276,9 +276,9 @@
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
-                <span class="progress-description">
+                {{-- <span class="progress-description">
                     70% Increase in 30 Days
-                </span>
+                </span> --}}
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -296,9 +296,9 @@
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
-                <span class="progress-description">
+                {{-- <span class="progress-description">
                     70% Increase in 30 Days
-                </span>
+                </span> --}}
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -316,9 +316,9 @@
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
-                <span class="progress-description">
+                {{-- <span class="progress-description">
                     70% Increase in 30 Days
-                </span>
+                </span> --}}
             </div>
             <!-- /.info-box-content -->
         </div>
