@@ -27,7 +27,7 @@
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="{{ $login_url }}" method="post">
+                <form action="{{ route('login') }}" method="post">
                     {{ csrf_field() }}
 
                     {{-- Email field --}}
