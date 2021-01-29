@@ -10,13 +10,11 @@ class SavingsController extends Controller
 {
     public function index()
     {
-        $debit = Savings::sum('debit');
-        $credit = Savings::sum('credit');
-        $balance =Savings::latest()->first();
+        $user = Savings::distinct('user_id')->count();
         $total = Savings::count();
 
-        $savings = Savings::with('user')->get();
+        $savings = Savings::with('user')->orderBy('id', 'DESC')->get();
 
-        return view('admin.savings.index', compact('savings', 'balance', 'credit', 'debit', 'total'));
+        return view('admin.savings.index', compact('savings', 'total', 'user'));
     }
 }

@@ -1,86 +1,38 @@
 @extends('admin/admin',['title' => "Savings | Sampah Bank"])
 @section('content')
 <div class="row">
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-success">
-            <span class="info-box-icon"><i class="fas fa-wallet"></i></span>
+    <div class="col-lg-6 col-6">
+        <!-- small card -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>{{ $user }}</h3>
 
-            <div class="info-box-content">
-                <span class="info-box-text">Total Balance</span>
-                <span class="info-box-number">Rp {{ number_format($balance['balance'], 0, ',', '.') }}</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                {{-- <span class="progress-description">
-                    70% Increase in 30 Days
-                </span> --}}
+                <p>Total User</p>
             </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-primary">
-            <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Total Debit</span>
-                <span class="info-box-number">Rp {{ number_format($debit, 0, ',', '.') }}</span>
-
-                <div class="progress">
-                </div>
-                    <div class="progress-bar" style="width: 70%"></div>
-                {{-- <span class="progress-description">
-                    70% Increase in 30 Days
-                </span> --}}
+            <div class="icon">
+                <i class="fas fa-users"></i>
             </div>
-            <!-- /.info-box-content -->
+            {{-- <a href="#" class="small-box-footer">
+            More info <i class="fas fa-arrow-circle-right"></i>
+          </a> --}}
         </div>
-        <!-- /.info-box -->
     </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-danger">
-            <span class="info-box-icon"><i class="fas fa-hand-holding-usd"></i></span>
+    <div class="col-lg-6 col-6">
+        <!-- small card -->
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3>{{ $total }}</h3>
 
-            <div class="info-box-content">
-                <span class="info-box-text">Total Credit</span>
-                <span class="info-box-number">Rp {{ number_format($credit, 0, ',', '.') }}</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                {{-- <span class="progress-description">
-                    70% Increase in 30 Days
-                </span> --}}
+                <p>Total Savings</p>
             </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-warning">
-            <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Total Savings</span>
-                <span class="info-box-number">{{ $total }}</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                {{-- <span class="progress-description">
-                    70% Increase in 30 Days
-                </span> --}}
+            <div class="icon">
+                <i class="fas fa-credit-card"></i>
             </div>
-            <!-- /.info-box-content -->
+            {{-- <a href="#" class="small-box-footer">
+            More info <i class="fas fa-arrow-circle-right"></i>
+          </a> --}}
         </div>
-        <!-- /.info-box -->
     </div>
-    <!-- /.col -->
 </div>
 
 <div class="card">

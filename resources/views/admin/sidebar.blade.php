@@ -78,7 +78,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ URL::to('/admin/savings') }}" class="nav-link">
-                        <i class="nav-icon fas fa-money"></i>
+                        <i class="nav-icon fas fa-credit-card"></i>
                         <p>
                             Savings
                         </p>
