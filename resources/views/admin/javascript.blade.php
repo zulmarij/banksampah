@@ -45,5 +45,4 @@
               , "responsive": true
           , });
       });
-
   </script>
