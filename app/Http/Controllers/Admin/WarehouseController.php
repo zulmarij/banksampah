@@ -10,14 +10,14 @@ class WarehouseController extends Controller
 {
     public function index()
     {
+        $warehouse = Warehouse::with('trash')->get();
         $weight = Warehouse::sum('weight');
         $trash = Warehouse::distinct('trash_id')->count();
-        $price =
+        $price = $warehouse->trash->price * $warehouse->weight;
         $total = Warehouse::count();
 
-        $warehouse = Warehouse::with('trash')->get();
 
-        $dd = dd($warehouse);
-        return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'dd'));
+        // $dd = dd($warehouse);
+        return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'price'));
     }
 }
