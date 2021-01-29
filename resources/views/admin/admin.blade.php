@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css')}}">
 
 </head>
-<body class="hold-transition sidebar-mini dark-mode accent-warning">
+<body class="hold-transition sidebar-mini dark-mode accent-warning text-sm">
     <div class="wrapper">
 
         <!-- Navbar -->
