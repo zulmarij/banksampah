@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
     return redirect('/admin');
 });
-Auth::routes();
 
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
@@ -41,7 +41,3 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::post('/admin/withdrawal/{id}/reject', 'WithdrawalController@reject');
     Route::post('/admin/withdrawal/withdraw/store', 'WithdrawalController@withdraw');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
