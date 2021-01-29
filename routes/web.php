@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
 Route::get('/', function () {
     return redirect('/admin');
 });
+Auth::routes();
 
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
