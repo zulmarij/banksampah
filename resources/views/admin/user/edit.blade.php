@@ -1,4 +1,4 @@
-@extends('admin/admin',['title' => "Edit User | Sampah Bank"])
+@extends('admin/admin',['title' => 'Edit User | Sampah Bank', 'judul' => 'Edit User', 'breadcrumb' => 'Edit User'])
 @section('content')
 <div class="row">
     <div class="col-12">
@@ -7,7 +7,7 @@
         <div class="card">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="card-header">
-                <h3 class="card-title">Update User</h3>
+                <h3 class="card-title">Edit User</h3>
             </div>
             <!-- /.row -->
             <div class="card-body">

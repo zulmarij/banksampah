@@ -1,9 +1,9 @@
-@extends('admin/admin',['title' => "Add User | Sampah Bank"])
+@extends('admin/admin',['title' => 'Add User | Sampah Bank', 'judul' => 'Add User', 'breadcrumb' => 'Add User'])
 @section('content')
 <div class="row">
     <div class="col-md-12">
         {{ Form::open(['action'=>'Admin\UserController@store', 'files'=>true]) }}
-        <div class="card card-primary">
+        <div class="card card-dark">
             <div class="card-header">
                 <h3 class="card-title">Add User</h3>
             </div>
