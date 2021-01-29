@@ -238,15 +238,15 @@
             <span class="info-box-icon"><i class="fas fa-dollar-sign"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Revenue</span>
+                <span class="info-box-text">Total Revenue</span>
                 <span class="info-box-number">Rp {{ number_format($revenue, 0, ',', '.') }}</span>
 
                 <div class="progress">
                 </div>
                 <div class="progress-bar" style="width: 70%"></div>
-                <span class="progress-description">
+                {{-- <span class="progress-description">
                     70% Increase in 30 Days
-                </span>
+                </span> --}}
             </div>
             <!-- /.info-box-content -->
         </div>*
@@ -258,35 +258,15 @@
             <span class="info-box-icon"><i class="fas fa-weight"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Weight</span>
+                <span class="info-box-text">Total Weight</span>
                 <span class="info-box-number">{{ number_format($weight, 0, ',', '.') }} Kg</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
-                <span class="progress-description">
+                {{-- <span class="progress-description">
                     70% Increase in 30 Days
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-warning">
-            <span class="info-box-icon"><i class="fas fa-trash"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Trash</span>
-                <span class="info-box-number">{{ $trash }}</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                <span class="progress-description">
-                    70% Increase in 30 Days
-                </span>
+                </span> --}}
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -295,18 +275,38 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-danger">
+            <span class="info-box-icon"><i class="fas fa-trash"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total Trash</span>
+                <span class="info-box-number">{{ $trash }}</span>
+
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                {{-- <span class="progress-description">
+                    70% Increase in 30 Days
+                </span> --}}
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-warning">
             <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Reports</span>
+                <span class="info-box-text">Total Sale</span>
                 <span class="info-box-number">{{ $total }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
                 </div>
-                <span class="progress-description">
+                {{-- <span class="progress-description">
                     70% Increase in 30 Days
-                </span>
+                </span> --}}
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -325,9 +325,9 @@
                 <tr>
                     <th>ID</th>
                     <th>Trash</th>
+                    <th>Price/Kg</th>
                     <th>Weight</th>
-                    <th>Sale</th>
-                    <th>Buy</th>
+                    <th>Total Price</th>
                     <th>Profit</th>
                     <th>Created_at</th>
                 </tr>
@@ -337,8 +337,8 @@
                 <tr>
                     <td>{{ $data->id}}</td>
                     <td>{{ $data->trash->trash}}</td>
-                    <td>{{ number_format($data->weight, 0, ',', '.')}} Kg</td>
                     <td>Rp {{ number_format($data->price, 0, ',', '.') }}</td>
+                    <td>{{ number_format($data->weight, 0, ',', '.')}} Kg</td>
                     <td>Rp {{ number_format($data->trash->price, 0, ',', '.') }}</td>
                     <td>Rp {{ number_format($data->revenue - ($data->trash->price * $data->weight), 0, ',', '.')}}</td>
                     <td>{{ $data->created_at}}</td>
