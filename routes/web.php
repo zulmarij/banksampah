@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', function () {
-    return redirect('/admin');
+    return redirect('/admin/login');
 });
 
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
-    Route::get('/admin', 'AdminController@index');
+    // Route::get('/admin', 'AdminController@index');
 
     Route::resource('/admin/user', 'UserController');
 
