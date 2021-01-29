@@ -46,7 +46,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ URL::to('/admin/trash') }}" class="nav-link">
-                        <i class="nav-icon fas fa-dumpster"></i>
+                        <i class="nav-icon fas fa-trash"></i>
                         <p>
                             Trash
                         </p>
@@ -65,6 +65,14 @@
                         <i class="nav-icon fas fa-truck-moving"></i>
                         <p>
                             Pickup
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ URL::to('/admin/warehouse') }}" class="nav-link">
+                        <i class="nav-icon fas fa-dumpster"></i>
+                        <p>
+                            Warehouse
                         </p>
                     </a>
                 </li>

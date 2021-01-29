@@ -325,9 +325,9 @@
                 <tr>
                     <th>ID</th>
                     <th>Trash</th>
-                    <th>Price/Kg</th>
                     <th>Weight</th>
-                    <th>Total Price</th>
+                    <th>Buy</th>
+                    <th>Sale</th>
                     <th>Profit</th>
                     <th>Created_at</th>
                 </tr>
@@ -337,9 +337,9 @@
                 <tr>
                     <td>{{ $data->id}}</td>
                     <td>{{ $data->trash->trash}}</td>
-                    <td>Rp {{ number_format($data->price, 0, ',', '.') }}</td>
                     <td>{{ number_format($data->weight, 0, ',', '.')}} Kg</td>
                     <td>Rp {{ number_format($data->trash->price, 0, ',', '.') }}</td>
+                    <td>Rp {{ number_format($data->price, 0, ',', '.') }}</td>
                     <td>Rp {{ number_format($data->revenue - ($data->trash->price * $data->weight), 0, ',', '.')}}</td>
                     <td>{{ $data->created_at}}</td>
                 </tr>
