@@ -12,7 +12,7 @@ class SavingsController extends Controller
     {
         $debit = Savings::sum('debit');
         $credit = Savings::sum('credit');
-        $balance =Savings::latest()->first('balance');
+        $balance =Savings::latest()->first();
         $total = Savings::count();
 
         $savings = Savings::with('user')->get();

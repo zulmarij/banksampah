@@ -7,7 +7,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Balance</span>
-                <span class="info-box-number">Rp {{ number_format($balance, 0, ',', '.') }}</span>
+                <span class="info-box-number">Rp {{ number_format($balance['balance'], 0, ',', '.') }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
