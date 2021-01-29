@@ -4,69 +4,105 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bank Sampah | Lockscreen</title>
+    <title>AdminLTE 3 | Log in (v2)</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="{{ asset('template/plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
 
-<body class="hold-transition lockscreen">
-    <!-- Automatic element centering -->
-    <div class="lockscreen-wrapper">
-        <div class="lockscreen-logo">
-            <a href="../../index2.html"><b>Sampah</b>Bank</a>
-        </div>
-        <!-- User name -->
-        <div class="lockscreen-name">Dzul Maarij</div>
-
-        <!-- START LOCK SCREEN ITEM -->
-        <div class="lockscreen-item">
-            <!-- lockscreen image -->
-            <div class="lockscreen-image">
-                <img src="{{ asset('template/dist/img/user1-128x128.JPG')}}" alt="User Image" width="128" height="128">
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a href="../../index2.html" class="h1"><b>Bank</b>Sampah</a>
             </div>
-            <!-- /.lockscreen-image -->
+            <div class="card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
 
-            <!-- lockscreen credentials (contains the form) -->
-            <form class="lockscreen-credentials" method="POST" action="{{ route('login') }}">
-                @csrf
-                <div class="input-group">
-                    <input id="email" type="hidden" class="form-control" name="email" value="admin@gmail.com">
-                    <input id="password" type="password" class="form-control" name="password">
+                <form action="{{ $login_url }}" method="post">
+                    {{ csrf_field() }}
 
-                    <div class="input-group-append">
-                        <button type="submit" class="btn">
-                            <i class="fas fa-arrow-right text-muted"></i>
-                        </button>
+                    {{-- Email field --}}
+                    <div class="input-group mb-3">
+                        <input type="email" name="email"
+                            class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                            value="{{ old('email') }}" placeholder="Email" autofocus>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                        @if($errors->has('email'))
+                        <div class="invalid-feedback">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </div>
+                        @endif
                     </div>
-                </div>
-            </form>
-            <!-- /.lockscreen credentials -->
 
+                    {{-- Password field --}}
+                    <div class="input-group mb-3">
+                        <input type="password" name="password"
+                            class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                            placeholder="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                        @if($errors->has('password'))
+                        <div class="invalid-feedback">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </div>
+                        @endif
+                    </div>
+
+                    {{-- Login field --}}
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="icheck-primary">
+                                <input type="checkbox" name="remember" id="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <button type=submit
+                                class="btn btn-block">
+                                <span class="fas fa-sign-in-alt"></span> Sign In </button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="social-auth-links text-center mt-2 mb-3">
+                    <a href="#" class="btn btn-block btn-primary">
+                        <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                    </a>
+                    <a href="#" class="btn btn-block btn-danger">
+                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                    </a>
+                </div>
+                <!-- /.social-auth-links -->
+            </div>
+            <!-- /.card-body -->
         </div>
-        <!-- /.lockscreen-item -->
-        <div class="help-block text-center">
-            Enter your password to retrieve your session
-        </div>
-        <div class="text-center">
-            <a href="login.html">Or sign in as a different user</a>
-        </div>
-        <div class="lockscreen-footer text-center">
-            Copyright &copy; 2020-<?= date('Y') ?> <b><a href="https://sampahbank.herokuapp.com" class="text-black">Sampah Bank</a></b><br>
-            All rights reserved
-        </div>
+        <!-- /.card -->
     </div>
-    <!-- /.center -->
+    <!-- /.login-box -->
 
     <!-- jQuery -->
-    <script src="{{ asset('template/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
 </body>
 
 </html>
