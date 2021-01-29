@@ -23,12 +23,14 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Trash</h3>
+                @hasrole('admin')
                 <div class="card-tools">
                     <a href="{{ URL::to('/admin/trash/create')}}" class="btn btn-dark">
                         <i class="fa fa-plus"></i>
                         &nbsp; Add
                     </a>
                 </div>
+                @endhasrole
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -52,6 +54,7 @@
                             <td>Rp {{ number_format($data->price, 0, ',', '.') }}</td>
                             <td class="text-center py-0 align-middle"><img src="{{ $data->image }}" width="64"
                                     height="64" /></td>
+                            @hasrole('admin')
                             <td class="text-center py-0 align-middle">
                                 <form method="POST" action="{{ URL::to('/admin/trash/'.$data->id) }}">
                                     {{ csrf_field() }}
@@ -73,6 +76,7 @@
                                     </div>
                                 </form>
                             </td>
+                            @endhasrole
                         </tr>
                         @endforeach
                     </tbody>

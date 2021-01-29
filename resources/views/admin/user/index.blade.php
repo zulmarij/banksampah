@@ -133,16 +133,17 @@
                                 @endforeach
                                 @endif
                             </td>
+                            @hasrole('admin')
                             <td class="text-center py-0 align-middle">
                                 <form method="POST" action="{{ URL::to('/admin/user/'.$data->id) }}">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="_method" value="DELETE" />
                                     <div class="btn-group">
-                                        <a class="btn btn-primary btn-sm"
+                                        {{-- <a class="btn btn-primary btn-sm"
                                             href="{{ URL::to('/admin/user/'.$data->id) }}">
                                             <i class="fas fa-eye">
                                             </i>
-                                        </a>
+                                        </a> --}}
                                         <a class="btn btn-warning btn-sm"
                                             href="{{ URL::to('/admin/user/'.$data->id.'/edit') }}">
                                             <i class="fas fa-pencil-alt">
@@ -155,6 +156,7 @@
                                     </div>
                                 </form>
                             </td>
+                            @endhasrole
                         </tr>
                         @endforeach
                     </tbody>
