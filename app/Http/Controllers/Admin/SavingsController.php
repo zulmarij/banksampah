@@ -16,7 +16,8 @@ class SavingsController extends Controller
         $total = Savings::count();
 
         $savings = Savings::all();
+       $dd = dd($savings);
 
-        return view('admin.savings.index', compact('savings', 'balance', 'credit', 'debit', 'total'));
+        return view('admin.savings.index', compact('savings', 'balance', 'credit', 'debit', 'total', 'dd'));
     }
 }
