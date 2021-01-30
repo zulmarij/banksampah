@@ -57,7 +57,7 @@
             <tbody>
                 @foreach($savings as $data)
                 <tr>
-                    <td>{{ $data->user->id}}</td>
+                    <td>{{ $data->id}}</td>
                     <td>{{ $data->user->name}}</td>
                     <td>{{ $data->user->email}}</td>
                     <td>Rp {{ number_format($data->balance, 0, ',', '.')}}</td>
