@@ -96,7 +96,7 @@ class WithdrawalController extends Controller
             'balance'      => Finance::latest()->first()->balance -= $withdrawal->credit
         ]);
 
-        alert::question('kenapa kamu pilih aku', 'Apakah kamu mencintaiku');
+        alert::success('message', 'Money Sent Successfully');
         return back();
     }
 
