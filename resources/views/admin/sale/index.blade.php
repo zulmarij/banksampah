@@ -1,4 +1,4 @@
-@extends('admin/admin',['title' => "Sale | Sampah Bank"])
+@extends('admin/admin',['title' => 'Sale | Sampah Bank', 'breadcrumb' => 'Sale'])
 @section('content')
 <div class="row">
     <div class="col-md-4">
@@ -249,7 +249,7 @@
                 </span> --}}
             </div>
             <!-- /.info-box-content -->
-        </div>*
+        </div>
         <!-- /.info-box -->
     </div>
     <!-- /.col -->

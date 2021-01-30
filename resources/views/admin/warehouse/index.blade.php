@@ -1,4 +1,4 @@
-@extends('admin/admin',['title' => "Warehouse | Sampah Bank"])
+@extends('admin/admin',['title' => 'Warehouse | Sampah Bank', 'breadcrumb' => 'Warehouse'])
 @section('content')
 <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
@@ -47,7 +47,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Price</span>
-                <span class="info-box-number">Soon</span>
+                <span class="info-box-number">{{ $totalPrice }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
