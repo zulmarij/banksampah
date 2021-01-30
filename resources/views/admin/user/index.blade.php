@@ -88,7 +88,7 @@
                 <div class="card-tools">
                     <a href="{{ URL::to('/admin/user/create')}}" class="btn btn-success">
                         <i class="fa fa-plus"></i>
-                        &nbsp; Add
+                        &nbsp; Create
                     </a>
                 </div>
             </div>

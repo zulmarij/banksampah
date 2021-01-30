@@ -19,7 +19,9 @@ Auth::routes();
 Route::get('/', function () {
     return redirect('/admin/login');
 });
-
+Route::get('/admin', function () {
+    return redirect('/admin/user');
+});
 // Route::view('password/reset', 'auth.reset_password')->name('password.reset');
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
     // Route::get('/admin', 'AdminController@index');

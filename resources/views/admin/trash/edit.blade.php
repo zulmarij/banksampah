@@ -1,4 +1,4 @@
-@extends('admin/admin',['title' => "Edit Trash | Sampah Bank"])
+@extends('admin/admin',['title' => 'Edit Trash | Sampah Bank', 'breadcrumb' => 'Edit Trash'])
 @section('content')
 <div class="row">
     <div class="col-12">
@@ -7,7 +7,7 @@
         <div class="card">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="card-header">
-                <h3 class="card-title">Update Trash</h3>
+                <h3 class="card-title">Edit Trash</h3>
             </div>
             <!-- /.row -->
             <div class="card-body">
@@ -40,7 +40,7 @@
             </div>
             <div class="card-footer">
                 <a href="{{ URL::to('admin/trash') }}" class="btn btn-secondary">Back</a>
-                {{ Form::submit('Update', ['class' => 'btn btn-warning float-right']) }}
+                {{ Form::submit('Edit', ['class' => 'btn btn-warning float-right']) }}
             </div>
         </div>
         {{ Form::close() }}

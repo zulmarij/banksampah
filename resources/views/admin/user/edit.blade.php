@@ -53,7 +53,7 @@
             </div>
             <div class="card-footer">
                 <a href="{{ URL::to('admin/user') }}" class="btn btn-secondary">Back</a>
-                {{ Form::submit('Update', ['class' => 'btn btn-warning float-right']) }}
+                {{ Form::submit('Edit', ['class' => 'btn btn-warning float-right']) }}
             </div>
         </div>
         {{ Form::close() }}

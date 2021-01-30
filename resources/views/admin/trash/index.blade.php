@@ -1,4 +1,4 @@
-@extends('admin/admin',['title' => "Trash | Sampah Bank"])
+@extends('admin/admin',['title' => 'Trash | Sampah Bank', 'breadcrumb' => 'Trash'])
 @section('content')
 <div class="row">
     <div class="col-lg-12 col-6">
@@ -25,9 +25,9 @@
                 <h3 class="card-title">Trash</h3>
                 @hasrole('admin')
                 <div class="card-tools">
-                    <a href="{{ URL::to('/admin/trash/create')}}" class="btn btn-dark">
+                    <a href="{{ URL::to('/admin/trash/create')}}" class="btn btn-success">
                         <i class="fa fa-plus"></i>
-                        &nbsp; Add
+                        &nbsp; Create
                     </a>
                 </div>
                 @endhasrole

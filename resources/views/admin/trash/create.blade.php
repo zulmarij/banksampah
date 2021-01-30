@@ -1,11 +1,11 @@
-@extends('admin/admin',['title' => "Add Trash | Sampah Bank"])
+@extends('admin/admin',['title' => 'Create Trash | Sampah Bank', 'breadcrumb' => 'Create Trash'])
 @section('content')
 <div class="row">
     <div class="col-md-12">
         {{ Form::open(['action'=>'Admin\TrashController@store', 'files'=>true]) }}
-        <div class="card card-primary">
+        <div class="card card-dark">
             <div class="card-header">
-                <h3 class="card-title">Add Trash</h3>
+                <h3 class="card-title">Create Trash</h3>
             </div>
             <div class="card-body">
                 @if(!empty($errors->all()))
@@ -34,7 +34,7 @@
             <!-- /.card-body -->
             <div class="card-footer">
                 <a href="{{ URL::to('admin/trash') }}" class="btn btn-secondary">Back</a>
-                {{ Form::submit('Create', ['class' => 'btn btn-primary float-right']) }}
+                {{ Form::submit('Create', ['class' => 'btn btn-success float-right']) }}
             </div>
         </div>
         <!-- /.card -->
