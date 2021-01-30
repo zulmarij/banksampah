@@ -17,10 +17,11 @@ class WarehouseController extends Controller
 
         $warehouse = Warehouse::with('trash')->get();
         foreach ($warehouse as $data) {
-          $price = array_sum($data->trash->price);
-          $weight = array_sum($data->weight);
+        //   $price = array_sum($data->trash->price);
+        //   $weight = array_sum($data->weight);
+        dd($data);
         }
-        $totalPrice = $price * $weight;
-        return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'totalPrice'));
+        // $totalPrice = $price * $weight;
+        return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'data'));
     }
 }
