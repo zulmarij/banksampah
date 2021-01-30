@@ -12,11 +12,11 @@
 <body class="hold-transition login-page" style="background-color: black">
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-warning">
+        <div class="card card-outline card-dark">
             <div class="card-header text-center">
                 <a href="../../index2.html" class="h1"><b>Sampah</b>Bank</a>
             </div>
-            <div class="card-body card-dark">
+            <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
                 <form action="{{ route('login') }}" method="post">
