@@ -14,13 +14,13 @@ class WarehouseController extends Controller
         $trash = Warehouse::distinct('trash_id')->count();
 
         $total = Warehouse::count();
-
+        $price = 0;
         $warehouse = Warehouse::with('trash')->get();
-        foreach ($warehouse as $price) {
-        $totalPrice = sum($price->trash->price);
-            $totalWeight = sum($price->weight);
+        foreach ($warehouse as $w) {
+        $price+=$w->trash->price*$w->weight;
+            // $totalWeight = $w->weight;
         }
-        $data = $price * $weight;
+        $data = $price;
         return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'data'));
     }
 }
