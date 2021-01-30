@@ -19,7 +19,7 @@ class WarehouseController extends Controller
         foreach ($warehouse as $data) {
         //   $price = array_sum($data->trash->price);
         //   $weight = array_sum($data->weight);
-        print_r($data);
+        print_r($data->trash());
         }
         // $totalPrice = $price * $weight;
         return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'data'));
