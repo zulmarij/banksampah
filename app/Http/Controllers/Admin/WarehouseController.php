@@ -12,7 +12,7 @@ class WarehouseController extends Controller
     public function index()
     {
         $weight = Warehouse::sum('weight');
-        $trash = Warehouse::where('weight'>0)->count();
+        $trash = Warehouse::where('weight', 'NOT NULL')->count();
 
         $total = Warehouse::count();
         $totalPrice = 0;
