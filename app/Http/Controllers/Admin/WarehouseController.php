@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Models\Trash;
 use App\Models\Warehouse;
 use App\Http\Controllers\Controller;
@@ -16,12 +15,13 @@ class WarehouseController extends Controller
 
         $total = Warehouse::count();
 
-        $data = Warehouse::with('trash')->get();
-        $totalprice = $data->trash->price;
-        $totalweight = $data->weight;
-        $price = $totalprice*$totalweight;
-
         $warehouse = Warehouse::with('trash')->get();
-        return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'price'));
+        foreach ($warehouse as $data) {
+        //   $price = array_sum($data->trash->price);
+        //   $weight = array_sum($data->weight);
+        print_r($data);
+        }
+        // $totalPrice = $price * $weight;
+        return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'data'));
     }
 }
