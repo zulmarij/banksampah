@@ -1,7 +1,7 @@
 @extends('admin/admin',['title' => 'Warehouse | Sampah Bank', 'breadcrumb' => 'Warehouse'])
 @section('content')
 <div class="row">
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-4 col-sm-6 col-12">
         <div class="info-box bg-success">
             <span class="info-box-icon"><i class="fas fa-weight"></i></span>
 
@@ -21,28 +21,8 @@
         <!-- /.info-box -->
     </div>
     <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
+    <div class="col-md-4 col-sm-6 col-12">
         <div class="info-box bg-primary">
-            <span class="info-box-icon"><i class="fas fa-trash"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Total Trash</span>
-                <span class="info-box-number">{{ $trash }}</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                {{-- <span class="progress-description">
-                    70% Increase in 30 Days
-                </span> --}}
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-danger">
             <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">
@@ -61,8 +41,8 @@
         <!-- /.info-box -->
     </div>
     <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box bg-warning">
+    <div class="col-md-4 col-sm-6 col-12">
+        <div class="info-box bg-danger">
             <span class="info-box-icon"><i class="fas fa-file-invoice-dollar"></i></span>
 
             <div class="info-box-content">

@@ -12,7 +12,6 @@ class WarehouseController extends Controller
     public function index()
     {
         $weight = Warehouse::sum('weight');
-        $trash = Warehouse::whereNotNull('weight')->count();
 
         $total = Warehouse::count();
         $totalPrice = 0;
@@ -21,6 +20,6 @@ class WarehouseController extends Controller
             $totalPrice += $price->trash->price * $price->weight;
         }
         $data = $totalPrice;
-        return view('admin.warehouse.index', compact('warehouse', 'total', 'trash', 'weight', 'data'));
+        return view('admin.warehouse.index', compact('warehouse', 'total', 'weight', 'data'));
     }
 }
