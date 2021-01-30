@@ -9,14 +9,14 @@
     @include('admin.css')
 </head>
 
-<body class="hold-transition login-page login-dark">
+<body class="hold-transition login-page" style="background-color: black">
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
+        <div class="card card-outline card-warning">
             <div class="card-header text-center">
                 <a href="../../index2.html" class="h1"><b>Sampah</b>Bank</a>
             </div>
-            <div class="card-body">
+            <div class="card-body card-dark">
                 <p class="login-box-msg">Sign in to start your session</p>
 
                 <form action="{{ route('login') }}" method="post">
