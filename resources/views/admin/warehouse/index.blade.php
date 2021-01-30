@@ -47,7 +47,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Total Price</span>
-                <span class="info-box-number">{{ $data }}</span>
+                <span class="info-box-number">Rp {{ number_format($data, 0, ',', '.') }}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
