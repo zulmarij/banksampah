@@ -85,12 +85,14 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">User</h3>
+                @hasrole('admin')
                 <div class="card-tools">
                     <a href="{{ URL::to('/admin/user/create')}}" class="btn btn-success">
                         <i class="fa fa-plus"></i>
                         &nbsp; Create
                     </a>
                 </div>
+                @endhasrole
             </div>
             <!-- /.card-header -->
             <div class="card-body">
