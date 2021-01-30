@@ -16,7 +16,7 @@ class WarehouseController extends Controller
 
         $total = Warehouse::count();
 
-        $price = Warehouse::with('trash')->get;
+        $price = Warehouse::with('trash')->get();
         // $totalprice = array_sum($data->trash->price);
         // $totalweight = array_sum($data->weight);
         // $price = $totalprice*$totalweight;
